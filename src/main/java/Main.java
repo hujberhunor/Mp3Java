@@ -7,21 +7,24 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("main");
-        //String songPath = "/home/i3hunor/Suli/Prog3/nagyHF/mp3project/Billy Joel Uptown Girl Official Video.mp3";
-        String songPath = "/home/i3hunor/Suli/Prog3/nagyHF/mp3project/01. Linkin Park  Foreword.mp3";
         try{
-            Mp3File mp3File = new Mp3File(songPath);
-            System.out.println("Length of this mp3 is: " + mp3File.getLengthInSeconds() + " seconds");
-            System.out.println("Has ID3v1 tag?: " + (mp3File.hasId3v2Tag() ? "YES" : "NO"));
-            ID3v1 id3v1Tag = mp3File.getId3v2Tag();
-            System.out.println("Track: " + id3v1Tag.getTrack());
-            System.out.println("Artist: " + id3v1Tag.getArtist());
+            FileHandler fh = new FileHandler();
+            fh.readDir("src/main/resources/");
+            
+            // for(Track track : fh.trackList){
+            //     System.out.println(track.getTitle());
+            // }
+
+            String asd = fh.trackList.get(1).getTitle();
+            System.out.println(asd);
+
+            // Mp3File file = new Mp3File("src/main/resources/02. Linkin Park  Don't Stay.mp3");
+            // long asd = file.getLengthInSeconds();
+            // System.out.println(asd);
+
 
         } 
-        catch(Exception e){
-            
-        }
+        catch(Exception e){}
 
-    }
-}
+    } // end of main method
+} // end of Main class

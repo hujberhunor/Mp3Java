@@ -6,15 +6,15 @@ public class Track {
     String title;
     String artis;
     String album;
-    int year;
+    long length;
 
     // Konstruktor
-    Track(String path, String title, String artist, String album, int year){
+    Track(String path, String title, String artist, String album, long length){
         this.path = path;
         this.title = title;
         this.artis = artist;
         this.album = album;
-        this.year = year;
+        this.length = length;
     }
 
     // Paraméter nélküli konstruktor
@@ -23,9 +23,8 @@ public class Track {
         this.title = null;
         this.artis = null;
         this.album = null;
-        this.year = 0;
+        this.length = 0;
     }
-
 
     public String getPath(){
         return path;
@@ -43,10 +42,9 @@ public class Track {
         return album;
     }
 
-    public int getYear(){
-        return year;
+    public long getLength(){
+        return length;
     }
-
 
 
 } // end of Track class
