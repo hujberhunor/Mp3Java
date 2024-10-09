@@ -15,12 +15,13 @@ public class Main {
             //     System.out.println(track.getTitle());
             // }
 
-            String asd = fh.trackList.get(1).getTitle();
+            String asd = fh.trackList.get(1).getPath();
             System.out.println(asd);
+            
+            Player pl = new Player();
+            pl.play(asd);
 
-            // Mp3File file = new Mp3File("src/main/resources/02. Linkin Park  Don't Stay.mp3");
-            // long asd = file.getLengthInSeconds();
-            // System.out.println(asd);
+
 
 
         } 

@@ -30,6 +30,7 @@ public class FileHandler {
 
                 if(listOfFiles[i].isFile() && name.endsWith(".mp3")){
                     Track track = createTrackFromPath(listOfFiles[i].getAbsolutePath());
+                    // TODO név szerint rendezve betenni a kollekcióba
                     trackList.add(track);
                 }
             } // end of for loop
