@@ -15,9 +15,11 @@ public class FileHandler {
     // Ebben a kollekcióban  tárolom a dalokat
     public ArrayList<Track> trackList = new ArrayList<>();
   
-    // A megadott dir végigpásztázása mp3 fájlok után kutatva
-    // Majd track létrehozása mindegyikből 
-    // A megtalált mp3 fájlokból egyesével lértehoz egy Track objektumot 
+   /*
+   * @param path dal elérési útvonala
+   * A megadott dir végigpásztázása mp3 fájlok után kutatva 
+   * A megtalált mp3 fájlokból egyesével lértehoz egy T //rack objektumot 
+   */ 
     public void readDir(String path) throws IOException, UnsupportedTagException,
      InvalidDataException{
         File dir = new File(path);
@@ -30,26 +32,30 @@ public class FileHandler {
 
                 if(listOfFiles[i].isFile() && name.endsWith(".mp3")){
                     Track track = createTrackFromPath(listOfFiles[i].getAbsolutePath());
-                    // TODO név szerint rendezve betenni a kollekcióba
                     trackList.add(track);
                 }
             } // end of for loop
-        } // end of if
+        } 
+        // Error handling
         else System.out.println("Hiba a mappa pásztázásakor");
     } // end of readDir() 
 
 
-    // @param path - a dal elérési útvonala
-    // Ebből létrehozza track objektumot
-    public Track createTrackFromPath(String path) throws IOException, UnsupportedTagException,
+    /*
+     * @param path - a dal elérési útvonala 
+     * Megadott útvonalból létrehozza a Track objektumot amit utána el tudok 
+     * tárolni egy kollekcióban. 
+     */
+     public Track createTrackFromPath(String path) throws IOException, UnsupportedTagException,
      InvalidDataException {
-        //  
+        // Inicializálás 
         Mp3File mp3File = new Mp3File(path);
         long length = 0;
         String artist = null;
         String title = null;
         String album = null; 
-        
+       
+        // Megnézem, hogy milyen típusú tagjei vannak
         if(mp3File.hasId3v1Tag()){
             ID3v1 v1Tag = mp3File.getId3v1Tag();
             length = mp3File.getLengthInSeconds();
@@ -58,16 +64,15 @@ public class FileHandler {
             album = v1Tag.getAlbum();
         }
         else if(mp3File.hasId3v2Tag()){
-            System.out.println("Has v2tag");
             ID3v2 v2Tag = mp3File.getId3v2Tag();
             length = mp3File.getLengthInSeconds();
             artist = v2Tag.getArtist();
             title = v2Tag.getTitle();
             album = v2Tag.getAlbum();
         }
-        else System.err.println("Jaj");
+        else System.err.println("Se v1 se v2 tagjei nincsenek a fájlnak.");
         
-        // Trakc konstruálás
+        // Trakc konstruálás, lényegi rész
         return new Track(path, title, artist, album, length);
     } // end of createTrackFromPath()
     

@@ -1,25 +1,45 @@
 import java.io.FileInputStream;
-import java.io.IOException;
 
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
-
 public class Player {
+    /*
+     * TODO
+     * Stop()
+     * Next()
+     * Start/Stop toggle
+     * currently in this time of this time
+     * setvol up 
+     * setvol down
+     * forward 5 sec 
+     */
 
+    private AdvancedPlayer player;
+    private Thread playerThread; 
     /*
      * MP3 fáj lejátszásért felelős method
      * Mainben hívva. 
      */
-    public void play(String path) {
+   public void play(String filepath) {
         try {
-            FileInputStream fis = new FileInputStream(path);
-            AdvancedPlayer player = new AdvancedPlayer(fis);
-            player.play();
-            fis.close();
-        } 
-        // Error handling
-        catch (JavaLayerException | IOException e) {
+            FileInputStream fis = new FileInputStream(filepath);
+            player = new AdvancedPlayer(fis);
+            playerThread = new Thread(() -> {
+                try {
+                    player.play();
+                } catch (JavaLayerException e) {
+                    e.printStackTrace();
+                }
+            });
+            playerThread.start();
+        } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void stop(){
+        if(player != null){
+            player.close();
         }
     }
 

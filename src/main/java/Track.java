@@ -2,11 +2,11 @@
 
 
 public class Track {
-    String path;
+    String path;    // Elérési útvonal. Csak ezt tárolom, nem a fájlt!!
     String title;
     String artis;
     String album;
-    long length;
+    long length;    // Sec-ben megadott dal hossz 
 
     // Konstruktor
     Track(String path, String title, String artist, String album, long length){
@@ -26,6 +26,7 @@ public class Track {
         this.length = 0;
     }
 
+    // Getterek
     public String getPath(){
         return path;
     }
