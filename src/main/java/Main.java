@@ -1,8 +1,10 @@
-import com.mpatric.mp3agic.Mp3File;
-import com.mpatric.mp3agic.ID3v1;
-import com.mpatric.mp3agic.ID3v2;
-import com.mpatric.mp3agic.UnsupportedTagException;
-import com.mpatric.mp3agic.InvalidDataException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import java.io.File;
 import java.io.IOException;
 
 public class Main {
@@ -18,9 +20,8 @@ public class Main {
             String asd = fh.trackList.get(1).getPath();
             System.out.println(asd);
             
-            Player pl = new Player();
-            pl.play(asd);
-
+            Player player = new Player(); 
+            player.play(asd);
 
 
 

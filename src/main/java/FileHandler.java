@@ -68,8 +68,7 @@ public class FileHandler {
         else System.err.println("Jaj");
         
         // Trakc konstruálás
-        Track track = new Track(path, title, artist, album, length);
-        return track;
+        return new Track(path, title, artist, album, length);
     } // end of createTrackFromPath()
     
 } // end of fileHandler class
