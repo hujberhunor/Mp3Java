@@ -2,7 +2,7 @@
 
 
 public class Track {
-    String path;    // Elérési útvonal. Csak ezt tárolom, nem a fájlt!!
+    String path;    // Absolute path that is set by the FileHandler.readDir()
     String title;
     String artis;
     String album;
@@ -27,6 +27,11 @@ public class Track {
     }
 
     // Getterek
+
+    /*
+     * @returns path absolute path to the song 
+     * The fileHandler class Readdi method sets this attribute
+     */
     public String getPath(){
         return path;
     }
