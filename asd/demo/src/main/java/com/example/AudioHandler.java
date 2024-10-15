@@ -23,9 +23,4 @@ public class AudioHandler {
         System.out.println("Paused.");
     }
 
-    public void resume() {
-        mediaPlayer.play();
-        System.out.println("Resumed.");
-    }
-
 } // END OF AUDIOHANDLER
