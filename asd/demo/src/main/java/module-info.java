@@ -4,4 +4,7 @@ module com.example {
 
     opens com.example to javafx.fxml;
     exports com.example;
+
+    // chatgpt
+    requires javafx.media;
 }
