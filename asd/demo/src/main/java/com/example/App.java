@@ -2,7 +2,11 @@ package com.example;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-
+/*
+ * MAIN
+ * This class conatins the main method
+ * 
+ */
 public class App extends Application {
 
     @Override
@@ -13,6 +17,7 @@ public class App extends Application {
         TuiHandler tuiHandler = new TuiHandler(audioHandler);
 
         // Run TUI handler in a separate thread
+        // Fogalmam sincs hogyan működik
         new Thread(tuiHandler::start).start();
     }
 
