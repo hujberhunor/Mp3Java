@@ -7,12 +7,13 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>22</maven.compiler.source> <!-- Update this to 22 -->
+        <maven.compiler.source>22</maven.compiler.source> <!-- Baszogatni kellett EL NE FELEJTSD -->
         <maven.compiler.target>22</maven.compiler.target>
-        <javafx.version>19.0.2</javafx.version> <!-- Use a recent version -->
+        <javafx.version>19.0.2</javafx.version> <!-- Baszogatni kellett EL NE FELEJTSD -->
     </properties>
     <dependencies>
         <dependency>
+            <!-- JavaFX library -->
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
@@ -25,7 +26,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>${javafx.version}</version> <!-- Add this line for media playback -->
+            <version>${javafx.version}</version> 
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -46,18 +47,18 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>22</release> <!-- Update this to 22 -->
+                    <release>22</release> <!-- Baszogatni kellett EL NE FELEJTSD -->
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version> <!-- Update to a newer version -->
+                <version>0.0.8</version> <!-- Baszogatni kellett EL NE FELEJTSD--> -->
                 <executions>
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.App</mainClass>
+                            <mainClass>com.example.App</mainClass> <!--NEEDS TO BE UPDATED IF MAIN CLASS CHANGES!-->
                         </configuration>
                     </execution>
                 </executions>

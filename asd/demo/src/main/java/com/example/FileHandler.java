@@ -3,6 +3,7 @@ package com.example;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.ID3v2;
@@ -14,6 +15,10 @@ import com.mpatric.mp3agic.UnsupportedTagException;
  * FileHandler
  */
 public class FileHandler {
+    // TODO
+    // SORT FUNCTIONS!!
+    // Playlist(Create, append) 
+
     // Ebben a kollekcióban  tárolom a dalokat
     public ArrayList<Track> trackList = new ArrayList<>();
   
@@ -47,6 +52,8 @@ public class FileHandler {
      * @param path - a dal elérési útvonala 
      * Megadott útvonalból létrehozza a Track objektumot amit utána el tudok 
      * tárolni egy kollekcióban. 
+     * Csak azért kell, hogy a readDir()-ben konstruálni tudjak metadatából Tracket 
+     * amit pedig kollekcióba tudok elhelyezni
      */
      public Track createTrackFromPath(String path) throws IOException, UnsupportedTagException,
      InvalidDataException {
@@ -77,5 +84,20 @@ public class FileHandler {
         // Trakc konstruálás, lényegi rész
         return new Track(path, title, artist, album, length);
     } // end of createTrackFromPath()
+
+    /*
+     * @param pattern keresett cím stringben megadva
+     * @return megtalált dal/dalok kollekciója
+     * TODO toLoweCase() 
+     * Nem teljesen értem mi a retek ez a kód, de lambda
+     */
+    public ArrayList<Track> search(String pattern) {
+        return trackList.stream()
+                .filter(track -> 
+                    track.getTitle().contains(pattern) 
+                    || track.getArtist().contains(pattern))
+                .collect(Collectors.toCollection(ArrayList::new)); 
+    } // end of search()
+
     
 } // end of fileHandler class
