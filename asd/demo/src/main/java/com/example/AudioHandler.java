@@ -8,8 +8,9 @@ import javafx.scene.media.MediaPlayer;
 public class AudioHandler {
     private MediaPlayer mediaPlayer;
 
-    public AudioHandler(String pathToMp3) {
-        Media media = new Media(new File(pathToMp3).toURI().toString());
+    public AudioHandler(Track track) {
+        String path = track.getPath();
+        Media media = new Media(new File(path).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
     }
 
