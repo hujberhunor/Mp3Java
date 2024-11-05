@@ -7,13 +7,13 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>22</maven.compiler.source> <!-- Baszogatni kellett EL NE FELEJTSD -->
+        <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
-        <javafx.version>19.0.2</javafx.version> <!-- Baszogatni kellett EL NE FELEJTSD -->
+        <javafx.version>19.0.2</javafx.version>
     </properties>
     <dependencies>
         <dependency>
-            <!-- JavaFX library -->
+            <!-- JavaFX libraries -->
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>13</version>
+            <version>${javafx.version}</version>
         </dependency>
         <!-- mp3agic library -->
         <dependency>
@@ -42,18 +42,18 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>22</release> <!-- Baszogatni kellett EL NE FELEJTSD -->
+                    <release>22</release>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version> <!-- Baszogatni kellett EL NE FELEJTSD-->
+                <version>0.0.8</version>
                 <executions>
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.App</mainClass> <!--NEEDS TO BE UPDATED IF MAIN CLASS CHANGES!-->
+                            <mainClass>com.example.App</mainClass> <!-- Update if main class changes -->
                         </configuration>
                     </execution>
                 </executions>
@@ -63,9 +63,10 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>com.example.App</mainClass> <!--NEEDS TO BE UPDATED IF MAIN CLASS CHANGES!-->
+                    <mainClass>com.example.App</mainClass> <!-- Update if main class changes -->
                 </configuration>
             </plugin>
         </plugins>
     </build>
 </project>
+

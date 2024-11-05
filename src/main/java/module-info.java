@@ -8,4 +8,7 @@ module com.example {
     // chatgpt
     requires javafx.media;
     requires mp3agic;
+    
+    // Swing + awt
+    requires java.desktop;
 }

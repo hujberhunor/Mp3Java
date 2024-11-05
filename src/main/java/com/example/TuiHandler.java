@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import javax.swing.*;
+import java.awt.*;
+
+
 public class TuiHandler {
     private AudioHandler audioHandler;
 
