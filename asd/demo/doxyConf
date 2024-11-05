@@ -1,0 +1,78 @@
+# Doxyfile 1.8.18
+
+# Project related configuration options
+PROJECT_NAME           = "Házi feladat"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Vonatjegykezelés"
+PROJECT_GITHUB_URL = https://github.com/hujberhunor/VonatJegy_kezeles/tree/beepitett_string
+OUTPUT_DIRECTORY       = "./docs"
+CREATE_SUBDIRS         = NO
+ALLOW_UNICODE_NAMES    = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES
+
+# Build related configuration options
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_METHODS  = YES
+
+
+# Configuration options related to source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = NO
+
+# Configuration options related to the input files
+INPUT                  = .
+FILE_PATTERNS          = *.cpp *.h
+RECURSIVE              = NO
+EXCLUDE 		= ./gtest_lite.h
+
+# Configuration options related to the output files
+GENERATE_HTML          = NO
+HTML_OUTPUT            = html
+GENERATE_LATEX         = YES
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+GENERATE_DOCBOOK       = NO
+
+# Configuration options related to warnings and progress messages
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+
+# Configuration options related to the preprocessor
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+SEARCH_INCLUDES        = YES
+INCLUDE_PATH           = 
+INCLUDE_FILE_PATTERNS  = 
+
+# Configuration options related to external references
+TAGFILES               = 
+
+# Configuration options related to dot
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 4
+CLASS_DIAGRAMS         = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+UML_LOOK               = YES
+TEMPLATE_RELATIONS     = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+
+# Configuration options related to the LaTeX output
+LATEX_OUTPUT           = latex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+LATEX_BATCHMODE        = NO
+LATEX_HIDE_INDICES     = NO
+
