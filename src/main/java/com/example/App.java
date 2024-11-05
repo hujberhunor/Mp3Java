@@ -17,13 +17,13 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws UnsupportedTagException, InvalidDataException, IOException {
         // INICIALIZÁLÁS 
-        String pathToMp3 = "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/asd/demo/src/main/resources/03-LinkinPark-SomewhereIBelong.mp3";
+        // String pathToMp3 = "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/asd/demo/src/main/resources/03-LinkinPark-SomewhereIBelong.mp3";
         FileHandler fileHandler = new FileHandler();
 
         // Beolvassa a megadott dir össze `.mp3` fájlját és kollekcióba rakja őket.
-        fileHandler.readDir("/home/i3hunor/Suli/Prog3/nagyHF/Fasz/asd/demo/src/main/resources");
+        fileHandler.readDir("/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources");
         // A kiválasztott lejátszandó track
-        Track track = fileHandler.trackList.get(3);
+        Track track = fileHandler.trackList.get(2);
 
         AudioHandler audioHandler = new AudioHandler(track);
         TuiHandler tuiHandler = new TuiHandler(audioHandler);

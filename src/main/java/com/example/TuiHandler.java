@@ -25,7 +25,7 @@ public class TuiHandler {
                         audioHandler.pause();
                         break;
                     default:
-                        System.out.println("Unknown command. Type 'play', 'pause', 'resume', or 'exit'.");
+                        System.out.println("Unknown command. Type 'play', 'pause' or 'exit'.");
                 }
             }
         } catch (IOException e) {
