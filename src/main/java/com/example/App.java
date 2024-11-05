@@ -7,13 +7,16 @@ import com.mpatric.mp3agic.UnsupportedTagException;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-/*
- * MAIN
+/**
  * This class conatins the main method
- * 
  */
 public class App extends Application {
 
+    /**
+     * javaFx requeres this start() method to be overwritten
+     * This start() called in main.
+     * @param stage No idea what is this and how it is works
+     */
     @Override
     public void start(Stage stage) throws UnsupportedTagException, InvalidDataException, IOException {
         // INICIALIZÁLÁS 

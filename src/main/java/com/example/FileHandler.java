@@ -22,7 +22,7 @@ public class FileHandler {
     // Ebben a kollekcióban  tárolom a dalokat
     public ArrayList<Track> trackList = new ArrayList<>();
   
-   /*
+   /**
    * @param path dal elérési útvonala
    * A megadott dir végigpásztázása mp3 fájlok után kutatva 
    * A megtalált mp3 fájlokból egyesével lértehoz egy T //rack objektumot 
@@ -48,7 +48,7 @@ public class FileHandler {
     } // end of readDir() 
 
 
-    /*
+    /**
      * @param path - a dal elérési útvonala 
      * Megadott útvonalból létrehozza a Track objektumot amit utána el tudok 
      * tárolni egy kollekcióban. 
@@ -85,7 +85,7 @@ public class FileHandler {
         return new Track(path, title, artist, album, length);
     } // end of createTrackFromPath()
 
-    /*
+    /**
      * @param pattern keresett cím stringben megadva
      * @return megtalált dal/dalok kollekciója
      * TODO toLoweCase() 
