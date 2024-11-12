@@ -8,11 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
-public class TuiHandler {
+public class GuiHandler {
     GuiActions actions = new GuiActions();
     Track track;
 
@@ -20,13 +21,21 @@ public class TuiHandler {
     JFrame frame;
     JTextField artistField;
     JTextField titleField;
+    JTextField statusField;
+    JTextField progressField;
+    
     JLabel statusLabel;
+   
     JButton playButton;
     JButton fileSel;
 
+    Timer progressTimer;
+
     public void init(){
         initFrame();
-        initTextFields();
+        initStaticTextFields();
+        progressTimer = new Timer(1000, e -> actions.fillProgress(progressField));
+
     }
   
 
@@ -64,13 +73,26 @@ public class TuiHandler {
 
 
         // Row 3
-        gbc.gridx = 0; // Column 0
-        gbc.gridy = 2; // Row 1
-        frame.add(new JLabel("Progress:"), gbc);
-        gbc.gridx = 1; // Column 1
-        gbc.gridwidth = 2; // Span 2 columns
-        gbc.gridwidth = 1; // Reset gridwidth for next components
+        gbc.gridy = 2; // Set to Row 2
 
+        // Add statusField in Column 1
+        gbc.gridx = 1; // Column 1
+        statusField = new JTextField();
+        statusField.setEditable(false);
+        frame.add(statusField, gbc);
+
+        // Add progressField in Column 2
+        gbc.gridx = 2; // Column 2
+        progressField = new JTextField();
+        progressField.setEditable(false);
+        frame.add(progressField, gbc);
+
+        // Add blank space in Column 3
+        gbc.gridx = 3; // Column 3
+        frame.add(new JLabel(""), gbc);
+
+        // Reset gridwidth for the next components if needed
+        gbc.gridwidth = 1;
 
         // Row 4
         gbc.gridx = 0; // Column 0
@@ -89,15 +111,22 @@ public class TuiHandler {
         frame.setVisible(true);
 
         // Action listeners
-        playButton.addActionListener(e -> actions.playPressed());
+        playButton.addActionListener(e -> {
+            actions.playPressed();
+            initDinTextFields();
+            if (actions.pressed) {
+                progressTimer.start();
+            } else {
+                progressTimer.stop();
+            }
+        });
+
         
         fileSel.addActionListener(e ->{
-
             try {
                 // sets the selected track
                 track = actions.selectTrack(frame);
-                // Refresh the textField to the selected track
-                initTextFields();
+                initStaticTextFields();
             } 
             catch (UnsupportedTagException | InvalidDataException | IOException e1) {
                 // TODO Auto-generated catch block
@@ -106,12 +135,15 @@ public class TuiHandler {
         });
     }
 
-    public void initTextFields(){
-        // Actions 
-        // Init text fields
-        // TODO refresh text fields
+    public void initStaticTextFields(){
         actions.fillArtist(artistField);
         actions.fillTitle(titleField);
+
+    }
+
+    public void initDinTextFields(){
+        actions.fillStatus(statusField); // need uptade at every play button press
+        actions.fillProgress(progressField);
     }
 
  }

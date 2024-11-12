@@ -38,4 +38,8 @@ public class AudioHandler {
         System.out.println("Paused.");
     }
 
+    public MediaPlayer getMediaPlayer(){
+        return mediaPlayer;
+    }
+
 } // END OF AUDIOHANDLER

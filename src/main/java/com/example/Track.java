@@ -43,7 +43,7 @@ public class Track {
         return artis;
     }
 
-    public String album(){
+    public String getAlbum(){
         return album;
     }
 

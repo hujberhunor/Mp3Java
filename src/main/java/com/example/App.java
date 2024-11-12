@@ -29,7 +29,7 @@ public class App extends Application {
 
         // AudioHandler audioHandler = new AudioHandler(track);
         // Itt hozom létre a tui handlert !!
-        TuiHandler tuiHandler = new TuiHandler();
+        GuiHandler tuiHandler = new GuiHandler();
 
         // TUI handler kezeli az inputut és onnan hívja meg a megfelelő play/pause metódusokat
         // Creates a new thread that wll run the tuiHandler

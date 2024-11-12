@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
+import javafx.scene.media.MediaPlayer.Status;
+
 public class GuiActions {
     private FileHandler fileHandler = new FileHandler();
     private AudioHandler audioHandler;
@@ -73,5 +75,26 @@ public class GuiActions {
         }
         else field.setText("NA");
    }
+
+    public void fillStatus(JTextField field){
+        if(selected != null){
+             String status = audioHandler.getMediaPlayer().getStatus().toString(); 
+             field.setText(status);
+             System.out.println("Status field filled");
+        }
+        else field.setText("NA");
+    }
+
+    public void fillProgress(JTextField field){
+        if(selected != null){
+            long len = selected.getLength();
+            int curr = (int) audioHandler.getMediaPlayer().getCurrentTime().toSeconds();
+            field.setText(curr + "/" + len);
+            System.out.println("Length of the track: " + len);
+        }
+        else field.setText("NA");
+    }
+
+    
 
 }
