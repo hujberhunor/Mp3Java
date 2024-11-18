@@ -27,7 +27,7 @@ public class Track {
 
     // Getterek
 
-    /**
+    /*
      * @returns path absolute path to the song 
      * The fileHandler class Readdi method sets this attribute
      */
@@ -50,12 +50,6 @@ public class Track {
     public long getLength(){
         return length;
     }
-
-    @Override
-    public String toString() {
-        return "title=" + title + "', artist='" + artis + " ";
-    }
-
 
 
 } // end of Track class

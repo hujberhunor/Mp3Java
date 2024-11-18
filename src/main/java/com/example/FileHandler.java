@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import javax.swing.plaf.basic.BasicSliderUI.TrackListener;
-
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.ID3v2;
 import com.mpatric.mp3agic.InvalidDataException;
@@ -14,9 +12,12 @@ import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
 /**
- * FileHandler - Minden aminek fileokhoz van köze itt van kezelve
+ * FileHandler
  */
 public class FileHandler {
+    // TODO
+    // SORT FUNCTIONS!!
+    // Playlist(Create, append) 
 
     // Ebben a kollekcióban  tárolom a dalokat
     public ArrayList<Track> trackList = new ArrayList<>();
@@ -84,48 +85,19 @@ public class FileHandler {
         return new Track(path, title, artist, album, length);
     } // end of createTrackFromPath()
 
-    // /**
-    //  * @param pattern keresett cím stringben megadva
-    //  * @return megtalált dal/dalok kollekciója
-    //  * TODO toLoweCase() 
-    //  * Nem teljesen értem mi a retek ez a kód, de lambda
-    //  */
-    // public ArrayList<Track> search(String pattern) {
-    //     return trackList.stream()
-    //             .filter(track -> 
-    //                 track.getTitle().contains(pattern) 
-    //                 || track.getArtist().contains(pattern))
-    //             .collect(Collectors.toCollection(ArrayList::new)); 
-    // } // end of search()
-
-
-   /**
-    * Search method 
-    * @param pattern amit keresek, guiban megadtam
-    * @param path az absolute path-ja a vizsgált dir-nek.
-    * @return matching trackek
-    * @throws IOException
-    * @throws UnsupportedTagException
-    * @throws InvalidDataException
-    */ 
-    public ArrayList<Track> searchTracks(String pattern, String path) throws IOException, UnsupportedTagException, InvalidDataException {
-        trackList.clear();  
-        readDir(path);  
-
-        String lowerCasepattern = pattern.toLowerCase();
-
-        ArrayList<Track> matchingTracks = new ArrayList<>();
-
-        for (Track t : trackList) {
-            if (t.getTitle().toLowerCase().contains(lowerCasepattern) || 
-                t.getArtist().toLowerCase().contains(lowerCasepattern)) {
-                matchingTracks.add(t);
-            }
-        }
-
-        return matchingTracks; 
-    }
-
+    /**
+     * @param pattern keresett cím stringben megadva
+     * @return megtalált dal/dalok kollekciója
+     * TODO toLoweCase() 
+     * Nem teljesen értem mi a retek ez a kód, de lambda
+     */
+    public ArrayList<Track> search(String pattern) {
+        return trackList.stream()
+                .filter(track -> 
+                    track.getTitle().contains(pattern) 
+                    || track.getArtist().contains(pattern))
+                .collect(Collectors.toCollection(ArrayList::new)); 
+    } // end of search()
 
     
 } // end of fileHandler class
