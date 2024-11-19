@@ -1,9 +1,0 @@
-<map id="com.example.FileHandler.createTrackFromPath" name="com.example.FileHandler.createTrackFromPath">
-<area shape="rect" id="Node000001" title=" " alt="" coords="575,36,807,81"/>
-<area shape="rect" id="Node000002" href="$classcom_1_1example_1_1FileHandler.html#aa61d4595ca311bb70003124bd4b199e0" title=" " alt="" coords="288,14,527,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="559,47,527,43,528,38,560,41"/>
-<area shape="rect" id="Node000004" href="$classcom_1_1example_1_1GuiActions.html#ae943b150a180aa1d2d170491a7aa4c0e" title=" " alt="" coords="294,65,521,110"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="560,75,522,79,521,73,559,69"/>
-<area shape="rect" id="Node000003" href="$classcom_1_1example_1_1FileHandler.html#a4c443b845f56d5c3b20b17f7183752a4" title=" " alt="" coords="5,5,240,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,30,240,30,240,25,272,25"/>
-</map>

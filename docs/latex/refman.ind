@@ -157,9 +157,9 @@
   \item {src/main/java/com/example/FileHandler.java}, \hyperpage{30}
   \item {src/main/java/com/example/GuiActions.java}, \hyperpage{31}
   \item {src/main/java/com/example/GuiHandler.java}, \hyperpage{32}
-  \item {src/main/java/com/example/Track.java}, \hyperpage{34}
-  \item {src/main/java/module-\/info.java}, \hyperpage{35}
-  \item {src/test/java/com/example/MainTest.java}, \hyperpage{35}
+  \item {src/main/java/com/example/Track.java}, \hyperpage{35}
+  \item {src/main/java/module-\/info.java}, \hyperpage{36}
+  \item {src/test/java/com/example/MainTest.java}, \hyperpage{36}
   \item {start}
     \subitem {com.example.App}, \hyperpage{8}
 

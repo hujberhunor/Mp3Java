@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.10.26)  19 NOV 2024 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.10.26)  19 NOV 2024 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,8 +1090,8 @@ Package pdftex.def Info: classcom_1_1example_1_1Track_a0935b0e960eddf779e076b52
 Chapter 5.
 (./App_8java_source.tex) (./AudioHandler_8java_source.tex [29])
 (./FileHandler_8java_source.tex [30]) (./GuiActions_8java_source.tex [31])
-(./GuiHandler_8java_source.tex [32] [33]) (./Track_8java_source.tex [34])
-(./module-info_8java_source.tex) (./MainTest_8java_source.tex [35]) [36]
+(./GuiHandler_8java_source.tex [32] [33] [34]) (./Track_8java_source.tex)
+(./module-info_8java_source.tex [35]) (./MainTest_8java_source.tex) [36]
 (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
@@ -1110,8 +1110,8 @@ Package rerunfilecheck Info: File `refman.out' has not changed.
 (rerunfilecheck)             Checksum: 883C00CD6740ABAE0DB7E44A278416BF;16161.
  ) 
 Here is how much of TeX's memory you used:
- 18918 strings out of 476076
- 319016 string characters out of 5793774
+ 18952 strings out of 476076
+ 320036 string characters out of 5793774
  1946187 words of memory out of 5000000
  39911 multiletter control sequences out of 15000+600000
  613671 words of font info for 103 fonts, out of 8000000 for 9000
@@ -1126,10 +1126,10 @@ st/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/h
 elvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (44 pages, 310165 bytes).
+Output written on refman.pdf (44 pages, 311897 bytes).
 PDF statistics:
- 2043 PDF objects out of 2073 (max. 8388607)
- 1897 compressed objects within 19 object streams
- 758 named destinations out of 1000 (max. 500000)
+ 2083 PDF objects out of 2487 (max. 8388607)
+ 1936 compressed objects within 20 object streams
+ 792 named destinations out of 1000 (max. 500000)
  780 words of extra memory for PDF output out of 10000 (max. 10000000)
 
