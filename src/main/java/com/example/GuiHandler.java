@@ -14,6 +14,13 @@ import javax.swing.Timer;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
+// A felugró ablakhoz kell
+import javax.swing.JList;
+import javax.swing.ListSelectionModel;
+import javax.swing.JScrollPane;
+
+
+
 public class GuiHandler {
     GuiActions actions = new GuiActions();
     Track track;
@@ -39,7 +46,7 @@ public class GuiHandler {
         frame.setVisible(true);
     }
 
-    /*
+    /**
      * Initeli a layoutot
      */
     private void setupLayout() {
@@ -144,7 +151,6 @@ public class GuiHandler {
             try {
                 searchTrack(searchField.getText());
             } catch (UnsupportedTagException | InvalidDataException | IOException e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
         });
@@ -190,6 +196,37 @@ public class GuiHandler {
         actions.fillProgress(progressField);
     }
 
+
+     /**
+     * Felugró ablak a search resultok miatt
+     * @param results The list of tracks found by the search.
+     */
+    private void showSearchResultsWindow(ArrayList<Track> results) {
+        JFrame resultsFrame = new JFrame("Search Results");
+        resultsFrame.setSize(400, 300);
+        resultsFrame.setLayout(new GridBagLayout());
+        resultsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1.0;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+    
+        //  lista a resultoknak
+        JList<String> resultsList = new JList<>(
+                results.stream().map(track -> track.getTitle() + " - " + track.getArtist()).toArray(String[]::new));
+        resultsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane scrollPane = new JScrollPane(resultsList);
+    
+        gbc.gridy = 0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        resultsFrame.add(scrollPane, gbc);
+    
+        resultsFrame.setVisible(true);
+    }
+
     /**
      * Csak továbbadja a paramétereit az azonos paraméterezésű searchTrack fv-nek ami
      * a fileHandlerben van definiálva.  
@@ -199,11 +236,14 @@ public class GuiHandler {
      * @throws IOException
      */
     private void searchTrack(String pattern) throws UnsupportedTagException, InvalidDataException, IOException {
-       System.out.println("Searching for: " + pattern);
-       ArrayList<Track> tracks = new ArrayList<>();
-       tracks = actions.searchTrack(pattern);
-       System.out.println(tracks);
+        System.out.println("Searching for: " + pattern);
+        ArrayList<Track> tracks = actions.searchTrack(pattern);
+    
+        if (tracks.isEmpty()) {
+            System.out.println("No results found.");
+        } else {
+            showSearchResultsWindow(tracks);
+        }
     }
-  
 
-}
+} // end of GuiHandler

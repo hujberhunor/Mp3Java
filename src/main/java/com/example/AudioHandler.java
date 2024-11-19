@@ -13,7 +13,7 @@ public class AudioHandler {
 
     /**
      * Contructor that initializes the mediaPlayer with a track
-     * @param track
+     * @param track dal amit le akarok játszani
      */
     public AudioHandler(Track track) {
         String path = track.getPath();

@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
-/*
+/**
  * Minden guiHandlerben helyet foglaló 
  * gombnak és fieldnek itt vannak definiálva 
  * a listenerjei és azok metódusai
@@ -111,9 +111,9 @@ public class GuiActions {
         return "Not selected";
     }
 
-public ArrayList<Track> searchTrack(String pattern) throws UnsupportedTagException, InvalidDataException, IOException {
-    return fileHandler.searchTracks(pattern, "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources");
-}
+    public ArrayList<Track> searchTrack(String pattern) throws UnsupportedTagException, InvalidDataException, IOException {
+        return fileHandler.searchTracks(pattern, "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources");
+    }
 
 
 }

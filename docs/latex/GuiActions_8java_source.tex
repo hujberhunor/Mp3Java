@@ -1,0 +1,111 @@
+\doxysection{Gui\+Actions.\+java}
+\hypertarget{GuiActions_8java_source}{}\label{GuiActions_8java_source}\index{src/main/java/com/example/GuiActions.java@{src/main/java/com/example/GuiActions.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.swing.JFileChooser;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00008}00008\ \textcolor{keyword}{import}\ javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00009}00009\ \textcolor{keyword}{import}\ javax.swing.JTextField;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00011}00011\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.InvalidDataException;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00012}00012\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.UnsupportedTagException;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00019}\mbox{\hyperlink{classcom_1_1example_1_1GuiActions}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1GuiActions}{GuiActions}}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}\ fileHandler\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{AudioHandler}}\ audioHandler;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{boolean}\ pressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ selected;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00033}\mbox{\hyperlink{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e}{selectTrack}}(JFrame\ frame)\ \textcolor{keywordflow}{throws}\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ JFileChooser\ fileChooser\ =\ \textcolor{keyword}{new}\ JFileChooser();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ String\ currentDirectory\ =\ System.getProperty(\textcolor{stringliteral}{"{}user.dir"{}});\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ fileChooser.setCurrentDirectory(\textcolor{keyword}{new}\ File(currentDirectory));}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ fileChooser.setFileFilter(\textcolor{keyword}{new}\ javax.swing.filechooser.FileNameExtensionFilter(\textcolor{stringliteral}{"{}MP3\ Files"{}},\ \textcolor{stringliteral}{"{}mp3"{}}));}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ fileChooser.showOpenDialog(frame);}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ ==\ JFileChooser.APPROVE\_OPTION)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ File\ selectedFile\ =\ fileChooser.getSelectedFile();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ selected\ =\ fileHandler.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(selectedFile.getAbsolutePath());}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ audioHandler\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{AudioHandler}}(selected);}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ selected;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playPressed()\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pressed)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ audioHandler.\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860ff8d6093906}{play}}();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ pressed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ audioHandler.\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}{pause}}();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ pressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ fillArtist(JTextField\ field)\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ artist\ =\ selected.getArtist();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(artist);}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Artist\ filed\ filled"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00075}00075\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ fillTitle(JTextField\ field)\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ artist\ =\ selected.getTitle();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(artist);}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Titke\ filed\ filled"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00084}00084\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ fillAlbum(JTextField\ field)\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ album\ =\ selected.getAlbum();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(album);}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Album\ filed\ filled"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00093}00093\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ fillProgress(JTextField\ field)\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ len\ =\ selected.getLength();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ curr\ =\ (int)\ audioHandler.getMediaPlayer().getCurrentTime().toSeconds();}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(curr\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ len);}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ System.out.println("{}Length\ of\ the\ track:\ "{}\ +\ len);}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00105}00105\ \ \ \ \ \ \textcolor{keyword}{public}\ String\ fillStatus()\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ status\ =\ audioHandler.getMediaPlayer().getStatus().toString();\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Status\ filled"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ selected"{}};}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{public}\ ArrayList<Track>\ searchTrack(String\ pattern)\ \textcolor{keywordflow}{throws}\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fileHandler.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4}{searchTracks}}(pattern,\ \textcolor{stringliteral}{"{}/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources"{}});}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{GuiActions_8java_source_l00119}00119\ \}}
+
+\end{DoxyCode}

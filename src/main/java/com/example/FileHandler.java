@@ -48,11 +48,11 @@ public class FileHandler {
 
 
     /**
-     * @param path - a dal elérési útvonala 
      * Megadott útvonalból létrehozza a Track objektumot amit utána el tudok 
      * tárolni egy kollekcióban. 
      * Csak azért kell, hogy a readDir()-ben konstruálni tudjak metadatából Tracket 
      * amit pedig kollekcióba tudok elhelyezni
+     * @param path - a dal elérési útvonala 
      */
      public Track createTrackFromPath(String path) throws IOException, UnsupportedTagException,
      InvalidDataException {

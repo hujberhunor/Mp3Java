@@ -1,0 +1,89 @@
+# Doxyfile 1.9.7
+
+# Project settings
+PROJECT_NAME           = "MP3Java"
+OUTPUT_DIRECTORY       = ./docs
+OUTPUT_LANGUAGE        = English
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Input
+INPUT                  = ./src
+FILE_PATTERNS          = *.java
+RECURSIVE              = YES
+
+# Exclude specific files or directories
+EXCLUDE                = 
+EXCLUDE_PATTERNS       = 
+EXCLUDE_SYMLINKS       = NO
+
+# Documentation generation options
+GENERATE_LATEX         = YES
+GENERATE_HTML          = YES
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+
+# Source browser
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+
+# LaTeX-specific settings
+LATEX_OUTPUT           = latex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+LATEX_BATCHMODE        = NO
+LATEX_SOURCE_CODE      = YES
+
+# Diagrams
+HAVE_DOT               = NO
+
+# Predefined macros
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+PREDEFINED             = 
+
+# Warnings
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# Optimization
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_PACKAGE        = YES
+EXTRACT_STATIC         = NO
+EXTRACT_LOCAL_CLASSES  = NO
+EXTRACT_ANON_NSPACES   = NO
+
+# Miscellaneous
+QUIET                  = NO
+WARN_LOGFILE           = 
+
+ If you set the HAVE_DOT tag to YES then doxygen will assume the dot tool is 
+# available from the path. This tool is part of Graphviz, a graph visualization 
+# toolkit from AT&T and Lucent Bell Labs. The other options in this section 
+# have no effect if this option is set to NO (the default)
+
+HAVE_DOT               = YES
+
+# If the GRAPHICAL_HIERARCHY and HAVE_DOT tags are set to YES then doxygen 
+# will generate a graphical hierarchy of all classes instead of a textual one.
+
+GRAPHICAL_HIERARCHY    = YES
+
+# If the UML_LOOK tag is set to YES doxygen will generate inheritance and 
+# collaboration diagrams in a style similar to the OMG's Unified Modeling 
+# Language.
+
+UML_LOOK               = YES
+
+# Sajé13:51
+DOT_UML_CLASS_DIAGRAMS = YES
+CALL_GRAPH = YES
+CALLER_GRAPH = YES
+DOT_GRAPH_MAX_NODES = 100
+DOT_TRANSPARENT = YES
+DOT_CLEANUP = YES
+LATEX_GRAPHICS = YES
