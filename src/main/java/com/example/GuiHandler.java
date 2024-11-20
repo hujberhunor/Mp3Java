@@ -223,7 +223,24 @@ public class GuiHandler {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         resultsFrame.add(scrollPane, gbc);
-    
+
+        JButton selectButton = new JButton("Select");
+        gbc.gridy = 1;
+        gbc.weighty = 0.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        resultsFrame.add(selectButton, gbc);
+
+        // Add functionality to select a track and close the results window
+        selectButton.addActionListener(e -> {
+            int selectedIndex = resultsList.getSelectedIndex();
+            if (selectedIndex >= 0) {
+                track = results.get(selectedIndex);
+                actions.selectedFromSearch(track);
+                initComponents();
+                resultsFrame.dispose();
+            }
+        });
+         
         resultsFrame.setVisible(true);
     }
 

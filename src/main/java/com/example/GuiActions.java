@@ -54,6 +54,11 @@ public class GuiActions {
         return null;
     }
 
+    public void selectedFromSearch(Track track){
+        selected = track;
+        audioHandler = new AudioHandler(track);
+    }
+
     public void playPressed(){
         if (!pressed) {
             audioHandler.play();
