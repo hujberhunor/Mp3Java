@@ -152,16 +152,20 @@ public class FileHandler {
     /*
      * DEBUG ONLY 
      */
-    public void read(String path) {
-       Gson gson = new Gson();
+    public ArrayList<Track> read(String path) {
+        Gson gson = new Gson();
+        ArrayList<Track> tracks = new ArrayList<>();
 
-       try (FileReader reader = new FileReader(path)) {
-           Type listType = new TypeToken<ArrayList<Track>>() {}.getType();
-           ArrayList<Track> tracks = gson.fromJson(reader, listType);
-           tracks.forEach(track -> System.out.println("Track: " + track.getTitle() + ", Artist: " + track.getArtist()));
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
+        try (FileReader reader = new FileReader(path)) {
+            Type listType = new TypeToken<ArrayList<Track>>() {}.getType();
+            tracks = gson.fromJson(reader, listType);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // tracks.forEach(track -> System.out.println(track.getTitle()));
+        return tracks;
     }
+
 
 } // end of fileHandler class
