@@ -1,9 +1,16 @@
 [
   {
-    "path": "src/test/resources/mockData/Linkin-1.mp3",
-    "title": "Session",
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/06.-Linkin-Park--Easier-To-Run.mp3",
+    "title": "Easier To Run",
     "artis": "Linkin Park",
     "album": "Meteora",
-    "length": 145
+    "length": 204
+  },
+  {
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/05.-Linkin-Park--Hit-The-Floor.mp3",
+    "title": "Hit The Floor",
+    "artis": "Linkin Park",
+    "album": "Meteora",
+    "length": 164
   }
 ]
