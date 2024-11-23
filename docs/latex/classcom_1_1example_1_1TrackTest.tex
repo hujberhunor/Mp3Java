@@ -1,0 +1,55 @@
+\doxysection{com.\+example.\+Track\+Test Class Reference}
+\hypertarget{classcom_1_1example_1_1TrackTest}{}\label{classcom_1_1example_1_1TrackTest}\index{com.example.TrackTest@{com.example.TrackTest}}
+
+
+Collaboration diagram for com.\+example.\+Track\+Test\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classcom_1_1example_1_1TrackTest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1TrackTest_aaecf1c0dae88543495549dcc1d2abc81}{test\+Get\+Album}} ()  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TrackTest_8java_source_l00012}{12}} of file \mbox{\hyperlink{TrackTest_8java_source}{Track\+Test.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1TrackTest_aaecf1c0dae88543495549dcc1d2abc81}\index{com.example.TrackTest@{com.example.TrackTest}!testGetAlbum@{testGetAlbum}}
+\index{testGetAlbum@{testGetAlbum}!com.example.TrackTest@{com.example.TrackTest}}
+\doxysubsubsection{\texorpdfstring{testGetAlbum()}{testGetAlbum()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1TrackTest_aaecf1c0dae88543495549dcc1d2abc81} 
+void com.\+example.\+Track\+Test.\+test\+Get\+Album (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrackTest_8java_source_l00014}{14}} of file \mbox{\hyperlink{TrackTest_8java_source}{Track\+Test.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ String\ song\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/Linkin-\/1.mp3"{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Track\ track\ =\ fh.createTrackFromPath(song);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ String\ album\ =\ track.getAlbum();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Meteora"{}},\ album);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/test/java/com/example/Track\+Test.\+java\end{DoxyCompactItemize}

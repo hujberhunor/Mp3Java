@@ -1,115 +1,145 @@
 \begin{theindex}
 
   \item {actions}
-    \subitem {com.example.GuiHandler}, \hyperpage{21}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
   \item {album}
-    \subitem {com.example.Track}, \hyperpage{27}
+    \subitem {com.example.Track}, \hyperpage{37}
   \item {albumField}
-    \subitem {com.example.GuiHandler}, \hyperpage{21}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
   \item {artis}
-    \subitem {com.example.Track}, \hyperpage{27}
+    \subitem {com.example.Track}, \hyperpage{37}
   \item {artistField}
-    \subitem {com.example.GuiHandler}, \hyperpage{21}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
   \item {AudioHandler}
-    \subitem {com.example.AudioHandler}, \hyperpage{10}
+    \subitem {com.example.AudioHandler}, \hyperpage{11}
 
   \indexspace
 
   \item {com.example.App}, \hyperpage{7}
     \subitem {main}, \hyperpage{8}
     \subitem {start}, \hyperpage{8}
-  \item {com.example.AudioHandler}, \hyperpage{9}
-    \subitem {AudioHandler}, \hyperpage{10}
-    \subitem {getMediaPlayer}, \hyperpage{10}
-    \subitem {pause}, \hyperpage{10}
-    \subitem {play}, \hyperpage{11}
-  \item {com.example.FileHandler}, \hyperpage{11}
-    \subitem {createTrackFromPath}, \hyperpage{12}
-    \subitem {readDir}, \hyperpage{13}
-    \subitem {searchTracks}, \hyperpage{13}
-    \subitem {trackList}, \hyperpage{15}
-  \item {com.example.GuiActions}, \hyperpage{16}
-    \subitem {fillAlbum}, \hyperpage{17}
-    \subitem {fillArtist}, \hyperpage{17}
-    \subitem {fillProgress}, \hyperpage{17}
-    \subitem {fillStatus}, \hyperpage{17}
-    \subitem {fillTitle}, \hyperpage{18}
-    \subitem {playPressed}, \hyperpage{18}
-    \subitem {pressed}, \hyperpage{19}
-    \subitem {searchTrack}, \hyperpage{18}
-    \subitem {selected}, \hyperpage{19}
-    \subitem {selectTrack}, \hyperpage{18}
-  \item {com.example.GuiHandler}, \hyperpage{20}
-    \subitem {actions}, \hyperpage{21}
-    \subitem {albumField}, \hyperpage{21}
-    \subitem {artistField}, \hyperpage{21}
-    \subitem {fileSelectButton}, \hyperpage{21}
-    \subitem {frame}, \hyperpage{22}
-    \subitem {init}, \hyperpage{21}
-    \subitem {playButton}, \hyperpage{22}
-    \subitem {progressField}, \hyperpage{22}
-    \subitem {progressTimer}, \hyperpage{22}
-    \subitem {searchField}, \hyperpage{22}
-    \subitem {titleField}, \hyperpage{22}
-    \subitem {track}, \hyperpage{22}
-  \item {com.example.MainTest}, \hyperpage{23}
-  \item {com.example.Track}, \hyperpage{24}
-    \subitem {album}, \hyperpage{27}
-    \subitem {artis}, \hyperpage{27}
-    \subitem {getAlbum}, \hyperpage{25}
-    \subitem {getArtist}, \hyperpage{25}
-    \subitem {getLength}, \hyperpage{26}
-    \subitem {getPath}, \hyperpage{26}
-    \subitem {getTitle}, \hyperpage{26}
-    \subitem {length}, \hyperpage{27}
-    \subitem {path}, \hyperpage{27}
-    \subitem {title}, \hyperpage{27}
-    \subitem {toString}, \hyperpage{26}
-    \subitem {Track}, \hyperpage{25}
+  \item {com.example.AudioHandler}, \hyperpage{10}
+    \subitem {AudioHandler}, \hyperpage{11}
+    \subitem {getMediaPlayer}, \hyperpage{11}
+    \subitem {getTrackFromAH}, \hyperpage{11}
+    \subitem {pause}, \hyperpage{12}
+    \subitem {play}, \hyperpage{12}
+    \subitem {track}, \hyperpage{12}
+  \item {com.example.FileHandler}, \hyperpage{13}
+    \subitem {createTrackFromPath}, \hyperpage{14}
+    \subitem {read}, \hyperpage{14}
+    \subitem {readDir}, \hyperpage{15}
+    \subitem {searchTracks}, \hyperpage{15}
+    \subitem {trackList}, \hyperpage{17}
+    \subitem {write}, \hyperpage{16}
+  \item {com.example.FileHandlerTest}, \hyperpage{18}
+    \subitem {setupJavaFx}, \hyperpage{18}
+    \subitem {testCreateTrackFromPath}, \hyperpage{18}
+    \subitem {testReadDir}, \hyperpage{19}
+    \subitem {testSearchTracks}, \hyperpage{19}
+    \subitem {testWriteAndReadSerialization}, \hyperpage{19}
+  \item {com.example.GuiActions}, \hyperpage{21}
+    \subitem {fillAlbum}, \hyperpage{22}
+    \subitem {fillArtist}, \hyperpage{22}
+    \subitem {fillProgress}, \hyperpage{22}
+    \subitem {fillStatus}, \hyperpage{23}
+    \subitem {fillTitle}, \hyperpage{23}
+    \subitem {playPressed}, \hyperpage{23}
+    \subitem {pressed}, \hyperpage{25}
+    \subitem {searchTrack}, \hyperpage{23}
+    \subitem {selected}, \hyperpage{25}
+    \subitem {selectedFromSearch}, \hyperpage{24}
+    \subitem {selectTrack}, \hyperpage{24}
+  \item {com.example.GuiActionsTest}, \hyperpage{26}
+    \subitem {fh}, \hyperpage{29}
+    \subitem {ga}, \hyperpage{29}
+    \subitem {setupJavaFx}, \hyperpage{27}
+    \subitem {song1Path}, \hyperpage{29}
+    \subitem {songAlbum}, \hyperpage{29}
+    \subitem {songArtis}, \hyperpage{29}
+    \subitem {testFillAlbum}, \hyperpage{27}
+    \subitem {testFillArtist}, \hyperpage{27}
+    \subitem {testPlayPressed}, \hyperpage{28}
+    \subitem {testSearchTrack}, \hyperpage{28}
+    \subitem {testSelectedFromSearch}, \hyperpage{28}
+  \item {com.example.GuiHandler}, \hyperpage{30}
+    \subitem {actions}, \hyperpage{31}
+    \subitem {albumField}, \hyperpage{31}
+    \subitem {artistField}, \hyperpage{31}
+    \subitem {fileSelectButton}, \hyperpage{31}
+    \subitem {frame}, \hyperpage{31}
+    \subitem {init}, \hyperpage{31}
+    \subitem {playButton}, \hyperpage{31}
+    \subitem {progressField}, \hyperpage{32}
+    \subitem {progressTimer}, \hyperpage{32}
+    \subitem {searchField}, \hyperpage{32}
+    \subitem {titleField}, \hyperpage{32}
+    \subitem {track}, \hyperpage{32}
+  \item {com.example.Track}, \hyperpage{33}
+    \subitem {album}, \hyperpage{37}
+    \subitem {artis}, \hyperpage{37}
+    \subitem {getAlbum}, \hyperpage{36}
+    \subitem {getArtist}, \hyperpage{36}
+    \subitem {getLength}, \hyperpage{36}
+    \subitem {getPath}, \hyperpage{36}
+    \subitem {getTitle}, \hyperpage{36}
+    \subitem {length}, \hyperpage{37}
+    \subitem {path}, \hyperpage{37}
+    \subitem {title}, \hyperpage{37}
+    \subitem {toString}, \hyperpage{37}
+    \subitem {Track}, \hyperpage{35}
+  \item {com.example.TrackTest}, \hyperpage{38}
+    \subitem {testGetAlbum}, \hyperpage{38}
   \item {createTrackFromPath}
-    \subitem {com.example.FileHandler}, \hyperpage{12}
+    \subitem {com.example.FileHandler}, \hyperpage{14}
 
   \indexspace
 
+  \item {fh}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{29}
   \item {fileSelectButton}
-    \subitem {com.example.GuiHandler}, \hyperpage{21}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
   \item {fillAlbum}
-    \subitem {com.example.GuiActions}, \hyperpage{17}
+    \subitem {com.example.GuiActions}, \hyperpage{22}
   \item {fillArtist}
-    \subitem {com.example.GuiActions}, \hyperpage{17}
+    \subitem {com.example.GuiActions}, \hyperpage{22}
   \item {fillProgress}
-    \subitem {com.example.GuiActions}, \hyperpage{17}
+    \subitem {com.example.GuiActions}, \hyperpage{22}
   \item {fillStatus}
-    \subitem {com.example.GuiActions}, \hyperpage{17}
+    \subitem {com.example.GuiActions}, \hyperpage{23}
   \item {fillTitle}
-    \subitem {com.example.GuiActions}, \hyperpage{18}
+    \subitem {com.example.GuiActions}, \hyperpage{23}
   \item {frame}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
 
   \indexspace
 
+  \item {ga}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{29}
   \item {getAlbum}
-    \subitem {com.example.Track}, \hyperpage{25}
+    \subitem {com.example.Track}, \hyperpage{36}
   \item {getArtist}
-    \subitem {com.example.Track}, \hyperpage{25}
+    \subitem {com.example.Track}, \hyperpage{36}
   \item {getLength}
-    \subitem {com.example.Track}, \hyperpage{26}
+    \subitem {com.example.Track}, \hyperpage{36}
   \item {getMediaPlayer}
-    \subitem {com.example.AudioHandler}, \hyperpage{10}
+    \subitem {com.example.AudioHandler}, \hyperpage{11}
   \item {getPath}
-    \subitem {com.example.Track}, \hyperpage{26}
+    \subitem {com.example.Track}, \hyperpage{36}
   \item {getTitle}
-    \subitem {com.example.Track}, \hyperpage{26}
+    \subitem {com.example.Track}, \hyperpage{36}
+  \item {getTrackFromAH}
+    \subitem {com.example.AudioHandler}, \hyperpage{11}
 
   \indexspace
 
   \item {init}
-    \subitem {com.example.GuiHandler}, \hyperpage{21}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
 
   \indexspace
 
   \item {length}
-    \subitem {com.example.Track}, \hyperpage{27}
+    \subitem {com.example.Track}, \hyperpage{37}
 
   \indexspace
 
@@ -119,63 +149,105 @@
   \indexspace
 
   \item {path}
-    \subitem {com.example.Track}, \hyperpage{27}
+    \subitem {com.example.Track}, \hyperpage{37}
   \item {pause}
-    \subitem {com.example.AudioHandler}, \hyperpage{10}
+    \subitem {com.example.AudioHandler}, \hyperpage{12}
   \item {play}
-    \subitem {com.example.AudioHandler}, \hyperpage{11}
+    \subitem {com.example.AudioHandler}, \hyperpage{12}
   \item {playButton}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.GuiHandler}, \hyperpage{31}
   \item {playPressed}
-    \subitem {com.example.GuiActions}, \hyperpage{18}
+    \subitem {com.example.GuiActions}, \hyperpage{23}
   \item {pressed}
-    \subitem {com.example.GuiActions}, \hyperpage{19}
+    \subitem {com.example.GuiActions}, \hyperpage{25}
   \item {progressField}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.GuiHandler}, \hyperpage{32}
   \item {progressTimer}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.GuiHandler}, \hyperpage{32}
 
   \indexspace
 
+  \item {read}
+    \subitem {com.example.FileHandler}, \hyperpage{14}
   \item {readDir}
-    \subitem {com.example.FileHandler}, \hyperpage{13}
+    \subitem {com.example.FileHandler}, \hyperpage{15}
 
   \indexspace
 
   \item {searchField}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.GuiHandler}, \hyperpage{32}
   \item {searchTrack}
-    \subitem {com.example.GuiActions}, \hyperpage{18}
+    \subitem {com.example.GuiActions}, \hyperpage{23}
   \item {searchTracks}
-    \subitem {com.example.FileHandler}, \hyperpage{13}
+    \subitem {com.example.FileHandler}, \hyperpage{15}
   \item {selected}
-    \subitem {com.example.GuiActions}, \hyperpage{19}
+    \subitem {com.example.GuiActions}, \hyperpage{25}
+  \item {selectedFromSearch}
+    \subitem {com.example.GuiActions}, \hyperpage{24}
   \item {selectTrack}
-    \subitem {com.example.GuiActions}, \hyperpage{18}
-  \item {src/main/java/com/example/App.java}, \hyperpage{29}
-  \item {src/main/java/com/example/AudioHandler.java}, \hyperpage{29}
-  \item {src/main/java/com/example/FileHandler.java}, \hyperpage{30}
-  \item {src/main/java/com/example/GuiActions.java}, \hyperpage{31}
-  \item {src/main/java/com/example/GuiHandler.java}, \hyperpage{32}
-  \item {src/main/java/com/example/Track.java}, \hyperpage{35}
-  \item {src/main/java/module-\/info.java}, \hyperpage{36}
-  \item {src/test/java/com/example/MainTest.java}, \hyperpage{36}
+    \subitem {com.example.GuiActions}, \hyperpage{24}
+  \item {setupJavaFx}
+    \subitem {com.example.FileHandlerTest}, \hyperpage{18}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{27}
+  \item {song1Path}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{29}
+  \item {songAlbum}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{29}
+  \item {songArtis}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{29}
+  \item {src/main/java/com/example/App.java}, \hyperpage{39}
+  \item {src/main/java/com/example/AudioHandler.java}, \hyperpage{39}
+  \item {src/main/java/com/example/FileHandler.java}, \hyperpage{40}
+  \item {src/main/java/com/example/GuiActions.java}, \hyperpage{42}
+  \item {src/main/java/com/example/GuiHandler.java}, \hyperpage{43}
+  \item {src/main/java/com/example/Track.java}, \hyperpage{46}
+  \item {src/main/java/module-\/info.java}, \hyperpage{46}
+  \item {src/test/java/com/example/FileHandlerTest.java}, 
+		\hyperpage{47}
+  \item {src/test/java/com/example/GuiActionsTest.java}, \hyperpage{48}
+  \item {src/test/java/com/example/TrackTest.java}, \hyperpage{49}
   \item {start}
     \subitem {com.example.App}, \hyperpage{8}
 
   \indexspace
 
+  \item {testCreateTrackFromPath}
+    \subitem {com.example.FileHandlerTest}, \hyperpage{18}
+  \item {testFillAlbum}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{27}
+  \item {testFillArtist}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{27}
+  \item {testGetAlbum}
+    \subitem {com.example.TrackTest}, \hyperpage{38}
+  \item {testPlayPressed}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{28}
+  \item {testReadDir}
+    \subitem {com.example.FileHandlerTest}, \hyperpage{19}
+  \item {testSearchTrack}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{28}
+  \item {testSearchTracks}
+    \subitem {com.example.FileHandlerTest}, \hyperpage{19}
+  \item {testSelectedFromSearch}
+    \subitem {com.example.GuiActionsTest}, \hyperpage{28}
+  \item {testWriteAndReadSerialization}
+    \subitem {com.example.FileHandlerTest}, \hyperpage{19}
   \item {title}
-    \subitem {com.example.Track}, \hyperpage{27}
+    \subitem {com.example.Track}, \hyperpage{37}
   \item {titleField}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.GuiHandler}, \hyperpage{32}
   \item {toString}
-    \subitem {com.example.Track}, \hyperpage{26}
+    \subitem {com.example.Track}, \hyperpage{37}
   \item {Track}
-    \subitem {com.example.Track}, \hyperpage{25}
+    \subitem {com.example.Track}, \hyperpage{35}
   \item {track}
-    \subitem {com.example.GuiHandler}, \hyperpage{22}
+    \subitem {com.example.AudioHandler}, \hyperpage{12}
+    \subitem {com.example.GuiHandler}, \hyperpage{32}
   \item {trackList}
-    \subitem {com.example.FileHandler}, \hyperpage{15}
+    \subitem {com.example.FileHandler}, \hyperpage{17}
+
+  \indexspace
+
+  \item {write}
+    \subitem {com.example.FileHandler}, \hyperpage{16}
 
 \end{theindex}

@@ -11,79 +11,112 @@
 \contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{8}{subsection.4.1.2}%
 \contentsline {subsubsection}{\numberline {4.1.2.1}main()}{8}{subsubsection.4.1.2.1}%
 \contentsline {subsubsection}{\numberline {4.1.2.2}start()}{8}{subsubsection.4.1.2.2}%
-\contentsline {section}{\numberline {4.2}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Audio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{9}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{10}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{10}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}AudioHandler()}{10}{subsubsection.4.2.2.1}%
-\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{10}{subsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}getMediaPlayer()}{10}{subsubsection.4.2.3.1}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}pause()}{11}{subsubsection.4.2.3.2}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}play()}{11}{subsubsection.4.2.3.3}%
-\contentsline {section}{\numberline {4.3}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{11}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{12}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Member Function Documentation}{12}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}createTrackFromPath()}{12}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}readDir()}{13}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}searchTracks()}{14}{subsubsection.4.3.2.3}%
-\contentsline {subsection}{\numberline {4.3.3}Member Data Documentation}{15}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}trackList}{15}{subsubsection.4.3.3.1}%
-\contentsline {section}{\numberline {4.4}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions Class Reference}{16}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{17}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{17}{subsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.1}fillAlbum()}{17}{subsubsection.4.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.4.2.2}fillArtist()}{17}{subsubsection.4.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.3}fillProgress()}{17}{subsubsection.4.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.4.2.4}fillStatus()}{18}{subsubsection.4.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.4.2.5}fillTitle()}{18}{subsubsection.4.4.2.5}%
-\contentsline {subsubsection}{\numberline {4.4.2.6}playPressed()}{18}{subsubsection.4.4.2.6}%
-\contentsline {subsubsection}{\numberline {4.4.2.7}searchTrack()}{18}{subsubsection.4.4.2.7}%
-\contentsline {subsubsection}{\numberline {4.4.2.8}selectTrack()}{18}{subsubsection.4.4.2.8}%
-\contentsline {subsection}{\numberline {4.4.3}Member Data Documentation}{19}{subsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.1}pressed}{19}{subsubsection.4.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.4.3.2}selected}{20}{subsubsection.4.4.3.2}%
-\contentsline {section}{\numberline {4.5}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{20}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{21}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Member Function Documentation}{21}{subsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.2.1}init()}{21}{subsubsection.4.5.2.1}%
-\contentsline {subsection}{\numberline {4.5.3}Member Data Documentation}{21}{subsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.3.1}actions}{21}{subsubsection.4.5.3.1}%
-\contentsline {subsubsection}{\numberline {4.5.3.2}albumField}{21}{subsubsection.4.5.3.2}%
-\contentsline {subsubsection}{\numberline {4.5.3.3}artistField}{21}{subsubsection.4.5.3.3}%
-\contentsline {subsubsection}{\numberline {4.5.3.4}fileSelectButton}{22}{subsubsection.4.5.3.4}%
-\contentsline {subsubsection}{\numberline {4.5.3.5}frame}{22}{subsubsection.4.5.3.5}%
-\contentsline {subsubsection}{\numberline {4.5.3.6}playButton}{22}{subsubsection.4.5.3.6}%
-\contentsline {subsubsection}{\numberline {4.5.3.7}progressField}{22}{subsubsection.4.5.3.7}%
-\contentsline {subsubsection}{\numberline {4.5.3.8}progressTimer}{22}{subsubsection.4.5.3.8}%
-\contentsline {subsubsection}{\numberline {4.5.3.9}searchField}{22}{subsubsection.4.5.3.9}%
-\contentsline {subsubsection}{\numberline {4.5.3.10}titleField}{22}{subsubsection.4.5.3.10}%
-\contentsline {subsubsection}{\numberline {4.5.3.11}track}{23}{subsubsection.4.5.3.11}%
-\contentsline {section}{\numberline {4.6}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test Class Reference}{23}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{23}{subsection.4.6.1}%
-\contentsline {section}{\numberline {4.7}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track Class Reference}{24}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{25}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Constructor \& Destructor Documentation}{25}{subsection.4.7.2}%
-\contentsline {subsubsection}{\numberline {4.7.2.1}Track()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{25}{subsubsection.4.7.2.1}%
-\contentsline {subsubsection}{\numberline {4.7.2.2}Track()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{25}{subsubsection.4.7.2.2}%
-\contentsline {subsection}{\numberline {4.7.3}Member Function Documentation}{25}{subsection.4.7.3}%
-\contentsline {subsubsection}{\numberline {4.7.3.1}getAlbum()}{25}{subsubsection.4.7.3.1}%
-\contentsline {subsubsection}{\numberline {4.7.3.2}getArtist()}{26}{subsubsection.4.7.3.2}%
-\contentsline {subsubsection}{\numberline {4.7.3.3}getLength()}{26}{subsubsection.4.7.3.3}%
-\contentsline {subsubsection}{\numberline {4.7.3.4}getPath()}{26}{subsubsection.4.7.3.4}%
-\contentsline {subsubsection}{\numberline {4.7.3.5}getTitle()}{26}{subsubsection.4.7.3.5}%
-\contentsline {subsubsection}{\numberline {4.7.3.6}toString()}{27}{subsubsection.4.7.3.6}%
-\contentsline {subsection}{\numberline {4.7.4}Member Data Documentation}{27}{subsection.4.7.4}%
-\contentsline {subsubsection}{\numberline {4.7.4.1}album}{27}{subsubsection.4.7.4.1}%
-\contentsline {subsubsection}{\numberline {4.7.4.2}artis}{27}{subsubsection.4.7.4.2}%
-\contentsline {subsubsection}{\numberline {4.7.4.3}length}{27}{subsubsection.4.7.4.3}%
-\contentsline {subsubsection}{\numberline {4.7.4.4}path}{27}{subsubsection.4.7.4.4}%
-\contentsline {subsubsection}{\numberline {4.7.4.5}title}{27}{subsubsection.4.7.4.5}%
-\contentsline {chapter}{\numberline {5}File Documentation}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}App.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Audio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{29}{section.5.2}%
-\contentsline {section}{\numberline {5.3}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{30}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{31}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{32}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Track.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{35}{section.5.6}%
-\contentsline {section}{\numberline {5.7}module-\/info.java}{36}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{36}{section.5.8}%
-\contentsline {chapter}{Index}{37}{section*.28}%
+\contentsline {section}{\numberline {4.2}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Audio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{10}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{11}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{11}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}AudioHandler()}{11}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{11}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}getMediaPlayer()}{11}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}getTrackFromAH()}{12}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}pause()}{12}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}play()}{12}{subsubsection.4.2.3.4}%
+\contentsline {subsection}{\numberline {4.2.4}Member Data Documentation}{12}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}track}{12}{subsubsection.4.2.4.1}%
+\contentsline {section}{\numberline {4.3}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{13}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{13}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Member Function Documentation}{14}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}createTrackFromPath()}{14}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}read()}{14}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}readDir()}{15}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}searchTracks()}{16}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}write()}{17}{subsubsection.4.3.2.5}%
+\contentsline {subsection}{\numberline {4.3.3}Member Data Documentation}{17}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}trackList}{17}{subsubsection.4.3.3.1}%
+\contentsline {section}{\numberline {4.4}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test Class Reference}{18}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{18}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{18}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}setupJavaFx()}{18}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}testCreateTrackFromPath()}{18}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}testReadDir()}{19}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}testSearchTracks()}{19}{subsubsection.4.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.4.2.5}testWriteAndReadSerialization()}{20}{subsubsection.4.4.2.5}%
+\contentsline {section}{\numberline {4.5}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions Class Reference}{21}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{22}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Member Function Documentation}{22}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}fillAlbum()}{22}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}fillArtist()}{22}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.3}fillProgress()}{23}{subsubsection.4.5.2.3}%
+\contentsline {subsubsection}{\numberline {4.5.2.4}fillStatus()}{23}{subsubsection.4.5.2.4}%
+\contentsline {subsubsection}{\numberline {4.5.2.5}fillTitle()}{23}{subsubsection.4.5.2.5}%
+\contentsline {subsubsection}{\numberline {4.5.2.6}playPressed()}{23}{subsubsection.4.5.2.6}%
+\contentsline {subsubsection}{\numberline {4.5.2.7}searchTrack()}{24}{subsubsection.4.5.2.7}%
+\contentsline {subsubsection}{\numberline {4.5.2.8}selectedFromSearch()}{24}{subsubsection.4.5.2.8}%
+\contentsline {subsubsection}{\numberline {4.5.2.9}selectTrack()}{24}{subsubsection.4.5.2.9}%
+\contentsline {subsection}{\numberline {4.5.3}Member Data Documentation}{25}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}pressed}{25}{subsubsection.4.5.3.1}%
+\contentsline {subsubsection}{\numberline {4.5.3.2}selected}{25}{subsubsection.4.5.3.2}%
+\contentsline {section}{\numberline {4.6}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test Class Reference}{26}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{27}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Member Function Documentation}{27}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}setupJavaFx()}{27}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}testFillAlbum()}{27}{subsubsection.4.6.2.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.3}testFillArtist()}{28}{subsubsection.4.6.2.3}%
+\contentsline {subsubsection}{\numberline {4.6.2.4}testPlayPressed()}{28}{subsubsection.4.6.2.4}%
+\contentsline {subsubsection}{\numberline {4.6.2.5}testSearchTrack()}{28}{subsubsection.4.6.2.5}%
+\contentsline {subsubsection}{\numberline {4.6.2.6}testSelectedFromSearch()}{28}{subsubsection.4.6.2.6}%
+\contentsline {subsection}{\numberline {4.6.3}Member Data Documentation}{29}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}fh}{29}{subsubsection.4.6.3.1}%
+\contentsline {subsubsection}{\numberline {4.6.3.2}ga}{29}{subsubsection.4.6.3.2}%
+\contentsline {subsubsection}{\numberline {4.6.3.3}song1Path}{29}{subsubsection.4.6.3.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.4}songAlbum}{29}{subsubsection.4.6.3.4}%
+\contentsline {subsubsection}{\numberline {4.6.3.5}songArtis}{29}{subsubsection.4.6.3.5}%
+\contentsline {section}{\numberline {4.7}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{30}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{31}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Member Function Documentation}{31}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}init()}{31}{subsubsection.4.7.2.1}%
+\contentsline {subsection}{\numberline {4.7.3}Member Data Documentation}{31}{subsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.1}actions}{31}{subsubsection.4.7.3.1}%
+\contentsline {subsubsection}{\numberline {4.7.3.2}albumField}{31}{subsubsection.4.7.3.2}%
+\contentsline {subsubsection}{\numberline {4.7.3.3}artistField}{31}{subsubsection.4.7.3.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.4}fileSelectButton}{31}{subsubsection.4.7.3.4}%
+\contentsline {subsubsection}{\numberline {4.7.3.5}frame}{31}{subsubsection.4.7.3.5}%
+\contentsline {subsubsection}{\numberline {4.7.3.6}playButton}{32}{subsubsection.4.7.3.6}%
+\contentsline {subsubsection}{\numberline {4.7.3.7}progressField}{32}{subsubsection.4.7.3.7}%
+\contentsline {subsubsection}{\numberline {4.7.3.8}progressTimer}{32}{subsubsection.4.7.3.8}%
+\contentsline {subsubsection}{\numberline {4.7.3.9}searchField}{32}{subsubsection.4.7.3.9}%
+\contentsline {subsubsection}{\numberline {4.7.3.10}titleField}{32}{subsubsection.4.7.3.10}%
+\contentsline {subsubsection}{\numberline {4.7.3.11}track}{32}{subsubsection.4.7.3.11}%
+\contentsline {section}{\numberline {4.8}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track Class Reference}{33}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{35}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Constructor \& Destructor Documentation}{35}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}Track()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{35}{subsubsection.4.8.2.1}%
+\contentsline {subsubsection}{\numberline {4.8.2.2}Track()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.4.8.2.2}%
+\contentsline {subsection}{\numberline {4.8.3}Member Function Documentation}{36}{subsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.1}getAlbum()}{36}{subsubsection.4.8.3.1}%
+\contentsline {subsubsection}{\numberline {4.8.3.2}getArtist()}{36}{subsubsection.4.8.3.2}%
+\contentsline {subsubsection}{\numberline {4.8.3.3}getLength()}{36}{subsubsection.4.8.3.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.4}getPath()}{36}{subsubsection.4.8.3.4}%
+\contentsline {subsubsection}{\numberline {4.8.3.5}getTitle()}{37}{subsubsection.4.8.3.5}%
+\contentsline {subsubsection}{\numberline {4.8.3.6}toString()}{37}{subsubsection.4.8.3.6}%
+\contentsline {subsection}{\numberline {4.8.4}Member Data Documentation}{37}{subsection.4.8.4}%
+\contentsline {subsubsection}{\numberline {4.8.4.1}album}{37}{subsubsection.4.8.4.1}%
+\contentsline {subsubsection}{\numberline {4.8.4.2}artis}{37}{subsubsection.4.8.4.2}%
+\contentsline {subsubsection}{\numberline {4.8.4.3}length}{37}{subsubsection.4.8.4.3}%
+\contentsline {subsubsection}{\numberline {4.8.4.4}path}{37}{subsubsection.4.8.4.4}%
+\contentsline {subsubsection}{\numberline {4.8.4.5}title}{38}{subsubsection.4.8.4.5}%
+\contentsline {section}{\numberline {4.9}com.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}example.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Track\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test Class Reference}{38}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{38}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Member Function Documentation}{38}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}testGetAlbum()}{38}{subsubsection.4.9.2.1}%
+\contentsline {chapter}{\numberline {5}File Documentation}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}App.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Audio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.3}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{40}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{42}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{43}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Track.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{46}{section.5.6}%
+\contentsline {section}{\numberline {5.7}module-\/info.java}{46}{section.5.7}%
+\contentsline {section}{\numberline {5.8}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{47}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{48}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Track\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}java}{49}{section.5.10}%
+\contentsline {chapter}{Index}{51}{section*.40}%

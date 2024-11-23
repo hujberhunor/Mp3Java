@@ -1,0 +1,13 @@
+<map id="com.example.GuiActionsTest" name="com.example.GuiActionsTest">
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,798,324,1017"/>
+<area shape="rect" id="Node000002" href="$classcom_1_1example_1_1FileHandler.html" title=" " alt="" coords="32,536,212,690"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,689,183,781,178,783,146,691"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,241,233,311"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,311,124,519,119,519,117,311"/>
+<area shape="rect" id="Node000004" href="$classcom_1_1example_1_1GuiActions.html" title=" " alt="" coords="238,493,414,733"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="287,734,269,783,264,781,282,732"/>
+<area shape="rect" id="Node000005" href="$classcom_1_1example_1_1Track.html" title=" " alt="" coords="257,124,397,428"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="329,428,329,476,324,476,324,428"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="283,5,372,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="330,89,330,124,325,124,325,89"/>
+</map>

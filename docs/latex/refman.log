@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.10.26)  19 NOV 2024 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.10.26)  23 NOV 2024 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,14 +853,14 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 230.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 230.
- [1]
+ [1] [2]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 230.
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 23
 0.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [2] [3] [4
+) [3] [4
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 233.
@@ -891,7 +891,7 @@ Chapter 3.
 Chapter 4.
 (./classcom_1_1example_1_1App.tex <./classcom_1_1example_1_1App__inherit__graph
 .pdf>
-<classcom_1_1example_1_1App__inherit__graph.pdf, id=547, 178.6675pt x 236.885pt
+<classcom_1_1example_1_1App__inherit__graph.pdf, id=727, 178.6675pt x 236.885pt
 >
 File: classcom_1_1example_1_1App__inherit__graph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1App__inherit__graph.pdf>
@@ -899,7 +899,7 @@ Package pdftex.def Info: classcom_1_1example_1_1App__inherit__graph.pdf  used o
 n input line 9.
 (pdftex.def)             Requested size: 178.0pt x 236.01329pt.
  <./classcom_1_1example_1_1App__coll__graph.pdf>
-<classcom_1_1example_1_1App__coll__graph.pdf, id=562, 178.6675pt x 236.885pt>
+<classcom_1_1example_1_1App__coll__graph.pdf, id=742, 178.6675pt x 236.885pt>
 File: classcom_1_1example_1_1App__coll__graph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1App__coll__graph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1App__coll__graph.pdf  used on i
@@ -921,185 +921,286 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
  [8])
 (./classcom_1_1example_1_1AudioHandler.tex <./classcom_1_1example_1_1AudioHandl
 er__coll__graph.pdf>
-<classcom_1_1example_1_1AudioHandler__coll__graph.pdf, id=607, 225.84375pt x 18
-0.675pt>
+<classcom_1_1example_1_1AudioHandler__coll__graph.pdf, id=787, 225.84375pt x 56
+4.1075pt>
 File: classcom_1_1example_1_1AudioHandler__coll__graph.pdf Graphic file (type p
 df)
 <use classcom_1_1example_1_1AudioHandler__coll__graph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1AudioHandler__coll__graph.pdf  
-used on input line 9.
-(pdftex.def)             Requested size: 225.0pt x 180.01013pt.
- [9] <./classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_c
-graph.pdf>
+used on input line 10.
+(pdftex.def)             Requested size: 220.21227pt x 550.0pt.
+ [9] [10] <./classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a
+645_cgraph.pdf>
 <classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_cgraph.p
-df, id=641, 422.57875pt x 114.4275pt>
+df, id=828, 422.57875pt x 114.4275pt>
 File: classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_cgr
 aph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_cgra
 ph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd2
-70bc4eebb80a645_cgraph.pdf  used on input line 61.
+70bc4eebb80a645_cgraph.pdf  used on input line 70.
 (pdftex.def)             Requested size: 350.0pt x 94.7775pt.
- [10]) (./classcom_1_1example_1_1FileHandler.tex <./classcom_1_1example_1_1File
-Handler__coll__graph.pdf>
-<classcom_1_1example_1_1FileHandler__coll__graph.pdf, id=667, 251.94125pt x 265
-.99374pt>
+ [11])
+(./classcom_1_1example_1_1FileHandler.tex <./classcom_1_1example_1_1FileHandler
+__coll__graph.pdf>
+<classcom_1_1example_1_1FileHandler__coll__graph.pdf, id=866, 251.94125pt x 298
+.11375pt>
 File: classcom_1_1example_1_1FileHandler__coll__graph.pdf Graphic file (type pd
 f)
 <use classcom_1_1example_1_1FileHandler__coll__graph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1FileHandler__coll__graph.pdf  u
-sed on input line 9.
-(pdftex.def)             Requested size: 251.0pt x 265.00275pt.
- [11] <./classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_i
-cgraph.pdf>
+sed on input line 10.
+(pdftex.def)             Requested size: 251.0pt x 297.0031pt.
+ [12] [13] <./classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b3718773487
+2f2_icgraph.pdf>
 <classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgraph.p
-df, id=698, 684.5575pt x 159.59625pt>
+df, id=921, 687.56876pt x 211.79124pt>
 File: classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgr
 aph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgra
 ph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4
-b37187734872f2_icgraph.pdf  used on input line 87.
-(pdftex.def)             Requested size: 350.0pt x 81.59999pt.
- [12] <./classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_c
+b37187734872f2_icgraph.pdf  used on input line 93.
+(pdftex.def)             Requested size: 350.0pt x 107.8085pt.
+ [14] <./classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_c
 graph.pdf>
 <classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_cgraph.pd
-f, id=725, 471.7625pt x 114.4275pt>
+f, id=945, 471.7625pt x 114.4275pt>
 File: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_cgra
 ph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_cgrap
 h.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb700
-03124bd4b199e0_cgraph.pdf  used on input line 131.
+03124bd4b199e0_cgraph.pdf  used on input line 165.
 (pdftex.def)             Requested size: 350.0pt x 84.89502pt.
  <./classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgrap
 h.pdf>
 <classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgraph.p
-df, id=733, 472.76625pt x 114.4275pt>
+df, id=953, 472.76625pt x 114.4275pt>
 File: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgr
 aph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgra
 ph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb700
-03124bd4b199e0_icgraph.pdf  used on input line 138.
+03124bd4b199e0_icgraph.pdf  used on input line 172.
 (pdftex.def)             Requested size: 350.0pt x 84.71518pt.
- [13]
-Underfull \hbox (badness 10000) detected at line 152
+ [15]
+Underfull \hbox (badness 10000) detected at line 186
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 162
+Underfull \hbox (badness 10000) detected at line 196
 [][][]
  []
 
  <./classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgraph
 .pdf>
 <classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgraph.pd
-f, id=757, 684.5575pt x 114.4275pt>
+f, id=974, 684.5575pt x 114.4275pt>
 File: classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgra
 ph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgrap
 h.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b2
-0b17f7183752a4_cgraph.pdf  used on input line 203.
+0b17f7183752a4_cgraph.pdf  used on input line 237.
 (pdftex.def)             Requested size: 350.0pt x 58.50566pt.
- [14]) (./classcom_1_1example_1_1GuiActions.tex <./classcom_1_1example_1_1GuiAc
-tions__coll__graph.pdf>
-<classcom_1_1example_1_1GuiActions__coll__graph.pdf, id=779, 212.795pt x 522.95
-375pt>
+ [16] <./classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_i
+cgraph.pdf>
+<classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgraph.p
+df, id=995, 456.70625pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgr
+aph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgra
+ph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d
+9fdcf04b041110_icgraph.pdf  used on input line 271.
+(pdftex.def)             Requested size: 350.0pt x 87.69563pt.
+) (./classcom_1_1example_1_1FileHandlerTest.tex <./classcom_1_1example_1_1FileH
+andlerTest__coll__graph.pdf>
+<classcom_1_1example_1_1FileHandlerTest__coll__graph.pdf, id=1006, 256.96pt x 1
+96.735pt>
+File: classcom_1_1example_1_1FileHandlerTest__coll__graph.pdf Graphic file (typ
+e pdf)
+<use classcom_1_1example_1_1FileHandlerTest__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandlerTest__coll__graph.pd
+f  used on input line 10.
+(pdftex.def)             Requested size: 256.0pt x 196.01402pt.
+ [17] [18] <./classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484
+c118ce8_cgraph.pdf>
+<classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_cgrap
+h.pdf, id=1056, 474.77374pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_
+cgraph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_c
+graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9
+045815f8484c118ce8_cgraph.pdf  used on input line 91.
+(pdftex.def)             Requested size: 350.0pt x 84.35898pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+\T1/pcr/m/n/8 void com.[]example.[]File[]Handler[]Test.[]test[]Read[]Dir () thr
+ows Unsupported[]Tag[]Exception, Invalid[]Data[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\T1/pcr/m/n/8 void com.[]example.[]File[]Handler[]Test.[]test[]Search[]Tracks (
+) throws Unsupported[]Tag[]Exception, Invalid[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+\T1/pcr/m/n/8 void com.[]example.[]File[]Handler[]Test.[]test[]Write[]And[]Read
+[]Serialization () throws Unsupported[]Tag[]
+ []
+
+[19]) (./classcom_1_1example_1_1GuiActions.tex <./classcom_1_1example_1_1GuiAct
+ions__coll__graph.pdf>
+<classcom_1_1example_1_1GuiActions__coll__graph.pdf, id=1081, 212.795pt x 628.3
+475pt>
 File: classcom_1_1example_1_1GuiActions__coll__graph.pdf Graphic file (type pdf
 )
 <use classcom_1_1example_1_1GuiActions__coll__graph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1GuiActions__coll__graph.pdf  us
-ed on input line 9.
-(pdftex.def)             Requested size: 212.0pt x 521.02937pt.
- [15] [16] [17] [18]
-Underfull \hbox (badness 10000) detected at line 211
+ed on input line 10.
+(pdftex.def)             Requested size: 186.26984pt x 550.0pt.
+ [20] [21] [22] [23]
+Underfull \hbox (badness 10000) detected at line 233
 [][][]
  []
 
- <./classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgraph.
-pdf>
+[24] <./classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgr
+aph.pdf>
 <classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgraph.pdf
-, id=871, 462.72874pt x 114.4275pt>
+, id=1189, 462.72874pt x 152.57pt>
 File: classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgrap
 h.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgraph
 .pdf>
 Package pdftex.def Info: classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d1
-70491a7aa4c0e_cgraph.pdf  used on input line 259.
-(pdftex.def)             Requested size: 350.0pt x 86.55199pt.
- [19]) (./classcom_1_1example_1_1GuiHandler.tex <./classcom_1_1example_1_1GuiHa
-ndler__coll__graph.pdf>
-<classcom_1_1example_1_1GuiHandler__coll__graph.pdf, id=895, 704.6325pt x 675.5
-2374pt>
+70491a7aa4c0e_cgraph.pdf  used on input line 284.
+(pdftex.def)             Requested size: 350.0pt x 115.40265pt.
+) (./classcom_1_1example_1_1GuiActionsTest.tex <./classcom_1_1example_1_1GuiAct
+ionsTest__coll__graph.pdf>
+<classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf, id=1202, 388.45125pt x
+ 842.14626pt>
+File: classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf Graphic file (type
+ pdf)
+<use classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf
+  used on input line 10.
+(pdftex.def)             Requested size: 253.69948pt x 550.0pt.
+ [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Fill[]Album () th
+rows Unsupported[]Tag[]Exception, Invalid[]Data[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Fill[]Artist () t
+hrows Unsupported[]Tag[]Exception, Invalid[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Play[]Pressed () 
+throws Unsupported[]Tag[]Exception, Invalid[]
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Selected[]From[]S
+earch () throws Unsupported[]Tag[]Exception,
+ []
+
+[28]
+Overfull \hbox (18.89209pt too wide) in paragraph at lines 212--213
+\T1/pcr/m/n/8 String com.[]example.[]Gui[]Actions[]Test.[]song1[]Path = "src/te
+st/resources/mock[]Data/Linkin-1.mp3" [package] 
+ []
+
+) (./classcom_1_1example_1_1GuiHandler.tex <./classcom_1_1example_1_1GuiHandler
+__coll__graph.pdf>
+<classcom_1_1example_1_1GuiHandler__coll__graph.pdf, id=1309, 704.6325pt x 780.
+9175pt>
 File: classcom_1_1example_1_1GuiHandler__coll__graph.pdf Graphic file (type pdf
 )
 <use classcom_1_1example_1_1GuiHandler__coll__graph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1GuiHandler__coll__graph.pdf  us
-ed on input line 9.
-(pdftex.def)             Requested size: 350.0pt x 335.53459pt.
- [20] [21]) (./classcom_1_1example_1_1MainTest.tex <./classcom_1_1example_1_1Ma
-inTest__coll__graph.pdf>
-<classcom_1_1example_1_1MainTest__coll__graph.pdf, id=983, 203.76125pt x 132.49
-5pt>
-File: classcom_1_1example_1_1MainTest__coll__graph.pdf Graphic file (type pdf)
-<use classcom_1_1example_1_1MainTest__coll__graph.pdf>
-Package pdftex.def Info: classcom_1_1example_1_1MainTest__coll__graph.pdf  used
- on input line 9.
-(pdftex.def)             Requested size: 203.0pt x 132.0054pt.
- [22])
-(./classcom_1_1example_1_1Track.tex <./classcom_1_1example_1_1Track__coll__grap
-h.pdf>
-<classcom_1_1example_1_1Track__coll__graph.pdf, id=1001, 185.69376pt x 309.155p
+ed on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 387.88397pt.
+ [29] [30] [31]) (./classcom_1_1example_1_1Track.tex <./classcom_1_1example_1_1
+Track__inherit__graph.pdf>
+<classcom_1_1example_1_1Track__inherit__graph.pdf, id=1409, 185.69376pt x 397.4
+85pt>
+File: classcom_1_1example_1_1Track__inherit__graph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1Track__inherit__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1Track__inherit__graph.pdf  used
+ on input line 10.
+(pdftex.def)             Requested size: 185.0pt x 396.0102pt.
+ [32] <./classcom_1_1example_1_1Track__coll__graph.pdf>
+<classcom_1_1example_1_1Track__coll__graph.pdf, id=1423, 185.69376pt x 397.485p
 t>
 File: classcom_1_1example_1_1Track__coll__graph.pdf Graphic file (type pdf)
 <use classcom_1_1example_1_1Track__coll__graph.pdf>
 Package pdftex.def Info: classcom_1_1example_1_1Track__coll__graph.pdf  used on
- input line 9.
-(pdftex.def)             Requested size: 185.0pt x 308.00792pt.
- [23]
+ input line 20.
+(pdftex.def)             Requested size: 185.0pt x 396.0102pt.
+ [33]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 31.
+(Font)              scaled to size 8.09995pt on input line 42.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 31.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 42.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 31.
- [24]
+(Font)              scaled to size 8.09995pt on input line 42.
+ [34]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 59.
- [25]
-Underfull \hbox (badness 10000) detected at line 167
+(Font)              scaled to size 7.19995pt on input line 70.
+ [35]
+Underfull \hbox (badness 10000) detected at line 178
 [][][]
  []
 
  <./classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pdf>
 <classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pdf, id
-=1079, 422.57875pt x 114.4275pt>
+=1497, 422.57875pt x 114.4275pt>
 File: classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pd
 f Graphic file (type pdf)
 <use classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pdf
 >
 Package pdftex.def Info: classcom_1_1example_1_1Track_a0935b0e960eddf779e076b52
-8083a7bb_icgraph.pdf  used on input line 185.
+8083a7bb_icgraph.pdf  used on input line 196.
 (pdftex.def)             Requested size: 350.0pt x 94.7775pt.
-[26]) [27] [28
+[36]) (./classcom_1_1example_1_1TrackTest.tex <./classcom_1_1example_1_1TrackTe
+st__coll__graph.pdf>
+<classcom_1_1example_1_1TrackTest__coll__graph.pdf, id=1532, 204.765pt x 132.49
+5pt>
+File: classcom_1_1example_1_1TrackTest__coll__graph.pdf Graphic file (type pdf)
 
-]
+<use classcom_1_1example_1_1TrackTest__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1TrackTest__coll__graph.pdf  use
+d on input line 10.
+(pdftex.def)             Requested size: 204.0pt x 132.00742pt.
+ [37]) [38]
 Chapter 5.
-(./App_8java_source.tex) (./AudioHandler_8java_source.tex [29])
-(./FileHandler_8java_source.tex [30]) (./GuiActions_8java_source.tex [31])
-(./GuiHandler_8java_source.tex [32] [33] [34]) (./Track_8java_source.tex)
-(./module-info_8java_source.tex [35]) (./MainTest_8java_source.tex) [36]
-(./refman.ind
+(./App_8java_source.tex) (./AudioHandler_8java_source.tex [39
+
+])
+(./FileHandler_8java_source.tex [40]) (./GuiActions_8java_source.tex [41]
+[42]) (./GuiHandler_8java_source.tex [43] [44] [45]) (./Track_8java_source.tex)
+(./module-info_8java_source.tex [46]) (./FileHandlerTest_8java_source.tex
+[47]) (./GuiActionsTest_8java_source.tex [48]) (./TrackTest_8java_source.tex)
+[49] [50
+
+] (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
- [37
+ [51
 
 
-
-] [38
+] [52] [53
 
 ]) (./refman.aux)
  ***********
@@ -1107,16 +1208,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 883C00CD6740ABAE0DB7E44A278416BF;16161.
+(rerunfilecheck)             Checksum: 298B52C83F5E0C0EE117B62D7DF58E6C;22860.
  ) 
 Here is how much of TeX's memory you used:
- 18952 strings out of 476076
- 320036 string characters out of 5793774
- 1946187 words of memory out of 5000000
- 39911 multiletter control sequences out of 15000+600000
+ 19417 strings out of 476076
+ 337668 string characters out of 5793774
+ 1947187 words of memory out of 5000000
+ 40036 multiletter control sequences out of 15000+600000
  613671 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,16n,117p,556b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,556b,742s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/
@@ -1126,10 +1227,10 @@ st/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/h
 elvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (44 pages, 311897 bytes).
+Output written on refman.pdf (59 pages, 402236 bytes).
 PDF statistics:
- 2083 PDF objects out of 2487 (max. 8388607)
- 1936 compressed objects within 20 object streams
- 792 named destinations out of 1000 (max. 500000)
- 780 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2927 PDF objects out of 2984 (max. 8388607)
+ 2733 compressed objects within 28 object streams
+ 1124 named destinations out of 1200 (max. 500000)
+ 1069 words of extra memory for PDF output out of 10000 (max. 10000000)
 

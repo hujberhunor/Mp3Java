@@ -2,11 +2,12 @@
 \hypertarget{classcom_1_1example_1_1AudioHandler}{}\label{classcom_1_1example_1_1AudioHandler}\index{com.example.AudioHandler@{com.example.AudioHandler}}
 
 
-Collaboration diagram for com.\+example.\+Audio\+Handler\+:\nopagebreak
+Collaboration diagram for com.\+example.\+Audio\+Handler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=225pt]{classcom_1_1example_1_1AudioHandler__coll__graph}
+\includegraphics[height=550pt]{classcom_1_1example_1_1AudioHandler__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -19,6 +20,13 @@ void \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860
 void \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}{pause}} ()
 \item 
 Media\+Player \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a2b1f117533ce0c7e6ab10febbee6ca86}{get\+Media\+Player}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a20d70c7613485852c322b3d7c6a1d79f}{get\+Track\+From\+AH}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_ab2ee9f1b0b615d5b8e5a5125c29644e2}{track}}
 \end{DoxyCompactItemize}
 
 
@@ -43,15 +51,16 @@ Contructor that initializes the media\+Player with a track
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00018}{18}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00019}{19}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ String\ path\ =\ track.getPath();}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Media\ media\ =\ \textcolor{keyword}{new}\ Media(\textcolor{keyword}{new}\ File(path).toURI().toString());}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ mediaPlayer\ =\ \textcolor{keyword}{new}\ MediaPlayer(media);}
-\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ String\ path\ =\ track.\mbox{\hyperlink{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb}{getPath}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ this.track\ =\ track;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Media\ media\ =\ \textcolor{keyword}{new}\ Media(\textcolor{keyword}{new}\ File(path).toURI().toString());}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ mediaPlayer\ =\ \textcolor{keyword}{new}\ MediaPlayer(media);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -72,13 +81,30 @@ Media\+Player com.\+example.\+Audio\+Handler.\+get\+Media\+Player (\begin{DoxyPa
 
 
 
-Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00041}{41}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00043}{43}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mediaPlayer;}
-\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mediaPlayer;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1AudioHandler_a20d70c7613485852c322b3d7c6a1d79f}\index{com.example.AudioHandler@{com.example.AudioHandler}!getTrackFromAH@{getTrackFromAH}}
+\index{getTrackFromAH@{getTrackFromAH}!com.example.AudioHandler@{com.example.AudioHandler}}
+\doxysubsubsection{\texorpdfstring{getTrackFromAH()}{getTrackFromAH()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1AudioHandler_a20d70c7613485852c322b3d7c6a1d79f} 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} com.\+example.\+Audio\+Handler.\+get\+Track\+From\+AH (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00047}{47}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ track;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}\index{com.example.AudioHandler@{com.example.AudioHandler}!pause@{pause}}
@@ -89,14 +115,14 @@ void com.\+example.\+Audio\+Handler.\+pause (\begin{DoxyParamCaption}{}{}\end{Do
 
 Calls \doxylink{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}{pause()} methond on the media\+Player 
 
-Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00036}{36}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00038}{38}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ mediaPlayer.pause();}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Paused."{}});}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ mediaPlayer.pause();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Paused."{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860ff8d6093906}\index{com.example.AudioHandler@{com.example.AudioHandler}!play@{play}}
@@ -107,16 +133,29 @@ void com.\+example.\+Audio\+Handler.\+play (\begin{DoxyParamCaption}{}{}\end{Dox
 
 Calls the \doxylink{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860ff8d6093906}{play()} method on the initialized media player Works as a resume() too 
 
-Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00028}{28}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00030}{30}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ mediaPlayer.play();}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Playing..."{}});}
-\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ mediaPlayer.play();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Playing..."{}});}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
 
 \end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1AudioHandler_ab2ee9f1b0b615d5b8e5a5125c29644e2}\index{com.example.AudioHandler@{com.example.AudioHandler}!track@{track}}
+\index{track@{track}!com.example.AudioHandler@{com.example.AudioHandler}}
+\doxysubsubsection{\texorpdfstring{track}{track}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1AudioHandler_ab2ee9f1b0b615d5b8e5a5125c29644e2} 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} com.\+example.\+Audio\+Handler.\+track\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{AudioHandler_8java_source_l00013}{13}} of file \mbox{\hyperlink{AudioHandler_8java_source}{Audio\+Handler.\+java}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

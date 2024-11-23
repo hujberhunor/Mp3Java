@@ -1,0 +1,18 @@
+<map id="com.example.GuiHandler" name="com.example.GuiHandler">
+<area shape="rect" id="Node000001" title=" " alt="" coords="309,866,487,935"/>
+<area shape="rect" id="Node000002" href="$classcom_1_1example_1_1GuiActions.html" title=" " alt="" coords="126,493,302,733"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,732,247,789,261,816,278,840,297,858,293,862,274,844,256,819,242,791,224,734"/>
+<area shape="rect" id="Node000003" href="$classcom_1_1example_1_1Track.html" title=" " alt="" coords="5,124,145,428"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="39,428,30,502,30,580,41,659,52,696,68,732,87,761,111,786,138,808,167,828,231,857,293,877,291,882,229,862,165,832,135,813,107,790,83,764,64,734,47,698,36,660,24,581,25,502,34,428"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,427,161,476,156,478,135,429"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="31,5,120,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="78,89,78,124,73,124,73,89"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="327,578,384,648"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="352,648,346,737,349,790,360,841,363,850,358,852,355,843,344,790,340,737,347,647"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="409,578,483,648"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="444,648,414,842,413,850,407,849,409,842,439,647"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="540,578,600,648"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="576,648,576,690,571,742,557,795,546,821,531,844,504,868,500,864,527,840,541,818,552,794,566,741,571,690,570,648"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="694,578,745,648"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="728,647,733,691,731,744,719,797,707,822,690,844,661,862,615,876,505,894,504,889,614,871,658,857,687,840,703,819,714,795,726,743,727,691,723,648"/>
+</map>

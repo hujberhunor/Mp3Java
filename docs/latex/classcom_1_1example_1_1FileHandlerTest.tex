@@ -1,0 +1,177 @@
+\doxysection{com.\+example.\+File\+Handler\+Test Class Reference}
+\hypertarget{classcom_1_1example_1_1FileHandlerTest}{}\label{classcom_1_1example_1_1FileHandlerTest}\index{com.example.FileHandlerTest@{com.example.FileHandlerTest}}
+
+
+Collaboration diagram for com.\+example.\+File\+Handler\+Test\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classcom_1_1example_1_1FileHandlerTest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8}{test\+Create\+Track\+From\+Path}} ()  throws Exception 
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a1fca2268f28a09595c96a481b1a8ab31}{test\+Read\+Dir}} ()  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a95d8d2e39f2e2ff322b3f5ffa81ff432}{test\+Search\+Tracks}} ()  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a070c529834f6e57b957c7e9cbfaec980}{test\+Write\+And\+Read\+Serialization}} ()  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a38ccc2b4d890fb281583c990ba5251c1}{setup\+Java\+Fx}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{FileHandlerTest_8java_source_l00018}{18}} of file \mbox{\hyperlink{FileHandlerTest_8java_source}{File\+Handler\+Test.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1FileHandlerTest_a38ccc2b4d890fb281583c990ba5251c1}\index{com.example.FileHandlerTest@{com.example.FileHandlerTest}!setupJavaFx@{setupJavaFx}}
+\index{setupJavaFx@{setupJavaFx}!com.example.FileHandlerTest@{com.example.FileHandlerTest}}
+\doxysubsubsection{\texorpdfstring{setupJavaFx()}{setupJavaFx()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandlerTest_a38ccc2b4d890fb281583c990ba5251c1} 
+static void com.\+example.\+File\+Handler\+Test.\+setup\+Java\+Fx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{FileHandlerTest_8java_source_l00021}{21}} of file \mbox{\hyperlink{FileHandlerTest_8java_source}{File\+Handler\+Test.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!Platform.isImplicitExit())\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Platform.startup(()\ -\/>\ \{\});}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8}\index{com.example.FileHandlerTest@{com.example.FileHandlerTest}!testCreateTrackFromPath@{testCreateTrackFromPath}}
+\index{testCreateTrackFromPath@{testCreateTrackFromPath}!com.example.FileHandlerTest@{com.example.FileHandlerTest}}
+\doxysubsubsection{\texorpdfstring{testCreateTrackFromPath()}{testCreateTrackFromPath()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8} 
+void com.\+example.\+File\+Handler\+Test.\+test\+Create\+Track\+From\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [package]}}
+
+Azért van előbb mert a readdir ezt a fv-\/t futtatja és a pásztázott fileokat trackké varátsolja 
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{FileHandlerTest_8java_source_l00034}{34}} of file \mbox{\hyperlink{FileHandlerTest_8java_source}{File\+Handler\+Test.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ String\ song\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/Linkin-\/1.mp3"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Track\ track\ =\ fh.createTrackFromPath(song);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ String\ artist\ =\ track.getArtist();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ assertNotNull(track);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Linkin\ Park"{}},\ artist);}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classcom_1_1example_1_1FileHandlerTest_a1fca2268f28a09595c96a481b1a8ab31}\index{com.example.FileHandlerTest@{com.example.FileHandlerTest}!testReadDir@{testReadDir}}
+\index{testReadDir@{testReadDir}!com.example.FileHandlerTest@{com.example.FileHandlerTest}}
+\doxysubsubsection{\texorpdfstring{testReadDir()}{testReadDir()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandlerTest_a1fca2268f28a09595c96a481b1a8ab31} 
+void com.\+example.\+File\+Handler\+Test.\+test\+Read\+Dir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{FileHandlerTest_8java_source_l00045}{45}} of file \mbox{\hyperlink{FileHandlerTest_8java_source}{File\+Handler\+Test.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ String\ dir\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ fh.readDir(dir);}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ assertEquals(2,\ fh.trackList.size());}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ assertTrue(fh.trackList.stream().anyMatch(track\ -\/>\ track.getPath().endsWith(\textcolor{stringliteral}{"{}Linkin-\/1.mp3"{}})));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ assertTrue(fh.trackList.stream().anyMatch(track\ -\/>\ track.getPath().endsWith(\textcolor{stringliteral}{"{}Linkin-\/2.mp3"{}})));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1FileHandlerTest_a95d8d2e39f2e2ff322b3f5ffa81ff432}\index{com.example.FileHandlerTest@{com.example.FileHandlerTest}!testSearchTracks@{testSearchTracks}}
+\index{testSearchTracks@{testSearchTracks}!com.example.FileHandlerTest@{com.example.FileHandlerTest}}
+\doxysubsubsection{\texorpdfstring{testSearchTracks()}{testSearchTracks()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandlerTest_a95d8d2e39f2e2ff322b3f5ffa81ff432} 
+void com.\+example.\+File\+Handler\+Test.\+test\+Search\+Tracks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{FileHandlerTest_8java_source_l00056}{56}} of file \mbox{\hyperlink{FileHandlerTest_8java_source}{File\+Handler\+Test.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ String\ pattern\ =\ \textcolor{stringliteral}{"{}Linkin"{}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ String\ path\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ ArrayList<Track>\ list;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ list\ =\ fh.searchTracks(pattern,\ path);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ assertNotNull(list);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ assertEquals(2,\ list.size());}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ assertTrue(list.stream().anyMatch(track\ -\/>\ track.getArtist().contains(\textcolor{stringliteral}{"{}Linkin"{}})));}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1FileHandlerTest_a070c529834f6e57b957c7e9cbfaec980}\index{com.example.FileHandlerTest@{com.example.FileHandlerTest}!testWriteAndReadSerialization@{testWriteAndReadSerialization}}
+\index{testWriteAndReadSerialization@{testWriteAndReadSerialization}!com.example.FileHandlerTest@{com.example.FileHandlerTest}}
+\doxysubsubsection{\texorpdfstring{testWriteAndReadSerialization()}{testWriteAndReadSerialization()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandlerTest_a070c529834f6e57b957c7e9cbfaec980} 
+void com.\+example.\+File\+Handler\+Test.\+test\+Write\+And\+Read\+Serialization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{FileHandlerTest_8java_source_l00069}{69}} of file \mbox{\hyperlink{FileHandlerTest_8java_source}{File\+Handler\+Test.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ FileHandler\ fileHandler\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ String\ testFile\ =\ \textcolor{stringliteral}{"{}serialTest.json"{}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ String\ songPath\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/Linkin-\/1.mp3"{}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Track\ track\ =\ fh.createTrackFromPath(songPath);\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ AudioHandler\ ah\ =\ \textcolor{keyword}{new}\ AudioHandler(track);\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ fileHandler.write(ah,\ testFile);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ ArrayList<Track>\ readTracks\ =\ fileHandler.read(testFile);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ assertNotNull(readTracks);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ assertEquals(1,\ readTracks.size());}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Linkin\ Park"{}},\ readTracks.get(0).getArtist());}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/test/java/com/example/File\+Handler\+Test.\+java\end{DoxyCompactItemize}

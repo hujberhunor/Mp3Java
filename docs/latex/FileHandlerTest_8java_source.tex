@@ -1,0 +1,88 @@
+\doxysection{File\+Handler\+Test.\+java}
+\hypertarget{FileHandlerTest_8java_source}{}\label{FileHandlerTest_8java_source}\index{src/test/java/com/example/FileHandlerTest.java@{src/test/java/com/example/FileHandlerTest.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertNotNull;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertTrue;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00010}00010\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeAll;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00011}00011\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00013}00013\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.InvalidDataException;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00014}00014\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.UnsupportedTagException;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00016}00016\ \textcolor{keyword}{import}\ javafx.application.Platform;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00018}\mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest}{FileHandlerTest}}\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00020}00020\ \ \ \ @BeforeAll}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00021}00021\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setupJavaFx()\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!Platform.isImplicitExit())\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ Platform.startup(()\ -\/>\ \{\});}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00033}00033\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00034}\mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8}{00034}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8}{testCreateTrackFromPath}}()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ String\ song\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/Linkin-\/1.mp3"{}};}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}\ fh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}();}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ track\ =\ fh.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(song);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ String\ artist\ =\ track.getArtist();}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ assertNotNull(track);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Linkin\ Park"{}},\ artist);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00044}00044\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ testReadDir()\ throws\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ String\ dir\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/"{}};}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}\ fh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}();}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ fh.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{readDir}}(dir);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00049}00049\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ assertEquals(2,\ fh.trackList.size());}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ assertTrue(fh.trackList.stream().anyMatch(track\ -\/>\ track.getPath().endsWith(\textcolor{stringliteral}{"{}Linkin-\/1.mp3"{}})));}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ assertTrue(fh.trackList.stream().anyMatch(track\ -\/>\ track.getPath().endsWith(\textcolor{stringliteral}{"{}Linkin-\/2.mp3"{}})));}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00055}00055\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ testSearchTracks()\ throws\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ String\ pattern\ =\ \textcolor{stringliteral}{"{}Linkin"{}};}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ String\ path\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/"{}};}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ ArrayList<Track>\ list;}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ list\ =\ fh.searchTracks(pattern,\ path);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ assertNotNull(list);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ assertEquals(2,\ list.size());}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ assertTrue(list.stream().anyMatch(track\ -\/>\ track.getArtist().contains(\textcolor{stringliteral}{"{}Linkin"{}})));}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00068}00068\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ testWriteAndReadSerialization()\ throws\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ FileHandler\ fileHandler\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ String\ testFile\ =\ \textcolor{stringliteral}{"{}serialTest.json"{}};}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ String\ songPath\ =\ \textcolor{stringliteral}{"{}src/test/resources/mockData/Linkin-\/1.mp3"{}};}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ FileHandler\ fh\ =\ \textcolor{keyword}{new}\ FileHandler();}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ Track\ track\ =\ fh.createTrackFromPath(songPath);\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ AudioHandler\ ah\ =\ \textcolor{keyword}{new}\ AudioHandler(track);\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ fileHandler.write(ah,\ testFile);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ ArrayList<Track>\ readTracks\ =\ fileHandler.read(testFile);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ assertNotNull(readTracks);}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ assertEquals(1,\ readTracks.size());}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Linkin\ Park"{}},\ readTracks.get(0).getArtist());}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{FileHandlerTest_8java_source_l00087}00087\ \}}
+
+\end{DoxyCode}

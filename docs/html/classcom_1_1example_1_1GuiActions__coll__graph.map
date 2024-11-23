@@ -1,0 +1,7 @@
+<map id="com.example.GuiActions" name="com.example.GuiActions">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,493,181,733"/>
+<area shape="rect" id="Node000002" href="$classcom_1_1example_1_1Track.html" title=" " alt="" coords="23,124,163,428"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,428,96,476,91,476,91,428"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="49,5,138,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,89,96,124,91,124,91,89"/>
+</map>

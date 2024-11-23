@@ -2,7 +2,8 @@
 \hypertarget{classcom_1_1example_1_1FileHandler}{}\label{classcom_1_1example_1_1FileHandler}\index{com.example.FileHandler@{com.example.FileHandler}}
 
 
-Collaboration diagram for com.\+example.\+File\+Handler\+:\nopagebreak
+Collaboration diagram for com.\+example.\+File\+Handler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,6 +18,10 @@ void \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb7000312
 \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{create\+Track\+From\+Path}} (String path)  throws IOException, Unsupported\+Tag\+Exception,      Invalid\+Data\+Exception 
 \item 
 Array\+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} $>$ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4}{search\+Tracks}} (String pattern, String path)  throws IOException, Unsupported\+Tag\+Exception, Invalid\+Data\+Exception 
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110}{write}} (\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{Audio\+Handler}} ah, String path)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} $>$ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_ab830bbc37f7af592e63cc62884ef4ee8}{read}} (String path)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -28,7 +33,7 @@ Array\+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} $>$ \mbox{
 \doxysubsection{Detailed Description}
 \doxylink{classcom_1_1example_1_1FileHandler}{File\+Handler} -\/ Minden aminek fileokhoz van köze itt van kezelve 
 
-Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00019}{19}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00022}{22}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
 
 
 
@@ -46,47 +51,76 @@ Megadott útvonalból létrehozza a \doxylink{classcom_1_1example_1_1Track}{Trac
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00057}{57}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00063}{63}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializálás\ }}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Mp3File\ mp3File\ =\ \textcolor{keyword}{new}\ Mp3File(path);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ length\ =\ 0;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ String\ artist\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ String\ title\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ String\ album\ =\ \textcolor{keyword}{null};\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Megnézem,\ hogy\ milyen\ típusú\ tagjei\ vannak}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mp3File.hasId3v1Tag())\{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ ID3v1\ v1Tag\ =\ mp3File.getId3v1Tag();}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ mp3File.getLengthInSeconds();}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ artist\ =\ v1Tag.getArtist();}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ v1Tag.getTitle();}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ album\ =\ v1Tag.getAlbum();}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(mp3File.hasId3v2Tag())\{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ ID3v2\ v2Tag\ =\ mp3File.getId3v2Tag();}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ mp3File.getLengthInSeconds();}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ artist\ =\ v2Tag.getArtist();}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ v2Tag.getTitle();}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ album\ =\ v2Tag.getAlbum();}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ System.err.println(\textcolor{stringliteral}{"{}Se\ v1\ se\ v2\ tagjei\ nincsenek\ a\ fájlnak."{}});}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Trakc\ konstruálás,\ lényegi\ rész}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Track(path,\ title,\ artist,\ album,\ length);}
-\DoxyCodeLine{00085\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ createTrackFromPath()}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializálás\ }}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Mp3File\ mp3File\ =\ \textcolor{keyword}{new}\ Mp3File(path);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ length\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ String\ artist\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ String\ title\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ String\ album\ =\ \textcolor{keyword}{null};\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Megnézem,\ hogy\ milyen\ típusú\ tagjei\ vannak}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mp3File.hasId3v1Tag())\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ ID3v1\ v1Tag\ =\ mp3File.getId3v1Tag();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ mp3File.getLengthInSeconds();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ artist\ =\ v1Tag.getArtist();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ v1Tag.getTitle();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ album\ =\ v1Tag.getAlbum();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(mp3File.hasId3v2Tag())\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ ID3v2\ v2Tag\ =\ mp3File.getId3v2Tag();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ mp3File.getLengthInSeconds();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ artist\ =\ v2Tag.getArtist();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ v2Tag.getTitle();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ album\ =\ v2Tag.getAlbum();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ System.err.println(\textcolor{stringliteral}{"{}Se\ v1\ se\ v2\ tagjei\ nincsenek\ a\ fájlnak."{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Trakc\ konstruálás,\ lényegi\ rész}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Track(path,\ title,\ artist,\ album,\ length);}
+\DoxyCodeLine{00091\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ createTrackFromPath()}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{classcom_1_1example_1_1FileHandler_ab830bbc37f7af592e63cc62884ef4ee8}\index{com.example.FileHandler@{com.example.FileHandler}!read@{read}}
+\index{read@{read}!com.example.FileHandler@{com.example.FileHandler}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandler_ab830bbc37f7af592e63cc62884ef4ee8} 
+Array\+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} $>$ com.\+example.\+File\+Handler.\+read (\begin{DoxyParamCaption}\item[{String}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00155}{155}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ Gson\ gson\ =\ \textcolor{keyword}{new}\ Gson();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ ArrayList<Track>\ tracks\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (FileReader\ reader\ =\ \textcolor{keyword}{new}\ FileReader(path))\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ Type\ listType\ =\ \textcolor{keyword}{new}\ TypeToken<ArrayList<Track>>()\ \{\}.getType();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ tracks\ =\ gson.fromJson(reader,\ listType);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tracks.forEach(track\ -\/>\ System.out.println(track.getTitle()));}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tracks;}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}\index{com.example.FileHandler@{com.example.FileHandler}!readDir@{readDir}}
 \index{readDir@{readDir}!com.example.FileHandler@{com.example.FileHandler}}
 \doxysubsubsection{\texorpdfstring{readDir()}{readDir()}}
@@ -100,28 +134,28 @@ void com.\+example.\+File\+Handler.\+read\+Dir (\begin{DoxyParamCaption}\item[{S
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00029}{29}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00035}{35}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ File\ dir\ =\ \textcolor{keyword}{new}\ File(path);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ File[]\ listOfFiles\ =\ dir.listFiles();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ String\ name;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(listOfFiles\ !=\ \textcolor{keyword}{null})\{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ listOfFiles.length;\ i++)\{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ listOfFiles[i].getName();}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(listOfFiles[i].isFile()\ \&\&\ name.endsWith(\textcolor{stringliteral}{"{}.mp3"{}}))\{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Track\ track\ =\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(listOfFiles[i].getAbsolutePath());}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackList.add(track);}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ for\ loop}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ handling}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ System.out.println(\textcolor{stringliteral}{"{}Hiba\ a\ mappa\ pásztázásakor"{}});}
-\DoxyCodeLine{00047\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ readDir()\ }}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ File\ dir\ =\ \textcolor{keyword}{new}\ File(path);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ File[]\ listOfFiles\ =\ dir.listFiles();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ String\ name;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(listOfFiles\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ listOfFiles.length;\ i++)\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ listOfFiles[i].getName();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(listOfFiles[i].isFile()\ \&\&\ name.endsWith(\textcolor{stringliteral}{"{}.mp3"{}}))\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Track\ track\ =\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(listOfFiles[i].getAbsolutePath());}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackList.add(track);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ for\ loop}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ handling}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ System.out.println(\textcolor{stringliteral}{"{}Hiba\ a\ mappa\ pásztázásakor"{}});}
+\DoxyCodeLine{00053\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ readDir()\ }}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -173,27 +207,27 @@ matching trackek
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00111}{111}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00117}{117}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ trackList.clear();\ \ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{readDir}}(path);\ \ }
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ String\ lowerCasepattern\ =\ pattern.toLowerCase();}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ ArrayList<Track>\ matchingTracks\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Track\ t\ :\ trackList)\ \{}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t.getTitle().toLowerCase().contains(lowerCasepattern)\ ||\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.getArtist().toLowerCase().contains(lowerCasepattern))\ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchingTracks.add(t);}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matchingTracks;\ }
-\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ trackList.clear();\ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{readDir}}(path);\ \ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ String\ lowerCasepattern\ =\ pattern.toLowerCase();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ ArrayList<Track>\ matchingTracks\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Track\ t\ :\ trackList)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t.getTitle().toLowerCase().contains(lowerCasepattern)\ ||\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.getArtist().toLowerCase().contains(lowerCasepattern))\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchingTracks.add(t);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matchingTracks;\ }
+\DoxyCodeLine{00133\ \ \ \ \ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -201,6 +235,40 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110}\index{com.example.FileHandler@{com.example.FileHandler}!write@{write}}
+\index{write@{write}!com.example.FileHandler@{com.example.FileHandler}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110} 
+void com.\+example.\+File\+Handler.\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{Audio\+Handler}}}]{ah}{, }\item[{String}]{path}{}\end{DoxyParamCaption})}
+
+Szerializáció Minden lejátszott dal (pontosabban audioplayerbe helyezett dal) belekerül a listába és ki lesz írva a played\+Tracks file-\/ba 
+
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00140}{140}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ toBeSerialized.add(ah.getTrackFromAH());}
+\DoxyCodeLine{00142\ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ Gson\ gson\ =\ \textcolor{keyword}{new}\ GsonBuilder().setPrettyPrinting().create();\ \textcolor{comment}{//\ For\ formatted\ JSON}}
+\DoxyCodeLine{00144\ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (FileWriter\ writer\ =\ \textcolor{keyword}{new}\ FileWriter(path))\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ gson.toJson(toBeSerialized,\ writer);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Written\ out"{}});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgraph}
 \end{center}
 \end{figure}
 
@@ -214,7 +282,7 @@ Array\+List$<$\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}$>$ com.\+ex
 
 
 
-Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00022}{22}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
+Definition at line \mbox{\hyperlink{FileHandler_8java_source_l00025}{25}} of file \mbox{\hyperlink{FileHandler_8java_source}{File\+Handler.\+java}}.
 
 
 

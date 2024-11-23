@@ -190,21 +190,38 @@
 \DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00223}00223\ \ \ \ \ \ \ \ \ gbc.weighty\ =\ 1.0;}
 \DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00224}00224\ \ \ \ \ \ \ \ \ gbc.fill\ =\ GridBagConstraints.BOTH;}
 \DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ resultsFrame.add(scrollPane,\ gbc);}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00226}00226\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ resultsFrame.setVisible(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00228}00228\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00229}00229\ }
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00238}00238\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ searchTrack(String\ pattern)\ \textcolor{keywordflow}{throws}\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00239}00239\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Searching\ for:\ "{}}\ +\ pattern);}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ ArrayList<Track>\ tracks\ =\ actions.searchTrack(pattern);}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00241}00241\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tracks.isEmpty())\ \{}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ results\ found."{}});}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ showSearchResultsWindow(tracks);}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00247}00247\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00248}00248\ }
-\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00249}00249\ \}\ \textcolor{comment}{//\ end\ of\ GuiHandler}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ JButton\ selectButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Select"{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ gbc.weighty\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ gbc.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ resultsFrame.add(selectButton,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ functionality\ to\ select\ a\ track\ and\ close\ the\ results\ window}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ selectButton.addActionListener(e\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ selectedIndex\ =\ resultsList.getSelectedIndex();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ track\ =\ results.get(selectedIndex);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actions.selectedFromSearch(track);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initComponents();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultsFrame.dispose();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00242}00242\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ resultsFrame.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00255}00255\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ searchTrack(String\ pattern)\ \textcolor{keywordflow}{throws}\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00256}00256\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Searching\ for:\ "{}}\ +\ pattern);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00257}00257\ \ \ \ \ \ \ \ \ ArrayList<Track>\ tracks\ =\ actions.searchTrack(pattern);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00258}00258\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tracks.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ results\ found."{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00261}00261\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ showSearchResultsWindow(tracks);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00263}00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00264}00264\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00266}00266\ \}\ \textcolor{comment}{//\ end\ of\ GuiHandler}}
 
 \end{DoxyCode}
