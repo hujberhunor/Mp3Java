@@ -3,53 +3,41 @@ package com.example;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+// A felugró ablakhoz kell
+import javax.swing.JList;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.Timer;
 
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
-
-// A felugró ablakhoz kell
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
-import javax.swing.JScrollPane;
 
 
 
 public class GuiHandler {
     GuiActions actions = new GuiActions();
     Track track;
-
-   // KOmponensek
     JFrame frame;
-    JTextField artistField;
-    JTextField titleField;
-    JTextField statusField;
-    JTextField progressField;
-    
-    JLabel statusLabel;
-   
-    JButton playButton;
-    JButton fileSel;
-
+    JTextField searchField, artistField, titleField, albumField, progressField;
+    JButton playButton, fileSelectButton;
     Timer progressTimer;
 
-    public void init(){
+    public void init() {
         initFrame();
-        initStaticTextFields();
-        progressTimer = new Timer(1000, e -> actions.fillProgress(progressField));
-
+        initComponents();
+        configureProgressTimer();
     }
-  
 
-    public void initFrame() {
-        frame = new JFrame("Mp3Java"); // Set the title
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Exit on close
-        frame.setSize(600, 400); // Set the size of the frame
+    private void initFrame() {
+        frame = new JFrame("Mp3Java");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 250);
         frame.setLayout(new GridBagLayout());
         setupLayout();
         frame.pack();
@@ -63,60 +51,36 @@ public class GuiHandler {
     private void setupLayout() {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1.0;  // Make the components expand horizontally
+        gbc.weightx = 1.0;
 
-        // Row 1
-        gbc.gridx = 0; // Column 0
-        gbc.gridy = 0; // Row 1
-        frame.add(new JLabel("Artist:"), gbc);
-        artistField = new JTextField(20); // Create the JTextField
-        artistField.setEditable(false); // Make it non-editable
-        gbc.gridx = 1; // Column 1
-        gbc.gridwidth = 2; // Span 2 columns
-        frame.add(artistField, gbc);
-        gbc.gridwidth = 1; // Reset gridwidth for next components
+        // Top row: Search field
+        addSearchLabelAndField(gbc, 0, "Search:", searchField = new JTextField(20));
 
-        // Row 2
-        gbc.gridx = 0; // Column 0
-        gbc.gridy = 1; // Row 1
-        frame.add(new JLabel("Title:"), gbc);
-        titleField = new JTextField(20); // Create the JTextField
-        titleField.setEditable(false); // Make it non-editable
-        gbc.gridx = 1; // Column 1
-        gbc.gridwidth = 2; // Span 2 columns
-        frame.add(titleField, gbc);
-        gbc.gridwidth = 1; // Reset gridwidth for next components
+        // Artist row
+        addLabelAndField(gbc, 1, "Artist:", artistField = new JTextField(20));
 
+        // Title row
+        addLabelAndField(gbc, 2, "Title:", titleField = new JTextField(20));
 
-        // Row 3
-        gbc.gridy = 2; // Set to Row 2
+        // Album row
+        addLabelAndField(gbc, 3, "Album:", albumField = new JTextField(20));
 
-        // Add statusField in Column 1
-        gbc.gridx = 1; // Column 1
-        statusField = new JTextField();
-        statusField.setEditable(false);
-        frame.add(statusField, gbc);
-
-        // Add progressField in Column 2
-        gbc.gridx = 2; // Column 2
-        progressField = new JTextField();
-        progressField.setEditable(false);
+        // Middle row: Progress field
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.gridwidth = 3;
+        progressField = createReadOnlyField();
         frame.add(progressField, gbc);
 
-        // Add blank space in Column 3
-        gbc.gridx = 3; // Column 3
-        frame.add(new JLabel(""), gbc);
-
-        // Reset gridwidth for the next components if needed
+        // Bottom row: File Select and Play/Stop buttons
         gbc.gridwidth = 1;
+        gbc.gridy = 5;
+        fileSelectButton = new JButton("File Select");
+        gbc.gridx = 0;
+        frame.add(fileSelectButton, gbc);
 
-        // Row 4
-        gbc.gridx = 0; // Column 0
-        gbc.gridy = 4; // Row 3
-        fileSel = new JButton("File select");
-        frame.add(fileSel, gbc);
-        gbc.gridx = 1; // Column 1
         playButton = new JButton("Play");
+        gbc.gridx = 1;
         frame.add(playButton, gbc);
 
         addButtonListeners();
@@ -187,18 +151,47 @@ public class GuiHandler {
                 searchTrack(searchField.getText());
             } catch (UnsupportedTagException | InvalidDataException | IOException e1) {
                 e1.printStackTrace();
-            } 
+            }
         });
     }
 
-    public void initStaticTextFields(){
-        actions.fillArtist(artistField);
-        actions.fillTitle(titleField);
-
+    /**
+     * A progressField frissítése miatt van rá szükség, emiatt lesz "reszponzív"
+     */
+    private void configureProgressTimer() {
+        progressTimer = new Timer(1000, e -> actions.fillProgress(progressField));
     }
 
-    public void initDinTextFields(){
-        actions.fillStatus(statusField); // need uptade at every play button press
+    private void selectTrack() {
+        try {
+            track = actions.selectTrack(frame);
+            initComponents();
+        } catch (UnsupportedTagException | InvalidDataException | IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    /**
+     * Toggle mechanizmus
+     * Számon tartja hogy meg volt-e nyomva a gomb 
+     * és aszerint alakítja a play/pause gomb feliratát
+     */
+    private void togglePlay() {
+        actions.playPressed();
+        updateDynamicFields();
+        
+        String currentStatus = actions.fillStatus();
+        playButton.setText(currentStatus.equals("PLAYING") ? "Pause" : "Play"); /// Ez a sor kerül be a play gomb-ra
+
+        if (actions.pressed) {
+            progressTimer.start();
+        } else {
+            progressTimer.stop();
+        }
+    }
+
+    /// A dinamikusan frissülő (progress bar) fieldek
+    private void updateDynamicFields() {
         actions.fillProgress(progressField);
     }
 
@@ -269,4 +262,4 @@ public class GuiHandler {
         }
     }
 
-} // end of GuiHandler
+}

@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -95,6 +96,17 @@ public class GuiActions {
         }
         else field.setText("NA");
     }
+
+
+    public void fillAlbum(JTextField field){
+        if(selected != null){
+             String album = selected.getAlbum();
+             field.setText(album);
+             System.out.println("Album filed filled");
+        }
+        else field.setText("NA");
+   }
+
 
     public void fillProgress(JTextField field){
         if(selected != null){
