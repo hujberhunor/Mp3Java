@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.7.3)  17 OCT 2024 10:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.10.26)  23 NOV 2024 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**refman.tex
+**refman
 (./refman.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -726,8 +726,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count345
 \l__pdf_internal_box=\box123
-)
-No file refman.aux.
+) (./refman.aux)
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 209.
@@ -806,12 +805,13 @@ e
 
 Package backref Info: ** backref set up for natbib ** on input line 209.
 Package hyperref Info: Link coloring ON on input line 209.
+(./refman.out) (./refman.out)
 \@outlinefile=\write5
 \openout5 = `refman.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-No file refman.toc.
+\Etoc@tf=\read4
 Package hyperref Info: Option `pageanchor' set `false' on input line 217.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 217.
 
@@ -822,13 +822,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 222.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 222
 .
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 222
 .
-
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 22
@@ -850,6 +849,20 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 \tf@toc=\write6
 \openout6 = `refman.toc'.
 
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 230.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 230.
+ [1] [2]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 230.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 23
+0.
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [3] [4
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 233.
 
 Chapter 1.
@@ -862,124 +875,362 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (./hierarchy.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 3.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1AudioHandler' on page 1 undefi
-ned on input line 3.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1FileHandler' on page 1 undefin
-ed on input line 4.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1Track' on page 1 undefined on 
-input line 5.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1TuiHandler' on page 1 undefine
-d on input line 6.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1App' on page 1 undefined on in
-put line 8.
-
-)
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 237.
- [1
-
+) [1
 
 ] [2
 
 ]
 Chapter 2.
-(./annotated.tex
-
-LaTeX Warning: Reference `classcom_1_1example_1_1App' on page 3 undefined on in
-put line 3.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1AudioHandler' on page 3 undefi
-ned on input line 4.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1FileHandler' on page 3 undefin
-ed on input line 5.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1Track' on page 3 undefined on 
-input line 6.
-
-
-LaTeX Warning: Reference `classcom_1_1example_1_1TuiHandler' on page 3 undefine
-d on input line 7.
-
-) [3] [4
+(./annotated.tex) [3] [4
 
 ]
 Chapter 3.
-(./classcom_1_1example_1_1App.tex <./classcom_1_1example_1_1App.pdf>
-<classcom_1_1example_1_1App.pdf, id=44, 501.875pt x 334.57997pt>
-File: classcom_1_1example_1_1App.pdf Graphic file (type pdf)
-<use classcom_1_1example_1_1App.pdf>
-Package pdftex.def Info: classcom_1_1example_1_1App.pdf  used on input line 6.
-(pdftex.def)             Requested size: 85.3559pt x 56.9055pt.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-2.
+(./files.tex) [5] [6
+
+]
+Chapter 4.
+(./classcom_1_1example_1_1App.tex <./classcom_1_1example_1_1App__inherit__graph
+.pdf>
+<classcom_1_1example_1_1App__inherit__graph.pdf, id=727, 178.6675pt x 236.885pt
+>
+File: classcom_1_1example_1_1App__inherit__graph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1App__inherit__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1App__inherit__graph.pdf  used o
+n input line 9.
+(pdftex.def)             Requested size: 178.0pt x 236.01329pt.
+ <./classcom_1_1example_1_1App__coll__graph.pdf>
+<classcom_1_1example_1_1App__coll__graph.pdf, id=742, 178.6675pt x 236.885pt>
+File: classcom_1_1example_1_1App__coll__graph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1App__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1App__coll__graph.pdf  used on i
+nput line 18.
+(pdftex.def)             Requested size: 178.0pt x 236.01329pt.
+ [7]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
+4.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 12.
-)
-(./classcom_1_1example_1_1AudioHandler.tex)
-(./classcom_1_1example_1_1FileHandler.tex [5]
+(Font)              scaled to size 8.99994pt on input line 24.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 23.
+(Font)              scaled to size 10.79993pt on input line 33.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 45.
+ [8])
+(./classcom_1_1example_1_1AudioHandler.tex <./classcom_1_1example_1_1AudioHandl
+er__coll__graph.pdf>
+<classcom_1_1example_1_1AudioHandler__coll__graph.pdf, id=787, 225.84375pt x 56
+4.1075pt>
+File: classcom_1_1example_1_1AudioHandler__coll__graph.pdf Graphic file (type p
+df)
+<use classcom_1_1example_1_1AudioHandler__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1AudioHandler__coll__graph.pdf  
+used on input line 10.
+(pdftex.def)             Requested size: 220.21227pt x 550.0pt.
+ [9] [10] <./classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a
+645_cgraph.pdf>
+<classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_cgraph.p
+df, id=828, 422.57875pt x 114.4275pt>
+File: classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_cgr
+aph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645_cgra
+ph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd2
+70bc4eebb80a645_cgraph.pdf  used on input line 70.
+(pdftex.def)             Requested size: 350.0pt x 94.7775pt.
+ [11])
+(./classcom_1_1example_1_1FileHandler.tex <./classcom_1_1example_1_1FileHandler
+__coll__graph.pdf>
+<classcom_1_1example_1_1FileHandler__coll__graph.pdf, id=866, 251.94125pt x 298
+.11375pt>
+File: classcom_1_1example_1_1FileHandler__coll__graph.pdf Graphic file (type pd
+f)
+<use classcom_1_1example_1_1FileHandler__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler__coll__graph.pdf  u
+sed on input line 10.
+(pdftex.def)             Requested size: 251.0pt x 297.0031pt.
+ [12] [13] <./classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b3718773487
+2f2_icgraph.pdf>
+<classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgraph.p
+df, id=921, 687.56876pt x 211.79124pt>
+File: classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgr
+aph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2_icgra
+ph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4
+b37187734872f2_icgraph.pdf  used on input line 93.
+(pdftex.def)             Requested size: 350.0pt x 107.8085pt.
+ [14] <./classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_c
+graph.pdf>
+<classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_cgraph.pd
+f, id=945, 471.7625pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_cgra
+ph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_cgrap
+h.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb700
+03124bd4b199e0_cgraph.pdf  used on input line 165.
+(pdftex.def)             Requested size: 350.0pt x 84.89502pt.
+ <./classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgrap
+h.pdf>
+<classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgraph.p
+df, id=953, 472.76625pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgr
+aph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0_icgra
+ph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler_aa61d4595ca311bb700
+03124bd4b199e0_icgraph.pdf  used on input line 172.
+(pdftex.def)             Requested size: 350.0pt x 84.71518pt.
+ [15]
+Underfull \hbox (badness 10000) detected at line 186
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 196
+[][][]
+ []
+
+ <./classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgraph
+.pdf>
+<classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgraph.pd
+f, id=974, 684.5575pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgra
+ph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4_cgrap
+h.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b2
+0b17f7183752a4_cgraph.pdf  used on input line 237.
+(pdftex.def)             Requested size: 350.0pt x 58.50566pt.
+ [16] <./classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_i
+cgraph.pdf>
+<classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgraph.p
+df, id=995, 456.70625pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgr
+aph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110_icgra
+ph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d
+9fdcf04b041110_icgraph.pdf  used on input line 271.
+(pdftex.def)             Requested size: 350.0pt x 87.69563pt.
+) (./classcom_1_1example_1_1FileHandlerTest.tex <./classcom_1_1example_1_1FileH
+andlerTest__coll__graph.pdf>
+<classcom_1_1example_1_1FileHandlerTest__coll__graph.pdf, id=1006, 256.96pt x 1
+96.735pt>
+File: classcom_1_1example_1_1FileHandlerTest__coll__graph.pdf Graphic file (typ
+e pdf)
+<use classcom_1_1example_1_1FileHandlerTest__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandlerTest__coll__graph.pd
+f  used on input line 10.
+(pdftex.def)             Requested size: 256.0pt x 196.01402pt.
+ [17] [18] <./classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484
+c118ce8_cgraph.pdf>
+<classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_cgrap
+h.pdf, id=1056, 474.77374pt x 114.4275pt>
+File: classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_
+cgraph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9045815f8484c118ce8_c
+graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1FileHandlerTest_a6c59afeccd5bc9
+045815f8484c118ce8_cgraph.pdf  used on input line 91.
+(pdftex.def)             Requested size: 350.0pt x 84.35898pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+\T1/pcr/m/n/8 void com.[]example.[]File[]Handler[]Test.[]test[]Read[]Dir () thr
+ows Unsupported[]Tag[]Exception, Invalid[]Data[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\T1/pcr/m/n/8 void com.[]example.[]File[]Handler[]Test.[]test[]Search[]Tracks (
+) throws Unsupported[]Tag[]Exception, Invalid[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+\T1/pcr/m/n/8 void com.[]example.[]File[]Handler[]Test.[]test[]Write[]And[]Read
+[]Serialization () throws Unsupported[]Tag[]
+ []
+
+[19]) (./classcom_1_1example_1_1GuiActions.tex <./classcom_1_1example_1_1GuiAct
+ions__coll__graph.pdf>
+<classcom_1_1example_1_1GuiActions__coll__graph.pdf, id=1081, 212.795pt x 628.3
+475pt>
+File: classcom_1_1example_1_1GuiActions__coll__graph.pdf Graphic file (type pdf
 )
-(./classcom_1_1example_1_1Track.tex) (./classcom_1_1example_1_1TuiHandler.tex)
-[6]
-No file refman.ind.
-(./refman.aux)
+<use classcom_1_1example_1_1GuiActions__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1GuiActions__coll__graph.pdf  us
+ed on input line 10.
+(pdftex.def)             Requested size: 186.26984pt x 550.0pt.
+ [20] [21] [22] [23]
+Underfull \hbox (badness 10000) detected at line 233
+[][][]
+ []
+
+[24] <./classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgr
+aph.pdf>
+<classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgraph.pdf
+, id=1189, 462.72874pt x 152.57pt>
+File: classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgrap
+h.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgraph
+.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d1
+70491a7aa4c0e_cgraph.pdf  used on input line 284.
+(pdftex.def)             Requested size: 350.0pt x 115.40265pt.
+) (./classcom_1_1example_1_1GuiActionsTest.tex <./classcom_1_1example_1_1GuiAct
+ionsTest__coll__graph.pdf>
+<classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf, id=1202, 388.45125pt x
+ 842.14626pt>
+File: classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf Graphic file (type
+ pdf)
+<use classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1GuiActionsTest__coll__graph.pdf
+  used on input line 10.
+(pdftex.def)             Requested size: 253.69948pt x 550.0pt.
+ [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Fill[]Album () th
+rows Unsupported[]Tag[]Exception, Invalid[]Data[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Fill[]Artist () t
+hrows Unsupported[]Tag[]Exception, Invalid[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Play[]Pressed () 
+throws Unsupported[]Tag[]Exception, Invalid[]
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\T1/pcr/m/n/8 void com.[]example.[]Gui[]Actions[]Test.[]test[]Selected[]From[]S
+earch () throws Unsupported[]Tag[]Exception,
+ []
+
+[28]
+Overfull \hbox (18.89209pt too wide) in paragraph at lines 212--213
+\T1/pcr/m/n/8 String com.[]example.[]Gui[]Actions[]Test.[]song1[]Path = "src/te
+st/resources/mock[]Data/Linkin-1.mp3" [package] 
+ []
+
+) (./classcom_1_1example_1_1GuiHandler.tex <./classcom_1_1example_1_1GuiHandler
+__coll__graph.pdf>
+<classcom_1_1example_1_1GuiHandler__coll__graph.pdf, id=1309, 704.6325pt x 780.
+9175pt>
+File: classcom_1_1example_1_1GuiHandler__coll__graph.pdf Graphic file (type pdf
+)
+<use classcom_1_1example_1_1GuiHandler__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1GuiHandler__coll__graph.pdf  us
+ed on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 387.88397pt.
+ [29] [30] [31]) (./classcom_1_1example_1_1Track.tex <./classcom_1_1example_1_1
+Track__inherit__graph.pdf>
+<classcom_1_1example_1_1Track__inherit__graph.pdf, id=1409, 185.69376pt x 397.4
+85pt>
+File: classcom_1_1example_1_1Track__inherit__graph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1Track__inherit__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1Track__inherit__graph.pdf  used
+ on input line 10.
+(pdftex.def)             Requested size: 185.0pt x 396.0102pt.
+ [32] <./classcom_1_1example_1_1Track__coll__graph.pdf>
+<classcom_1_1example_1_1Track__coll__graph.pdf, id=1423, 185.69376pt x 397.485p
+t>
+File: classcom_1_1example_1_1Track__coll__graph.pdf Graphic file (type pdf)
+<use classcom_1_1example_1_1Track__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1Track__coll__graph.pdf  used on
+ input line 20.
+(pdftex.def)             Requested size: 185.0pt x 396.0102pt.
+ [33]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 42.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 42.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 42.
+ [34]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 70.
+ [35]
+Underfull \hbox (badness 10000) detected at line 178
+[][][]
+ []
+
+ <./classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pdf>
+<classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pdf, id
+=1497, 422.57875pt x 114.4275pt>
+File: classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pd
+f Graphic file (type pdf)
+<use classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph.pdf
+>
+Package pdftex.def Info: classcom_1_1example_1_1Track_a0935b0e960eddf779e076b52
+8083a7bb_icgraph.pdf  used on input line 196.
+(pdftex.def)             Requested size: 350.0pt x 94.7775pt.
+[36]) (./classcom_1_1example_1_1TrackTest.tex <./classcom_1_1example_1_1TrackTe
+st__coll__graph.pdf>
+<classcom_1_1example_1_1TrackTest__coll__graph.pdf, id=1532, 204.765pt x 132.49
+5pt>
+File: classcom_1_1example_1_1TrackTest__coll__graph.pdf Graphic file (type pdf)
+
+<use classcom_1_1example_1_1TrackTest__coll__graph.pdf>
+Package pdftex.def Info: classcom_1_1example_1_1TrackTest__coll__graph.pdf  use
+d on input line 10.
+(pdftex.def)             Requested size: 204.0pt x 132.00742pt.
+ [37]) [38]
+Chapter 5.
+(./App_8java_source.tex) (./AudioHandler_8java_source.tex [39
+
+])
+(./FileHandler_8java_source.tex [40]) (./GuiActions_8java_source.tex [41]
+[42]) (./GuiHandler_8java_source.tex [43] [44] [45]) (./Track_8java_source.tex)
+(./module-info_8java_source.tex [46]) (./FileHandlerTest_8java_source.tex
+[47]) (./GuiActionsTest_8java_source.tex [48]) (./TrackTest_8java_source.tex)
+[49] [50
+
+] (./refman.ind
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.39185pt on input line 1.
+ [51
+
+
+] [52] [53
+
+]) (./refman.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `refman.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `refman.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  746C13410387F9DEAA6D6D300823A300;2221.
+Package rerunfilecheck Info: File `refman.out' has not changed.
+(rerunfilecheck)             Checksum: 298B52C83F5E0C0EE117B62D7DF58E6C;22860.
  ) 
 Here is how much of TeX's memory you used:
- 17730 strings out of 476076
- 281609 string characters out of 5793776
- 1939187 words of memory out of 5000000
- 39489 multiletter control sequences out of 15000+600000
- 590130 words of font info for 70 fonts, out of 8000000 for 9000
+ 19417 strings out of 476076
+ 337668 string characters out of 5793774
+ 1947187 words of memory out of 5000000
+ 40036 multiletter control sequences out of 15000+600000
+ 613671 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,11n,117p,358b,571s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,556b,742s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/hel
-vetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (8 pages, 54777 bytes).
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb
+></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-di
+st/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/h
+elvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
+</usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-di
+st/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (59 pages, 402236 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2927 PDF objects out of 2984 (max. 8388607)
+ 2733 compressed objects within 28 object streams
+ 1124 named destinations out of 1200 (max. 500000)
+ 1069 words of extra memory for PDF output out of 10000 (max. 10000000)
 

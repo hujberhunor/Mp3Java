@@ -10,8 +10,11 @@ import javax.swing.JTextField;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
-import javafx.scene.media.MediaPlayer.Status;
-
+/**
+ * Minden guiHandlerben helyet foglaló 
+ * gombnak és fieldnek itt vannak definiálva 
+ * a listenerjei és azok metódusai
+ */
 public class GuiActions {
     private FileHandler fileHandler = new FileHandler();
     private AudioHandler audioHandler;
@@ -41,10 +44,18 @@ public class GuiActions {
             // Init audiohandler so i can call pause and play
             audioHandler = new AudioHandler(selected);
 
+            fileHandler.write(audioHandler, "playedTracks.json"); // szerializáció
+           
             return selected;
         }
         
         return null;
+    }
+
+    public void selectedFromSearch(Track track){
+        selected = track;
+        audioHandler = new AudioHandler(track);
+        fileHandler.write(audioHandler, "playedTracks.json"); // szerializáció
     }
 
     public void playPressed(){
@@ -95,6 +106,18 @@ public class GuiActions {
         else field.setText("NA");
     }
 
-    
+     public String fillStatus(){
+        if(selected != null){
+             String status = audioHandler.getMediaPlayer().getStatus().toString(); 
+             System.out.println("Status filled");
+             return status;
+        }
+        return "Not selected";
+    }
+
+    public ArrayList<Track> searchTrack(String pattern) throws UnsupportedTagException, InvalidDataException, IOException {
+        return fileHandler.searchTracks(pattern, "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources");
+    }
+
 
 }

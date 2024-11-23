@@ -1,0 +1,42 @@
+\doxysection{Audio\+Handler.\+java}
+\hypertarget{AudioHandler_8java_source}{}\label{AudioHandler_8java_source}\index{src/main/java/com/example/AudioHandler.java@{src/main/java/com/example/AudioHandler.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00005}00005\ \textcolor{keyword}{import}\ javafx.scene.media.Media;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00006}00006\ \textcolor{keyword}{import}\ javafx.scene.media.MediaPlayer;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00011}\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{00011}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{AudioHandler}}\ \{}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ MediaPlayer\ mediaPlayer;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ track;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00019}\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a969240d5aaee73cd270bc4eebb80a645}{AudioHandler}}(\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ track)\ \{}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ String\ path\ =\ track.\mbox{\hyperlink{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb}{getPath}}();}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ this.track\ =\ track;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ Media\ media\ =\ \textcolor{keyword}{new}\ Media(\textcolor{keyword}{new}\ File(path).toURI().toString());}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ mediaPlayer\ =\ \textcolor{keyword}{new}\ MediaPlayer(media);}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00030}\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860ff8d6093906}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860ff8d6093906}{play}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ mediaPlayer.play();}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Playing..."{}});}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00038}\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}{pause}}()\ \{}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ mediaPlayer.pause();}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Paused."{}});}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ MediaPlayer\ getMediaPlayer()\{}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mediaPlayer;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ Track\ getTrackFromAH()\{}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ track;}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AudioHandler_8java_source_l00050}00050\ \}\ \textcolor{comment}{//\ END\ OF\ AUDIOHANDLER}}
+
+\end{DoxyCode}

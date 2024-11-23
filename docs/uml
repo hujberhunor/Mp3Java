@@ -1,0 +1,87 @@
+@startuml
+class App {
+    + start(Stage stage): void
+    + main(String[] args): void
+}
+
+class AudioHandler {
+    - MediaPlayer mediaPlayer
+    + AudioHandler(Track track)
+    + play(): void
+    + pause(): void
+    + getMediaPlayer(): MediaPlayer
+}
+
+class FileHandler {
+    - ArrayList<Track> trackList
+    + readDir(String path): void
+    + createTrackFromPath(String path): Track
+    + searchTracks(String pattern, String path): ArrayList<Track>
+}
+
+class GuiActions {
+    - FileHandler fileHandler
+    - AudioHandler audioHandler
+    - boolean pressed
+    - Track selected
+    + selectTrack(JFrame frame): Track
+    + playPressed(): void
+    + fillArtist(JTextField field): void
+    + fillTitle(JTextField field): void
+    + fillAlbum(JTextField field): void
+    + fillProgress(JTextField field): void
+    + fillStatus(): String
+    + searchTrack(String pattern): ArrayList<Track>
+}
+
+class GuiHandler {
+    - GuiActions actions
+    - Track track
+    - JFrame frame
+    - JTextField searchField
+    - JTextField artistField
+    - JTextField titleField
+    - JTextField albumField
+    - JTextField progressField
+    - JButton playButton
+    - JButton fileSelectButton
+    - Timer progressTimer
+    + init(): void
+    - initFrame(): void
+    - setupLayout(): void
+    - addSearchLabelAndField(GridBagConstraints, int, String, JTextField): void
+    - addLabelAndField(GridBagConstraints, int, String, JTextField): void
+    - createReadOnlyField(): JTextField
+    - initComponents(): void
+    - addButtonListeners(): void
+    - configureProgressTimer(): void
+    - selectTrack(): void
+    - togglePlay(): void
+    - updateDynamicFields(): void
+    - showSearchResultsWindow(ArrayList<Track>): void
+    - searchTrack(String): void
+}
+
+class Track {
+    - String path
+    - String title
+    - String artis
+    - String album
+    - long length
+    + Track(String, String, String, String, long)
+    + Track()
+    + getPath(): String
+    + getTitle(): String
+    + getArtist(): String
+    + getAlbum(): String
+    + getLength(): long
+    + toString(): String
+}
+
+GuiHandler o-- GuiActions
+GuiActions --> Track
+GuiHandler o-- Track 
+GuiActions --> AudioHandler 
+GuiActions --> FileHandler 
+
+@enduml

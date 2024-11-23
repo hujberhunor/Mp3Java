@@ -1,0 +1,227 @@
+\doxysection{Gui\+Handler.\+java}
+\hypertarget{GuiHandler_8java_source}{}\label{GuiHandler_8java_source}\index{src/main/java/com/example/GuiHandler.java@{src/main/java/com/example/GuiHandler.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.awt.GridBagConstraints;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.awt.GridBagLayout;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00008}00008\ \textcolor{keyword}{import}\ javax.swing.JButton;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00009}00009\ \textcolor{keyword}{import}\ javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00010}00010\ \textcolor{keyword}{import}\ javax.swing.JLabel;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00011}00011\ \textcolor{keyword}{import}\ javax.swing.JTextField;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00012}00012\ \textcolor{keyword}{import}\ javax.swing.Timer;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00014}00014\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.InvalidDataException;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00015}00015\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.UnsupportedTagException;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00017}00017\ \textcolor{comment}{//\ A\ felugró\ ablakhoz\ kell}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00018}00018\ \textcolor{keyword}{import}\ javax.swing.JList;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00019}00019\ \textcolor{keyword}{import}\ javax.swing.ListSelectionModel;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00020}00020\ \textcolor{keyword}{import}\ javax.swing.JScrollPane;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00024}\mbox{\hyperlink{classcom_1_1example_1_1GuiHandler}{00024}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1GuiHandler}{GuiHandler}}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1GuiActions}{GuiActions}}\ actions\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1GuiActions}{GuiActions}}();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ track;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00027}00027\ \ \ \ \ JFrame\ frame;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00028}00028\ \ \ \ \ JTextField\ searchField,\ artistField,\ titleField,\ albumField,\ progressField;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00029}00029\ \ \ \ \ JButton\ playButton,\ fileSelectButton;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00030}00030\ \ \ \ \ Timer\ progressTimer;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ init()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ initFrame();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ initComponents();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ configureProgressTimer();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initFrame()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ frame\ =\ \textcolor{keyword}{new}\ JFrame(\textcolor{stringliteral}{"{}Mp3Java"{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ frame.setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ frame.setSize(400,\ 250);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ frame.setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ setupLayout();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ frame.pack();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ frame.setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ frame.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ setupLayout()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ GridBagConstraints\ gbc\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ gbc.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ gbc.weightx\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Top\ row:\ Search\ field}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ addSearchLabelAndField(gbc,\ 0,\ \textcolor{stringliteral}{"{}Search:"{}},\ searchField\ =\ \textcolor{keyword}{new}\ JTextField(20));}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Artist\ row}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ addLabelAndField(gbc,\ 1,\ \textcolor{stringliteral}{"{}Artist:"{}},\ artistField\ =\ \textcolor{keyword}{new}\ JTextField(20));}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Title\ row}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ addLabelAndField(gbc,\ 2,\ \textcolor{stringliteral}{"{}Title:"{}},\ titleField\ =\ \textcolor{keyword}{new}\ JTextField(20));}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Album\ row}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ addLabelAndField(gbc,\ 3,\ \textcolor{stringliteral}{"{}Album:"{}},\ albumField\ =\ \textcolor{keyword}{new}\ JTextField(20));}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Middle\ row:\ Progress\ field}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ gbc.gridwidth\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ progressField\ =\ createReadOnlyField();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ frame.add(progressField,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bottom\ row:\ File\ Select\ and\ Play/Stop\ buttons}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ gbc.gridwidth\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ fileSelectButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}File\ Select"{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ frame.add(fileSelectButton,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ playButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Play"{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ frame.add(playButton,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ addButtonListeners();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ addSearchLabelAndField(GridBagConstraints\ gbc,\ \textcolor{keywordtype}{int}\ row,\ String\ label,\ JTextField\ field)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ row;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ frame.add(\textcolor{keyword}{new}\ JLabel(label),\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ field.setEditable(\textcolor{keyword}{true});\ \textcolor{comment}{//\ Make\ searchField\ editable}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ gbc.gridwidth\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ frame.add(field,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ gbc.gridwidth\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00116}00116\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ addLabelAndField(GridBagConstraints\ gbc,\ \textcolor{keywordtype}{int}\ row,\ String\ label,\ JTextField\ field)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ row;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ frame.add(\textcolor{keyword}{new}\ JLabel(label),\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ field.setEditable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ gbc.gridwidth\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ frame.add(field,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ gbc.gridwidth\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00127}00127\ \ \ \ \ \textcolor{keyword}{private}\ JTextField\ createReadOnlyField()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ JTextField\ field\ =\ \textcolor{keyword}{new}\ JTextField();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ field.setEditable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ field;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initComponents()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ actions.fillArtist(artistField);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ actions.fillTitle(titleField);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ actions.fillAlbum(albumField);\ \textcolor{comment}{//\ Fill\ the\ album\ field\ if\ the\ method\ is\ available\ in\ GuiActions}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00145}00145\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ addButtonListeners()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ fileSelectButton.addActionListener(e\ -\/>\ selectTrack());}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ playButton.addActionListener(e\ -\/>\ togglePlay());}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ ActionListener\ to\ the\ search\ field}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ searchField.addActionListener(e\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ searchTrack(searchField.getText());}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (UnsupportedTagException\ |\ InvalidDataException\ |\ IOException\ e1)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e1.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00162}00162\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ configureProgressTimer()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ progressTimer\ =\ \textcolor{keyword}{new}\ Timer(1000,\ e\ -\/>\ actions.fillProgress(progressField));}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00166}00166\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ selectTrack()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ track\ =\ actions.\mbox{\hyperlink{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e}{selectTrack}}(frame);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ initComponents();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (UnsupportedTagException\ |\ InvalidDataException\ |\ IOException\ e1)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ e1.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00180}00180\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ togglePlay()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ actions.playPressed();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ updateDynamicFields();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ String\ currentStatus\ =\ actions.fillStatus();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ playButton.setText(currentStatus.equals(\textcolor{stringliteral}{"{}PLAYING"{}})\ ?\ \textcolor{stringliteral}{"{}Pause"{}}\ :\ \textcolor{stringliteral}{"{}Play"{}});\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actions.pressed)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ progressTimer.start();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ progressTimer.stop();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00195}00195\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ updateDynamicFields()\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ actions.fillProgress(progressField);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00197}00197\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00204}00204\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ showSearchResultsWindow(ArrayList<Track>\ results)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ JFrame\ resultsFrame\ =\ \textcolor{keyword}{new}\ JFrame(\textcolor{stringliteral}{"{}Search\ Results"{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ resultsFrame.setSize(400,\ 300);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ resultsFrame.setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ resultsFrame.setDefaultCloseOperation(JFrame.DISPOSE\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00209}00209\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00210}00210\ \ \ \ \ \ \ \ \ GridBagConstraints\ gbc\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00211}00211\ \ \ \ \ \ \ \ \ gbc.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ gbc.weightx\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ gbc.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00214}00214\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00215}00215\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ lista\ a\ resultoknak}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ JList<String>\ resultsList\ =\ \textcolor{keyword}{new}\ JList<>(}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ results.stream().map(track\ -\/>\ track.getTitle()\ +\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ +\ track.getArtist()).toArray(String[]::new));}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00219}00219\ \ \ \ \ \ \ \ \ resultsList.setSelectionMode(ListSelectionModel.SINGLE\_SELECTION);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00220}00220\ \ \ \ \ \ \ \ \ JScrollPane\ scrollPane\ =\ \textcolor{keyword}{new}\ JScrollPane(resultsList);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00221}00221\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00222}00222\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00223}00223\ \ \ \ \ \ \ \ \ gbc.weighty\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00224}00224\ \ \ \ \ \ \ \ \ gbc.fill\ =\ GridBagConstraints.BOTH;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ resultsFrame.add(scrollPane,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ JButton\ selectButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Select"{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ gbc.gridy\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ gbc.weighty\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ gbc.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ resultsFrame.add(selectButton,\ gbc);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ functionality\ to\ select\ a\ track\ and\ close\ the\ results\ window}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ selectButton.addActionListener(e\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ selectedIndex\ =\ resultsList.getSelectedIndex();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ track\ =\ results.get(selectedIndex);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actions.selectedFromSearch(track);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initComponents();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultsFrame.dispose();}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00242}00242\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ resultsFrame.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00255}00255\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ searchTrack(String\ pattern)\ \textcolor{keywordflow}{throws}\ UnsupportedTagException,\ InvalidDataException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00256}00256\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Searching\ for:\ "{}}\ +\ pattern);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00257}00257\ \ \ \ \ \ \ \ \ ArrayList<Track>\ tracks\ =\ actions.searchTrack(pattern);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00258}00258\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tracks.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ results\ found."{}});}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00261}00261\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ showSearchResultsWindow(tracks);}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00263}00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00264}00264\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{GuiHandler_8java_source_l00266}00266\ \}\ \textcolor{comment}{//\ end\ of\ GuiHandler}}
+
+\end{DoxyCode}

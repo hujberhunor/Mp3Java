@@ -1,0 +1,9 @@
+[
+  {
+    "path": "src/test/resources/mockData/Linkin-1.mp3",
+    "title": "Session",
+    "artis": "Linkin Park",
+    "album": "Meteora",
+    "length": 145
+  }
+]

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['track_0',['Track',['../classcom_1_1example_1_1Track.html',1,'com::example']]],
-  ['tuihandler_1',['TuiHandler',['../classcom_1_1example_1_1TuiHandler.html',1,'com::example']]]
+  ['guiactions_0',['GuiActions',['../classcom_1_1example_1_1GuiActions.html',1,'com::example']]],
+  ['guiactionstest_1',['GuiActionsTest',['../classcom_1_1example_1_1GuiActionsTest.html',1,'com::example']]],
+  ['guihandler_2',['GuiHandler',['../classcom_1_1example_1_1GuiHandler.html',1,'com::example']]]
 ];

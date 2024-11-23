@@ -1,0 +1,7 @@
+<map id="com.example.GuiActions.selectTrack" name="com.example.GuiActions.selectTrack">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,36,233,81"/>
+<area shape="rect" id="Node000002" href="$classcom_1_1example_1_1FileHandler.html#aa08fd2ad49c6b921e4b37187734872f2" title=" " alt="" coords="281,5,513,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,43,265,40,265,45,233,48"/>
+<area shape="rect" id="Node000003" href="$classcom_1_1example_1_1FileHandler.html#ab3a209facd4d81e25d9fdcf04b041110" title=" " alt="" coords="285,74,509,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,68,269,72,269,77,233,73"/>
+</map>

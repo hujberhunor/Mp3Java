@@ -1,0 +1,147 @@
+\doxysection{File\+Handler.\+java}
+\hypertarget{FileHandler_8java_source}{}\label{FileHandler_8java_source}\index{src/main/java/com/example/FileHandler.java@{src/main/java/com/example/FileHandler.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.io.FileReader;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.io.FileWriter;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.lang.reflect.Type;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00010}00010\ \textcolor{keyword}{import}\ com.google.gson.Gson;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00011}00011\ \textcolor{keyword}{import}\ com.google.gson.GsonBuilder;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00012}00012\ \textcolor{keyword}{import}\ com.google.gson.reflect.TypeToken;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00013}00013\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.ID3v1;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00014}00014\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.ID3v2;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00015}00015\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.InvalidDataException;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00016}00016\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.Mp3File;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00017}00017\ \textcolor{keyword}{import}\ com.mpatric.mp3agic.UnsupportedTagException;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00022}\mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{00022}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1FileHandler}{FileHandler}}\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Ebben\ a\ kollekcióban\ \ tárolom\ a\ dalokat}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ ArrayList<Track>\ trackList\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ ArrayList<Track>\ toBeSerialized\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00029}00029\ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00035}\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{readDir}}(String\ path)\ \textcolor{keywordflow}{throws}\ IOException,\ UnsupportedTagException,}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00036}00036\ \ \ \ \ \ InvalidDataException\{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ File\ dir\ =\ \textcolor{keyword}{new}\ File(path);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ File[]\ listOfFiles\ =\ dir.listFiles();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ String\ name;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(listOfFiles\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ listOfFiles.length;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ listOfFiles[i].getName();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(listOfFiles[i].isFile()\ \&\&\ name.endsWith(\textcolor{stringliteral}{"{}.mp3"{}}))\{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ track\ =\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(listOfFiles[i].getAbsolutePath());}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trackList.add(track);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ for\ loop}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ handling}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ System.out.println(\textcolor{stringliteral}{"{}Hiba\ a\ mappa\ pásztázásakor"{}});}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00053}00053\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ readDir()\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00063}\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{00063}}\ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(String\ path)\ \textcolor{keywordflow}{throws}\ IOException,\ UnsupportedTagException,}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00064}00064\ \ \ \ \ \ InvalidDataException\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializálás\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ Mp3File\ mp3File\ =\ \textcolor{keyword}{new}\ Mp3File(path);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ length\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ String\ artist\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ String\ title\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ String\ album\ =\ \textcolor{keyword}{null};\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00071}00071\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Megnézem,\ hogy\ milyen\ típusú\ tagjei\ vannak}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mp3File.hasId3v1Tag())\{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ ID3v1\ v1Tag\ =\ mp3File.getId3v1Tag();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ mp3File.getLengthInSeconds();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ artist\ =\ v1Tag.getArtist();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ v1Tag.getTitle();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ album\ =\ v1Tag.getAlbum();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(mp3File.hasId3v2Tag())\{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ ID3v2\ v2Tag\ =\ mp3File.getId3v2Tag();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ length\ =\ mp3File.getLengthInSeconds();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ artist\ =\ v2Tag.getArtist();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ v2Tag.getTitle();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ album\ =\ v2Tag.getAlbum();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ System.err.println(\textcolor{stringliteral}{"{}Se\ v1\ se\ v2\ tagjei\ nincsenek\ a\ fájlnak."{}});}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Trakc\ konstruálás,\ lényegi\ rész}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}(path,\ title,\ artist,\ album,\ length);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00091}00091\ \ \ \ \ \}\ \textcolor{comment}{//\ end\ of\ createTrackFromPath()}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ /**}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ \ *\ @param\ pattern\ keresett\ cím\ stringben\ megadva}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ \ *\ @return\ megtalált\ dal/dalok\ kollekciója}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ \ *\ TODO\ toLoweCase()\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ \ *\ Nem\ teljesen\ értem\ mi\ a\ retek\ ez\ a\ kód,\ de\ lambda}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ \ */}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//\ public\ ArrayList<Track>\ search(String\ pattern)\ \{}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ return\ trackList.stream()}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ .filter(track\ -\/>\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ track.getTitle().contains(pattern)\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ track.getArtist().contains(pattern))}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.toCollection(ArrayList::new));\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00105}00105\ \ \ \ \ \textcolor{comment}{//\ \}\ //\ end\ of\ search()}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00117}\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4}{00117}}\ \ \ \ \ \textcolor{keyword}{public}\ ArrayList<Track>\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4}{searchTracks}}(String\ pattern,\ String\ path)\ \textcolor{keywordflow}{throws}\ IOException,\ UnsupportedTagException,\ InvalidDataException\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ trackList.clear();\ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{readDir}}(path);\ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ String\ lowerCasepattern\ =\ pattern.toLowerCase();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ ArrayList<Track>\ matchingTracks\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}\ t\ :\ trackList)\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t.getTitle().toLowerCase().contains(lowerCasepattern)\ ||\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.getArtist().toLowerCase().contains(lowerCasepattern))\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchingTracks.add(t);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matchingTracks;\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00140}\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110}{00140}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110}{write}}(\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler}{AudioHandler}}\ ah,\ String\ path)\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ toBeSerialized.add(ah.getTrackFromAH());}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00142}00142\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ Gson\ gson\ =\ \textcolor{keyword}{new}\ GsonBuilder().setPrettyPrinting().create();\ \textcolor{comment}{//\ For\ formatted\ JSON}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00144}00144\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (FileWriter\ writer\ =\ \textcolor{keyword}{new}\ FileWriter(path))\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ gson.toJson(toBeSerialized,\ writer);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Written\ out"{}});}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00152}00152\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00153}00153\ \textcolor{comment}{\ \ \ \ \ *\ DEBUG\ ONLY\ }}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00154}00154\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{public}\ ArrayList<Track>\ read(String\ path)\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ Gson\ gson\ =\ \textcolor{keyword}{new}\ Gson();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ ArrayList<Track>\ tracks\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (FileReader\ reader\ =\ \textcolor{keyword}{new}\ FileReader(path))\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ Type\ listType\ =\ \textcolor{keyword}{new}\ TypeToken<ArrayList<Track>>()\ \{\}.getType();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ tracks\ =\ gson.fromJson(reader,\ listType);}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tracks.forEach(track\ -\/>\ System.out.println(track.getTitle()));}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tracks;}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{FileHandler_8java_source_l00171}00171\ \}\ \textcolor{comment}{//\ end\ of\ fileHandler\ class}}
+
+\end{DoxyCode}

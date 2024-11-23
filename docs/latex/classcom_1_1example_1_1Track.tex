@@ -1,23 +1,292 @@
 \doxysection{com.\+example.\+Track Class Reference}
 \hypertarget{classcom_1_1example_1_1Track}{}\label{classcom_1_1example_1_1Track}\index{com.example.Track@{com.example.Track}}
+
+
+Inheritance diagram for com.\+example.\+Track\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classcom_1_1example_1_1Track__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+example.\+Track\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classcom_1_1example_1_1Track__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb}\label{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb} 
-String {\bfseries get\+Path} ()
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb}{get\+Path}} ()
 \item 
-\Hypertarget{classcom_1_1example_1_1Track_a59cc000a7bf0e4697f88618048776933}\label{classcom_1_1example_1_1Track_a59cc000a7bf0e4697f88618048776933} 
-String {\bfseries get\+Title} ()
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_a59cc000a7bf0e4697f88618048776933}{get\+Title}} ()
 \item 
-\Hypertarget{classcom_1_1example_1_1Track_a7a14660d8722317f7d940dc22c1255fb}\label{classcom_1_1example_1_1Track_a7a14660d8722317f7d940dc22c1255fb} 
-String {\bfseries get\+Artist} ()
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_a7a14660d8722317f7d940dc22c1255fb}{get\+Artist}} ()
 \item 
-\Hypertarget{classcom_1_1example_1_1Track_a4e6c621bb378a1e21a60d541440086d9}\label{classcom_1_1example_1_1Track_a4e6c621bb378a1e21a60d541440086d9} 
-String {\bfseries album} ()
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_af3a31954fa652fe492184e8ae86562b0}{get\+Album}} ()
 \item 
-\Hypertarget{classcom_1_1example_1_1Track_a7f6bc921935bf8065d25bf430ce2dde2}\label{classcom_1_1example_1_1Track_a7f6bc921935bf8065d25bf430ce2dde2} 
-long {\bfseries get\+Length} ()
+long \mbox{\hyperlink{classcom_1_1example_1_1Track_a7f6bc921935bf8065d25bf430ce2dde2}{get\+Length}} ()
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_ac1de7c7a2b1876f56d071df18ea70d73}{to\+String}} ()
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1Track_acdba8db342fef7de0d31b470ff7881c2}{Track}} (String path, String \mbox{\hyperlink{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed}{title}}, String artist, String album, long length)
+\begin{DoxyCompactList}\small\item\em Sec-\/ben megadott dal hossz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1example_1_1Track_a2410aeabf5d2071b91b51511c1e97f9b}{Track}} ()
+\begin{DoxyCompactList}\small\item\em Paraméter nélküli konstruktor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_a9e51b00d7316c6c1b428bddc975fe4bd}{path}}
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed}{title}}
+\begin{DoxyCompactList}\small\item\em Absolute path that is set by the \doxylink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{File\+Handler.\+read\+Dir()} \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_a39fbfdc6dca3081df5036c131972686d}{artis}}
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1Track_a4c5d662565b12c0d8672f8b832d1d791}{album}}
+\item 
+long \mbox{\hyperlink{classcom_1_1example_1_1Track_aea2cbafef595a91b58c151c0301a08dc}{length}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00005}{5}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1Track_acdba8db342fef7de0d31b470ff7881c2}\index{com.example.Track@{com.example.Track}!Track@{Track}}
+\index{Track@{Track}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{Track()}{Track()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_acdba8db342fef7de0d31b470ff7881c2} 
+com.\+example.\+Track.\+Track (\begin{DoxyParamCaption}\item[{String}]{path}{, }\item[{String}]{title}{, }\item[{String}]{artist}{, }\item[{String}]{album}{, }\item[{long}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Sec-\/ben megadott dal hossz. 
+
+Konstruktor 
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00013}{13}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ this.path\ =\ path;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ this.title\ =\ \mbox{\hyperlink{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed}{title}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ this.artis\ =\ artist;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ this.album\ =\ album;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this.length\ =\ length;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1Track_a2410aeabf5d2071b91b51511c1e97f9b}\index{com.example.Track@{com.example.Track}!Track@{Track}}
+\index{Track@{Track}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{Track()}{Track()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a2410aeabf5d2071b91b51511c1e97f9b} 
+com.\+example.\+Track.\+Track (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Paraméter nélküli konstruktor. 
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00022}{22}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ this.path\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this.title\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this.artis\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this.album\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this.length\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1Track_af3a31954fa652fe492184e8ae86562b0}\index{com.example.Track@{com.example.Track}!getAlbum@{getAlbum}}
+\index{getAlbum@{getAlbum}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{getAlbum()}{getAlbum()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_af3a31954fa652fe492184e8ae86562b0} 
+String com.\+example.\+Track.\+get\+Album (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00048}{48}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ album;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1Track_a7a14660d8722317f7d940dc22c1255fb}\index{com.example.Track@{com.example.Track}!getArtist@{getArtist}}
+\index{getArtist@{getArtist}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{getArtist()}{getArtist()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a7a14660d8722317f7d940dc22c1255fb} 
+String com.\+example.\+Track.\+get\+Artist (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00044}{44}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ artis;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1Track_a7f6bc921935bf8065d25bf430ce2dde2}\index{com.example.Track@{com.example.Track}!getLength@{getLength}}
+\index{getLength@{getLength}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a7f6bc921935bf8065d25bf430ce2dde2} 
+long com.\+example.\+Track.\+get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00052}{52}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ length;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb}\index{com.example.Track@{com.example.Track}!getPath@{getPath}}
+\index{getPath@{getPath}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb} 
+String com.\+example.\+Track.\+get\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+The file\+Handler class Readdi method sets this attribute \begin{DoxyReturn}{Returns}
+path absolute path to the song 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00036}{36}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1example_1_1Track_a0935b0e960eddf779e076b528083a7bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classcom_1_1example_1_1Track_a59cc000a7bf0e4697f88618048776933}\index{com.example.Track@{com.example.Track}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a59cc000a7bf0e4697f88618048776933} 
+String com.\+example.\+Track.\+get\+Title (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00040}{40}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed}{title}};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1Track_ac1de7c7a2b1876f56d071df18ea70d73}\index{com.example.Track@{com.example.Track}!toString@{toString}}
+\index{toString@{toString}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_ac1de7c7a2b1876f56d071df18ea70d73} 
+String com.\+example.\+Track.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00057}{57}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}title="{}}\ +\ \mbox{\hyperlink{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed}{title}}\ +\ \textcolor{stringliteral}{"{}',\ artist='"{}}\ +\ artis\ +\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1Track_a4c5d662565b12c0d8672f8b832d1d791}\index{com.example.Track@{com.example.Track}!album@{album}}
+\index{album@{album}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{album}{album}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a4c5d662565b12c0d8672f8b832d1d791} 
+String com.\+example.\+Track.\+album\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00009}{9}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1Track_a39fbfdc6dca3081df5036c131972686d}\index{com.example.Track@{com.example.Track}!artis@{artis}}
+\index{artis@{artis}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{artis}{artis}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a39fbfdc6dca3081df5036c131972686d} 
+String com.\+example.\+Track.\+artis\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00008}{8}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1Track_aea2cbafef595a91b58c151c0301a08dc}\index{com.example.Track@{com.example.Track}!length@{length}}
+\index{length@{length}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_aea2cbafef595a91b58c151c0301a08dc} 
+long com.\+example.\+Track.\+length\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00010}{10}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1Track_a9e51b00d7316c6c1b428bddc975fe4bd}\index{com.example.Track@{com.example.Track}!path@{path}}
+\index{path@{path}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_a9e51b00d7316c6c1b428bddc975fe4bd} 
+String com.\+example.\+Track.\+path\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00006}{6}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed}\index{com.example.Track@{com.example.Track}!title@{title}}
+\index{title@{title}!com.example.Track@{com.example.Track}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1Track_add01f895191e948d950e076245496aed} 
+String com.\+example.\+Track.\+title\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Absolute path that is set by the \doxylink{classcom_1_1example_1_1FileHandler_aa61d4595ca311bb70003124bd4b199e0}{File\+Handler.\+read\+Dir()} 
+
+
+
+Definition at line \mbox{\hyperlink{Track_8java_source_l00007}{7}} of file \mbox{\hyperlink{Track_8java_source}{Track.\+java}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

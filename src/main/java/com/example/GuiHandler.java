@@ -13,6 +13,13 @@ import javax.swing.Timer;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
+// A felugró ablakhoz kell
+import javax.swing.JList;
+import javax.swing.ListSelectionModel;
+import javax.swing.JScrollPane;
+
+
+
 public class GuiHandler {
     GuiActions actions = new GuiActions();
     Track track;
@@ -44,7 +51,16 @@ public class GuiHandler {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Exit on close
         frame.setSize(600, 400); // Set the size of the frame
         frame.setLayout(new GridBagLayout());
-        
+        setupLayout();
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+    /**
+     * Initeli a layoutot
+     */
+    private void setupLayout() {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weightx = 1.0;  // Make the components expand horizontally
@@ -103,33 +119,73 @@ public class GuiHandler {
         playButton = new JButton("Play");
         frame.add(playButton, gbc);
 
-        gbc.gridx = 2; // Column 2
+        addButtonListeners();
+    }
 
-        // Adjust frame settings
-        frame.pack();
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setVisible(true);
+    /**
+     * Külön a search fildnek egy sor ami editelhető
+     * @param gbc grid bag constrain layout
+     * @param row sort specifikál
+     * @param label a nevét adja meg a sor labeljének
+     * @param field a textfield amibe kerül majd az adat
+     *  */
+    private void addSearchLabelAndField(GridBagConstraints gbc, int row, String label, JTextField field) {
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        frame.add(new JLabel(label), gbc);
+        field.setEditable(true); // Make searchField editable
+        gbc.gridx = 1;
+        gbc.gridwidth = 2;
+        frame.add(field, gbc);
+        gbc.gridwidth = 1;
+    }
 
-        // Action listeners
-        playButton.addActionListener(e -> {
-            actions.playPressed();
-            initDinTextFields();
-            if (actions.pressed) {
-                progressTimer.start();
-            } else {
-                progressTimer.stop();
-            }
-        });
+    /**
+     * Általános sor leírása
+     * Searchhot képest csak az editable(faslse) a változás
+     * @param gbc grid bag constrain layout
+     * @param row sort specifikál
+     * @param label a nevét adja meg a sor labeljének
+     * @param field a textfield amibe kerül majd az adat
+     *  */
+    private void addLabelAndField(GridBagConstraints gbc, int row, String label, JTextField field) {
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        frame.add(new JLabel(label), gbc);
+        field.setEditable(false);
+        gbc.gridx = 1;
+        gbc.gridwidth = 2;
+        frame.add(field, gbc);
+        gbc.gridwidth = 1;
+    }
 
-        
-        fileSel.addActionListener(e ->{
+    private JTextField createReadOnlyField() {
+        JTextField field = new JTextField();
+        field.setEditable(false);
+        return field;
+    }
+
+    /**
+     * Inicializálja "statikus" komponenseit a gui-nak
+     */
+    private void initComponents() {
+        actions.fillArtist(artistField);
+        actions.fillTitle(titleField);
+        actions.fillAlbum(albumField); // Fill the album field if the method is available in GuiActions
+    }
+
+    /**
+     * Gombok listenerjei
+     */
+    private void addButtonListeners() {
+        fileSelectButton.addActionListener(e -> selectTrack());
+        playButton.addActionListener(e -> togglePlay());
+
+        // Add ActionListener to the search field
+        searchField.addActionListener(e -> {
             try {
-                // sets the selected track
-                track = actions.selectTrack(frame);
-                initStaticTextFields();
-            } 
-            catch (UnsupportedTagException | InvalidDataException | IOException e1) {
-                // TODO Auto-generated catch block
+                searchTrack(searchField.getText());
+            } catch (UnsupportedTagException | InvalidDataException | IOException e1) {
                 e1.printStackTrace();
             } 
         });
@@ -146,4 +202,71 @@ public class GuiHandler {
         actions.fillProgress(progressField);
     }
 
- }
+
+     /**
+     * Felugró ablak a search resultok miatt
+     * @param results The list of tracks found by the search.
+     */
+    private void showSearchResultsWindow(ArrayList<Track> results) {
+        JFrame resultsFrame = new JFrame("Search Results");
+        resultsFrame.setSize(400, 300);
+        resultsFrame.setLayout(new GridBagLayout());
+        resultsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1.0;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+    
+        //  lista a resultoknak
+        JList<String> resultsList = new JList<>(
+                results.stream().map(track -> track.getTitle() + " - " + track.getArtist()).toArray(String[]::new));
+        resultsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane scrollPane = new JScrollPane(resultsList);
+    
+        gbc.gridy = 0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        resultsFrame.add(scrollPane, gbc);
+
+        JButton selectButton = new JButton("Select");
+        gbc.gridy = 1;
+        gbc.weighty = 0.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        resultsFrame.add(selectButton, gbc);
+
+        // Add functionality to select a track and close the results window
+        selectButton.addActionListener(e -> {
+            int selectedIndex = resultsList.getSelectedIndex();
+            if (selectedIndex >= 0) {
+                track = results.get(selectedIndex);
+                actions.selectedFromSearch(track);
+                initComponents();
+                resultsFrame.dispose();
+            }
+        });
+         
+        resultsFrame.setVisible(true);
+    }
+
+    /**
+     * Csak továbbadja a paramétereit az azonos paraméterezésű searchTrack fv-nek ami
+     * a fileHandlerben van definiálva.  
+     * @param pattern Amit keresek
+     * @throws UnsupportedTagException
+     * @throws InvalidDataException
+     * @throws IOException
+     */
+    private void searchTrack(String pattern) throws UnsupportedTagException, InvalidDataException, IOException {
+        System.out.println("Searching for: " + pattern);
+        ArrayList<Track> tracks = actions.searchTrack(pattern);
+    
+        if (tracks.isEmpty()) {
+            System.out.println("No results found.");
+        } else {
+            showSearchResultsWindow(tracks);
+        }
+    }
+
+} // end of GuiHandler

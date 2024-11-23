@@ -1,0 +1,314 @@
+\doxysection{com.\+example.\+Gui\+Actions Class Reference}
+\hypertarget{classcom_1_1example_1_1GuiActions}{}\label{classcom_1_1example_1_1GuiActions}\index{com.example.GuiActions@{com.example.GuiActions}}
+
+
+Collaboration diagram for com.\+example.\+Gui\+Actions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classcom_1_1example_1_1GuiActions__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e}{select\+Track}} (JFrame frame)  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_afdbf481b6cf361bd51727865aea2a4cd}{selected\+From\+Search}} (\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} track)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_a3b6d8408c4b2e898a4de8ae5be97cd52}{play\+Pressed}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_a6b073955ca143205382c5d191b74944c}{fill\+Artist}} (JText\+Field field)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_acf65591ef67691180a25274eadbb2b97}{fill\+Title}} (JText\+Field field)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_a9dd6e052ebf33ffdaac3bf909b6972de}{fill\+Album}} (JText\+Field field)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_aa80568794e36e2d79eece3b5dbf06245}{fill\+Progress}} (JText\+Field field)
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_a244a7ff01cc936b01d5f0b4af1420f64}{fill\+Status}} ()
+\item 
+Array\+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} $>$ \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_ac3b8653f37b25cf91566c115a8bc7c81}{search\+Track}} (String pattern)  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_aca66bfead562600b8470f0dab03b22bf}{pressed}} = false
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} \mbox{\hyperlink{classcom_1_1example_1_1GuiActions_af028fc11f301f047965619ddbcc80c36}{selected}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Minden gui\+Handlerben helyet foglaló gombnak és fieldnek itt vannak definiálva a listenerjei és azok metódusai 
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00019}{19}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1GuiActions_a9dd6e052ebf33ffdaac3bf909b6972de}\index{com.example.GuiActions@{com.example.GuiActions}!fillAlbum@{fillAlbum}}
+\index{fillAlbum@{fillAlbum}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{fillAlbum()}{fillAlbum()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_a9dd6e052ebf33ffdaac3bf909b6972de} 
+void com.\+example.\+Gui\+Actions.\+fill\+Album (\begin{DoxyParamCaption}\item[{JText\+Field}]{field}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00094}{94}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ album\ =\ selected.getAlbum();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(album);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Album\ filed\ filled"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{00101\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_a6b073955ca143205382c5d191b74944c}\index{com.example.GuiActions@{com.example.GuiActions}!fillArtist@{fillArtist}}
+\index{fillArtist@{fillArtist}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{fillArtist()}{fillArtist()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_a6b073955ca143205382c5d191b74944c} 
+void com.\+example.\+Gui\+Actions.\+fill\+Artist (\begin{DoxyParamCaption}\item[{JText\+Field}]{field}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00076}{76}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ artist\ =\ selected.getArtist();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(artist);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Artist\ filed\ filled"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{00083\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_aa80568794e36e2d79eece3b5dbf06245}\index{com.example.GuiActions@{com.example.GuiActions}!fillProgress@{fillProgress}}
+\index{fillProgress@{fillProgress}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{fillProgress()}{fillProgress()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_aa80568794e36e2d79eece3b5dbf06245} 
+void com.\+example.\+Gui\+Actions.\+fill\+Progress (\begin{DoxyParamCaption}\item[{JText\+Field}]{field}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00103}{103}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ len\ =\ selected.getLength();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ curr\ =\ (int)\ audioHandler.getMediaPlayer().getCurrentTime().toSeconds();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(curr\ +\ \textcolor{stringliteral}{"{}/"{}}\ +\ len);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ System.out.println("{}Length\ of\ the\ track:\ "{}\ +\ len);}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_a244a7ff01cc936b01d5f0b4af1420f64}\index{com.example.GuiActions@{com.example.GuiActions}!fillStatus@{fillStatus}}
+\index{fillStatus@{fillStatus}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{fillStatus()}{fillStatus()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_a244a7ff01cc936b01d5f0b4af1420f64} 
+String com.\+example.\+Gui\+Actions.\+fill\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00113}{113}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ status\ =\ audioHandler.getMediaPlayer().getStatus().toString();\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Status\ filled"{}});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ selected"{}};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_acf65591ef67691180a25274eadbb2b97}\index{com.example.GuiActions@{com.example.GuiActions}!fillTitle@{fillTitle}}
+\index{fillTitle@{fillTitle}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{fillTitle()}{fillTitle()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_acf65591ef67691180a25274eadbb2b97} 
+void com.\+example.\+Gui\+Actions.\+fill\+Title (\begin{DoxyParamCaption}\item[{JText\+Field}]{field}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00085}{85}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(selected\ !=\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ artist\ =\ selected.getTitle();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ field.setText(artist);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Titke\ filed\ filled"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ field.setText(\textcolor{stringliteral}{"{}NA"{}});}
+\DoxyCodeLine{00092\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_a3b6d8408c4b2e898a4de8ae5be97cd52}\index{com.example.GuiActions@{com.example.GuiActions}!playPressed@{playPressed}}
+\index{playPressed@{playPressed}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{playPressed()}{playPressed()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_a3b6d8408c4b2e898a4de8ae5be97cd52} 
+void com.\+example.\+Gui\+Actions.\+play\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00065}{65}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pressed)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ audioHandler.\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a3eb5a8e1416afe5b32860ff8d6093906}{play}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ pressed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ audioHandler.\mbox{\hyperlink{classcom_1_1example_1_1AudioHandler_a31fc57768eaee5a68bc7328a45ac7fa8}{pause}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ pressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_ac3b8653f37b25cf91566c115a8bc7c81}\index{com.example.GuiActions@{com.example.GuiActions}!searchTrack@{searchTrack}}
+\index{searchTrack@{searchTrack}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{searchTrack()}{searchTrack()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_ac3b8653f37b25cf91566c115a8bc7c81} 
+Array\+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} $>$ com.\+example.\+Gui\+Actions.\+search\+Track (\begin{DoxyParamCaption}\item[{String}]{pattern}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00122}{122}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fileHandler.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_a4c443b845f56d5c3b20b17f7183752a4}{searchTracks}}(pattern,\ \textcolor{stringliteral}{"{}/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources"{}});}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_afdbf481b6cf361bd51727865aea2a4cd}\index{com.example.GuiActions@{com.example.GuiActions}!selectedFromSearch@{selectedFromSearch}}
+\index{selectedFromSearch@{selectedFromSearch}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{selectedFromSearch()}{selectedFromSearch()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_afdbf481b6cf361bd51727865aea2a4cd} 
+void com.\+example.\+Gui\+Actions.\+selected\+From\+Search (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}}}]{track}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00059}{59}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ selected\ =\ track;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ audioHandler\ =\ \textcolor{keyword}{new}\ AudioHandler(track);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ fileHandler.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110}{write}}(audioHandler,\ \textcolor{stringliteral}{"{}playedTracks.json"{}});\ \textcolor{comment}{//\ szerializáció}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e}\index{com.example.GuiActions@{com.example.GuiActions}!selectTrack@{selectTrack}}
+\index{selectTrack@{selectTrack}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{selectTrack()}{selectTrack()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e} 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} com.\+example.\+Gui\+Actions.\+select\+Track (\begin{DoxyParamCaption}\item[{JFrame}]{frame}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException}
+
+A dal/file kiválasztásáért felel 
+\begin{DoxyParams}{Parameters}
+{\em frame} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+selected track 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unsupported\+Tag\+Exception} & \\
+\hline
+{\em Invalid\+Data\+Exception} & \\
+\hline
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+curr directoryt nyitja meg
+
+csak mp3 fájlokat látsz
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00033}{33}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ JFileChooser\ fileChooser\ =\ \textcolor{keyword}{new}\ JFileChooser();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ String\ currentDirectory\ =\ System.getProperty(\textcolor{stringliteral}{"{}user.dir"{}});\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ fileChooser.setCurrentDirectory(\textcolor{keyword}{new}\ File(currentDirectory));}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ fileChooser.setFileFilter(\textcolor{keyword}{new}\ javax.swing.filechooser.FileNameExtensionFilter(\textcolor{stringliteral}{"{}MP3\ Files"{}},\ \textcolor{stringliteral}{"{}mp3"{}}));}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ fileChooser.showOpenDialog(frame);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ ==\ JFileChooser.APPROVE\_OPTION)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ File\ selectedFile\ =\ fileChooser.getSelectedFile();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ selected\ =\ fileHandler.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_aa08fd2ad49c6b921e4b37187734872f2}{createTrackFromPath}}(selectedFile.getAbsolutePath());}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ audioHandler\ =\ \textcolor{keyword}{new}\ AudioHandler(selected);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ fileHandler.\mbox{\hyperlink{classcom_1_1example_1_1FileHandler_ab3a209facd4d81e25d9fdcf04b041110}{write}}(audioHandler,\ \textcolor{stringliteral}{"{}playedTracks.json"{}});\ \textcolor{comment}{//\ szerializáció}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ selected;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1example_1_1GuiActions_ae943b150a180aa1d2d170491a7aa4c0e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1GuiActions_aca66bfead562600b8470f0dab03b22bf}\index{com.example.GuiActions@{com.example.GuiActions}!pressed@{pressed}}
+\index{pressed@{pressed}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{pressed}{pressed}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_aca66bfead562600b8470f0dab03b22bf} 
+boolean com.\+example.\+Gui\+Actions.\+pressed = false\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00022}{22}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1GuiActions_af028fc11f301f047965619ddbcc80c36}\index{com.example.GuiActions@{com.example.GuiActions}!selected@{selected}}
+\index{selected@{selected}!com.example.GuiActions@{com.example.GuiActions}}
+\doxysubsubsection{\texorpdfstring{selected}{selected}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1GuiActions_af028fc11f301f047965619ddbcc80c36} 
+\mbox{\hyperlink{classcom_1_1example_1_1Track}{Track}} com.\+example.\+Gui\+Actions.\+selected\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \mbox{\hyperlink{GuiActions_8java_source_l00023}{23}} of file \mbox{\hyperlink{GuiActions_8java_source}{Gui\+Actions.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/Gui\+Actions.\+java\end{DoxyCompactItemize}

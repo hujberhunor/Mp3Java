@@ -1,23 +1,96 @@
 \doxysection{com.\+example.\+App Class Reference}
 \hypertarget{classcom_1_1example_1_1App}{}\label{classcom_1_1example_1_1App}\index{com.example.App@{com.example.App}}
-Inheritance diagram for com.\+example.\+App\+:\begin{figure}[H]
+
+
+Inheritance diagram for com.\+example.\+App\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classcom_1_1example_1_1App}
+\includegraphics[width=178pt]{classcom_1_1example_1_1App__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+example.\+App\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classcom_1_1example_1_1App__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a}\label{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a} 
-void {\bfseries start} (Stage stage)  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
+void \mbox{\hyperlink{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a}{start}} (Stage stage)  throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException 
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classcom_1_1example_1_1App_a28228b12da000bb30a163d24a7c43c35}\label{classcom_1_1example_1_1App_a28228b12da000bb30a163d24a7c43c35} 
-static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)
+static void \mbox{\hyperlink{classcom_1_1example_1_1App_a28228b12da000bb30a163d24a7c43c35}{main}} (String\mbox{[}$\,$\mbox{]} args)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class conatins the main method 
+
+Definition at line \mbox{\hyperlink{App_8java_source_l00013}{13}} of file \mbox{\hyperlink{App_8java_source}{App.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1App_a28228b12da000bb30a163d24a7c43c35}\index{com.example.App@{com.example.App}!main@{main}}
+\index{main@{main}!com.example.App@{com.example.App}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1App_a28228b12da000bb30a163d24a7c43c35} 
+static void com.\+example.\+App.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{App_8java_source_l00039}{39}} of file \mbox{\hyperlink{App_8java_source}{App.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ launch(args);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a}\index{com.example.App@{com.example.App}!start@{start}}
+\index{start@{start}!com.example.App@{com.example.App}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a} 
+void com.\+example.\+App.\+start (\begin{DoxyParamCaption}\item[{Stage}]{stage}{}\end{DoxyParamCaption}) throws Unsupported\+Tag\+Exception, Invalid\+Data\+Exception, IOException}
+
+java\+Fx requeres this \doxylink{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a}{start()} method to be overwritten This \doxylink{classcom_1_1example_1_1App_ab365529bd11cd830708491d9a50d7c9a}{start()} called in main. 
+\begin{DoxyParams}{Parameters}
+{\em stage} & No idea what is this and how it is works \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{App_8java_source_l00021}{21}} of file \mbox{\hyperlink{App_8java_source}{App.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ INICIALIZÁLÁS\ }}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FileHandler\ fileHandler\ =\ new\ FileHandler();}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ //\ Beolvassa\ a\ megadott\ dir\ össze\ \`{}.mp3`\ fájlját\ és\ kollekcióba\ rakja\ őket.}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fileHandler.readDir("{}/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources"{});}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ //\ A\ kiválasztott\ lejátszandó\ track}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Track\ track\ =\ fileHandler.trackList.get(2);}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AudioHandler\ audioHandler\ =\ new\ AudioHandler(track);}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Itt\ hozom\ létre\ a\ tui\ handlert\ !!}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ GuiHandler\ tuiHandler\ =\ \textcolor{keyword}{new}\ GuiHandler();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TUI\ handler\ kezeli\ az\ inputut\ és\ onnan\ hívja\ meg\ a\ megfelelő\ play/pause\ metódusokat}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creates\ a\ new\ thread\ that\ wll\ run\ the\ tuiHandler}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(tuiHandler::init).start();}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
