@@ -1,16 +1,9 @@
 [
   {
-    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/06.-Linkin-Park--Easier-To-Run.mp3",
-    "title": "Easier To Run",
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/04.-Linkin-Park--Lying-From-You.mp3",
+    "title": "Lying From You",
     "artis": "Linkin Park",
     "album": "Meteora",
-    "length": 204
-  },
-  {
-    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/05.-Linkin-Park--Hit-The-Floor.mp3",
-    "title": "Hit The Floor",
-    "artis": "Linkin Park",
-    "album": "Meteora",
-    "length": 164
+    "length": 175
   }
 ]
