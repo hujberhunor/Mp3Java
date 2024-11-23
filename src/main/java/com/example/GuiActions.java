@@ -48,7 +48,7 @@ public class GuiActions {
 
             audioHandler = new AudioHandler(selected);
 
-            fileHandler.write(audioHandler); // szerializáció
+            fileHandler.write(audioHandler, "playedTracks.json"); // szerializáció
            
             return selected;
         }
@@ -59,7 +59,7 @@ public class GuiActions {
     public void selectedFromSearch(Track track){
         selected = track;
         audioHandler = new AudioHandler(track);
-        fileHandler.write(audioHandler); // szerializáció
+        fileHandler.write(audioHandler, "playedTracks.json"); // szerializáció
     }
 
     public void playPressed(){

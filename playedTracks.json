@@ -1,0 +1,16 @@
+[
+  {
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/04.-Linkin-Park--Lying-From-You.mp3",
+    "title": "Lying From You",
+    "artis": "Linkin Park",
+    "album": "Meteora",
+    "length": 175
+  },
+  {
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/12.-Linkin-Park--Session.mp3",
+    "title": "Session",
+    "artis": "Linkin Park",
+    "album": "Meteora",
+    "length": 145
+  }
+]

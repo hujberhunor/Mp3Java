@@ -1,13 +1,15 @@
 package com.example;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.ID3v2;
 import com.mpatric.mp3agic.InvalidDataException;
@@ -21,6 +23,9 @@ public class FileHandler {
 
     // Ebben a kollekcióban  tárolom a dalokat
     public ArrayList<Track> trackList = new ArrayList<>();
+
+    /// szerializált adatok
+    private ArrayList<Track> toBeSerialized = new ArrayList<>();
   
    /**
    * @param path dal elérési útvonala
@@ -132,25 +137,31 @@ public class FileHandler {
      * Minden lejátszott dal (pontosabban audioplayerbe helyezett dal)
      * belekerül a listába és ki lesz írva a playedTracks file-ba
      */
-    public void write(AudioHandler ah){
-        ArrayList<Track> toBeSeraial = new ArrayList<>();
-        toBeSeraial.add(ah.getTrackFromAH());
-
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PlayedTracks"))) {
-            oos.writeObject(toBeSeraial); // Serialize the list to a file
+    public void write(AudioHandler ah, String path) {
+        toBeSerialized.add(ah.getTrackFromAH());
+    
+        Gson gson = new GsonBuilder().setPrettyPrinting().create(); // For formatted JSON
+    
+        try (FileWriter writer = new FileWriter(path)) {
+            gson.toJson(toBeSerialized, writer);
             System.out.println("Written out");
         } catch (IOException e) {
-            e.printStackTrace();
+        e.printStackTrace();
         }
+    }
+    /*
+     * DEBUG ONLY 
+     */
+    public void read(String path) {
+       Gson gson = new Gson();
+
+       try (FileReader reader = new FileReader(path)) {
+           Type listType = new TypeToken<ArrayList<Track>>() {}.getType();
+           ArrayList<Track> tracks = gson.fromJson(reader, listType);
+           tracks.forEach(track -> System.out.println("Track: " + track.getTitle() + ", Artist: " + track.getArtist()));
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
     }
 
-    public void read() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("PlayedTracks"))) {
-            ArrayList<Track> tracks = (ArrayList<Track>) ois.readObject();
-            tracks.forEach(track -> System.out.println("Track: " + track.getTitle()));
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    
 } // end of fileHandler class
