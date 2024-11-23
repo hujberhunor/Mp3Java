@@ -68,21 +68,17 @@ static void setupJavaFx() {
     @Test
     void testWriteAndReadSerialization() throws UnsupportedTagException, InvalidDataException, IOException {
         FileHandler fileHandler = new FileHandler();
-        String testFile = "serialTest.json"; // File to write/read during test
+        String testFile = "serialTest.json";
 
-        // Arrange: Prepare a Track object and an AudioHandler
-        String songPath = "src/test/resources/mockData/Linkin-1.mp3"; // Mock path for testing
+        String songPath = "src/test/resources/mockData/Linkin-1.mp3";
         FileHandler fh = new FileHandler();
-        Track track = fh.createTrackFromPath(songPath); // Create a Track object
-        AudioHandler ah = new AudioHandler(track); // Create an AudioHandler
+        Track track = fh.createTrackFromPath(songPath); 
+        AudioHandler ah = new AudioHandler(track); 
         
-        // Act: Write the Track object to a file
         fileHandler.write(ah, testFile);
 
-        // Act: Read the Track object back from the file
         ArrayList<Track> readTracks = fileHandler.read(testFile);
 
-        // Assert: Verify that the Track data has been correctly serialized and deserialized
         assertNotNull(readTracks);
         assertEquals(1, readTracks.size());
         assertEquals("Linkin Park", readTracks.get(0).getArtist());
