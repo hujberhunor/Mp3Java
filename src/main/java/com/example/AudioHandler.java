@@ -10,6 +10,7 @@ import javafx.scene.media.MediaPlayer;
  */
 public class AudioHandler {
     private MediaPlayer mediaPlayer;
+    Track track;
 
     /**
      * Contructor that initializes the mediaPlayer with a track
@@ -17,6 +18,7 @@ public class AudioHandler {
      */
     public AudioHandler(Track track) {
         String path = track.getPath();
+        this.track = track;
         Media media = new Media(new File(path).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
     }
@@ -42,4 +44,7 @@ public class AudioHandler {
         return mediaPlayer;
     }
 
+    public Track getTrackFromAH(){
+        return track;
+    }
 } // END OF AUDIOHANDLER

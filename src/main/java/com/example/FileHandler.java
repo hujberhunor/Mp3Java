@@ -1,11 +1,12 @@
 package com.example;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
-
-import javax.swing.plaf.basic.BasicSliderUI.TrackListener;
 
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.ID3v2;
@@ -126,6 +127,30 @@ public class FileHandler {
         return matchingTracks; 
     }
 
+    /**
+     * Szerializáció
+     * Minden lejátszott dal (pontosabban audioplayerbe helyezett dal)
+     * belekerül a listába és ki lesz írva a playedTracks file-ba
+     */
+    public void write(AudioHandler ah){
+        ArrayList<Track> toBeSeraial = new ArrayList<>();
+        toBeSeraial.add(ah.getTrackFromAH());
 
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("PlayedTracks"))) {
+            oos.writeObject(toBeSeraial); // Serialize the list to a file
+            System.out.println("Written out");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void read() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("PlayedTracks"))) {
+            ArrayList<Track> tracks = (ArrayList<Track>) ois.readObject();
+            tracks.forEach(track -> System.out.println("Track: " + track.getTitle()));
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     
 } // end of fileHandler class

@@ -1,6 +1,8 @@
 package com.example;
 
-public class Track {
+import java.io.Serializable;
+
+public class Track implements Serializable {
     String path;    /// Absolute path that is set by the FileHandler.readDir()
     String title;
     String artis;
