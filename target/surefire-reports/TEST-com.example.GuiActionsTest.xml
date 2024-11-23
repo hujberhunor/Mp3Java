@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.GuiActionsTest" time="0.864" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.GuiActionsTest" time="0.867" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="javafx.runtime.version" value="19.0.2+1"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-22-openjdk/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/target/surefire 2024-11-23T18-43-02_190-jvmRun1 surefire-20241123184302564_1tmp surefire_0-20241123184302564_2tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/target/surefire 2024-11-23T19-25-54_222-jvmRun1 surefire-20241123192554445_1tmp surefire_0-20241123192554445_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/target/test-classes:/home/i3hunor/.m2/repository/org/openjfx/javafx-controls/19.0.2/javafx-controls-19.0.2.jar:/home/i3hunor/.m2/repository/org/openjfx/javafx-graphics/19.0.2/javafx-graphics-19.0.2.jar:/home/i3hunor/.m2/repository/org/openjfx/javafx-base/19.0.2/javafx-base-19.0.2.jar:/home/i3hunor/.m2/repository/org/openjfx/javafx-fxml/19.0.2/javafx-fxml-19.0.2.jar:/home/i3hunor/.m2/repository/org/openjfx/javafx-media/19.0.2/javafx-media-19.0.2.jar:/home/i3hunor/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/home/i3hunor/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/i3hunor/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/i3hunor/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/home/i3hunor/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/home/i3hunor/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -58,19 +58,19 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testFillArtist" classname="com.example.GuiActionsTest" time="0.438">
+  <testcase name="testFillArtist" classname="com.example.GuiActionsTest" time="0.434">
     <system-out><![CDATA[Written out
 Artist filed filled
 ]]></system-out>
   </testcase>
-  <testcase name="testPlayPressed" classname="com.example.GuiActionsTest" time="0.01">
+  <testcase name="testPlayPressed" classname="com.example.GuiActionsTest" time="0.011">
     <system-out><![CDATA[Written out
 Playing...
 Paused.
 ]]></system-out>
   </testcase>
-  <testcase name="testSearchTrack" classname="com.example.GuiActionsTest" time="0.07"/>
-  <testcase name="testFillAlbum" classname="com.example.GuiActionsTest" time="0.011">
+  <testcase name="testSearchTrack" classname="com.example.GuiActionsTest" time="0.054"/>
+  <testcase name="testFillAlbum" classname="com.example.GuiActionsTest" time="0.01">
     <system-out><![CDATA[Written out
 Album filed filled
 ]]></system-out>
