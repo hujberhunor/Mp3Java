@@ -1,9 +1,16 @@
 [
   {
-    "path": "src/test/resources/mockData/Linkin-1.mp3",
-    "title": "Session",
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/07.-Linkin-Park--Faint.mp3",
+    "title": "Faint",
     "artis": "Linkin Park",
     "album": "Meteora",
-    "length": 145
+    "length": 162
+  },
+  {
+    "path": "/home/i3hunor/Suli/Prog3/nagyHF/Fasz/mp3java/src/main/resources/08.-Linkin-Park--Figure.09.mp3",
+    "title": "Figure.09",
+    "artis": "Linkin Park",
+    "album": "Meteora",
+    "length": 198
   }
 ]

@@ -113,7 +113,7 @@ public class GuiActions {
             long len = selected.getLength();
             int curr = (int) audioHandler.getMediaPlayer().getCurrentTime().toSeconds();
             field.setText(curr + "/" + len);
-            System.out.println("Length of the track: " + len);
+            // System.out.println("Length of the track: " + len);
         }
         else field.setText("NA");
     }
