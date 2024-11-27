@@ -97,37 +97,43 @@ public class GuiPlaylist {
     } // end of showSearchResultsWindow()
 
     public void finalizePlaylistPanel(DefaultListModel<Track> playlListModel){
-        JFrame frame = new JFrame("Finalized Playlist");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(400, 300);
-        frame.setLayout(new BorderLayout());
+    JFrame frame = new JFrame("Finalized Playlist");
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.setSize(400, 300);
+    frame.setLayout(new BorderLayout());
 
-        // Playlist Panel (similar to the one in showSearchResultsWindow)
-        JPanel playlistPanel = new JPanel(new BorderLayout());
-        JList<Track> finalizedPlaylistList = new JList<>(playlListModel);
-        finalizedPlaylistList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Allow single selection
-        JScrollPane playlistScrollPane = new JScrollPane(finalizedPlaylistList);
-        playlistPanel.add(playlistScrollPane, BorderLayout.CENTER);
-        playlistPanel.setBorder(BorderFactory.createTitledBorder("Finalized Playlist"));
+    // Playlist Panel (similar to the one in showSearchResultsWindow)
+    JPanel playlistPanel = new JPanel(new BorderLayout());
+    JList<Track> finalizedPlaylistList = new JList<>(playlListModel);
+    finalizedPlaylistList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Allow single selection
+    JScrollPane playlistScrollPane = new JScrollPane(finalizedPlaylistList);
+    playlistPanel.add(playlistScrollPane, BorderLayout.CENTER);
+    playlistPanel.setBorder(BorderFactory.createTitledBorder("Finalized Playlist"));
 
-        // Play Button Panel
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 1));
-        JButton playButton = new JButton("Play");
-        buttonPanel.add(playButton);
+    // Play Button Panel
+    JPanel buttonPanel = new JPanel(new GridLayout(1, 1));
+    JButton playButton = new JButton("Play");
+    buttonPanel.add(playButton);
 
-        // Add ActionListener for Play button (example action)
-        playButton.addActionListener(e -> {
-            // Here you can define the logic for starting the playback
-            // For now, it just shows a message when clicked
-            JOptionPane.showMessageDialog(frame, "Playing the playlist", "Play", JOptionPane.INFORMATION_MESSAGE);
-        });
+    // Add ActionListener for Play button (example action)
+    playButton.addActionListener(e -> {
+        // Get the selected index from the playlist
+        int selectedIndex = finalizedPlaylistList.getSelectedIndex();
 
-        // Add panels to frame
-        frame.add(playlistPanel, BorderLayout.CENTER);
-        frame.add(buttonPanel, BorderLayout.SOUTH);
+        if (selectedIndex != -1) { // If a track is selected
+            Track selectedTrack = playlListModel.get(selectedIndex);  // Get the selected track from the model
+            JOptionPane.showMessageDialog(frame, "Playing: "+ selectedIndex + " asd "  + selectedTrack.toString(), "Play", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(frame, "No song selected.", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+    });
 
-        frame.setVisible(true);
-    }
+    // Add panels to frame
+    frame.add(playlistPanel, BorderLayout.CENTER);
+    frame.add(buttonPanel, BorderLayout.SOUTH);
+
+    frame.setVisible(true);
+}
 
 
 }

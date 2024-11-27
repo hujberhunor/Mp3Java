@@ -37,8 +37,6 @@ public class GuiHandler {
     JButton playButton, fileSelectButton;
     Timer progressTimer;
 
-    // Playlist makerhez kellenek
-    ArrayList<Track> playList = new ArrayList<>();
 
     public void init() {
         initFrame();
@@ -171,7 +169,7 @@ public class GuiHandler {
      * A progressField frissítése miatt van rá szükség, emiatt lesz "reszponzív"
      */
     private void configureProgressTimer() {
-        progressTimer = new Timer(1000, e -> actions.fillProgress(progressField));
+        progressTimer = new Timer(500, e -> actions.fillProgress(progressField));
     }
 
     private void selectTrack() {
@@ -207,8 +205,6 @@ public class GuiHandler {
         actions.fillProgress(progressField);
     }
 
-
-
     /**
      * Csak továbbadja a paramétereit az azonos paraméterezésű searchTrack fv-nek ami
      * a fileHandlerben van definiálva.  
@@ -222,7 +218,7 @@ public class GuiHandler {
         ArrayList<Track> tracks = actions.searchTrack(pattern);
     
         if (tracks.isEmpty()) {
-            System.out.println("No results found.");
+            JOptionPane.showMessageDialog(frame, "No results found", "Play", JOptionPane.INFORMATION_MESSAGE);
         } else {
             // ITT történik az ablak megjelenítése
             gp.showSearchResultsWindow(tracks);
