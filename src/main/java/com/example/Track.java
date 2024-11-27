@@ -53,6 +53,11 @@ public class Track implements Serializable {
         return length;
     }
 
+    @Override
+    public String toString() {
+        return getArtist() + " - " + getTitle();
+    }
+
 
 } // end of Track class
 

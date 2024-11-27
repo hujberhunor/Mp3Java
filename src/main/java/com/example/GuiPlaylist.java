@@ -15,16 +15,14 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 public class GuiPlaylist {
-        JButton addToPlaylist, removeFromPlaylist, finalizePlaylist;
 
+    JButton addToPlaylist, removeFromPlaylist, finalizePlaylist;
+    DefaultListModel<Track> playlistModel = new DefaultListModel<>(); // Changed to store Track objects
 
-
-
-
-
-     /**
-     * Felugró ablak a search resultok miatt
-     * GuiHandlerben a searchTrack() method hívja meg a kííratást
+    /**
+     * Pop-up window for search results.
+     * Called by the searchTrack() method in GuiHandler.
+     * 
      * @param results The list of tracks found by the search.
      */
     public void showSearchResultsWindow(ArrayList<Track> results) {
@@ -35,11 +33,9 @@ public class GuiPlaylist {
 
         // Song List (Search Results)
         JPanel songsPanel = new JPanel(new BorderLayout());
-        DefaultListModel<String> resultsModel = new DefaultListModel<>();
-        results.stream()
-                .map(track -> track.getTitle() + " - " + track.getArtist())
-                .forEach(resultsModel::addElement);
-        JList<String> resultsList = new JList<>(resultsModel);
+        DefaultListModel<Track> resultsModel = new DefaultListModel<>();
+        results.forEach(resultsModel::addElement); // Add Track objects to the model
+        JList<Track> resultsList = new JList<>(resultsModel);
         resultsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane songsScrollPane = new JScrollPane(resultsList);
         songsPanel.add(songsScrollPane, BorderLayout.CENTER);
@@ -47,8 +43,7 @@ public class GuiPlaylist {
 
         // Playlist
         JPanel playlistPanel = new JPanel(new BorderLayout());
-        DefaultListModel<String> playlistModel = new DefaultListModel<>();
-        JList<String> playlistList = new JList<>(playlistModel);
+        JList<Track> playlistList = new JList<>(playlistModel);
         JScrollPane playlistScrollPane = new JScrollPane(playlistList);
         playlistPanel.add(playlistScrollPane, BorderLayout.CENTER);
         playlistPanel.setBorder(BorderFactory.createTitledBorder("Playlist"));
@@ -64,21 +59,31 @@ public class GuiPlaylist {
 
         // Add ActionListener for "Add" button
         addToPlaylist.addActionListener(e -> {
-            String selectedSong = resultsList.getSelectedValue();
-            if (selectedSong != null && !playlistModel.contains(selectedSong)) {
-                playlistModel.addElement(selectedSong);
-            } else if (selectedSong == null) {
+            Track selectedTrack = resultsList.getSelectedValue();
+            if (selectedTrack != null && !playlistModel.contains(selectedTrack)) {
+                playlistModel.addElement(selectedTrack);
+            } else if (selectedTrack == null) {
                 JOptionPane.showMessageDialog(frame, "No song selected.", "Error", JOptionPane.WARNING_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(frame, "Song already in playlist.", "Error", JOptionPane.WARNING_MESSAGE);
             }
         });
+       
+        // Add ActionListener for "Finalize playlist" button
+        finalizePlaylist.addActionListener(e -> {
+            // Close the search results window
+            frame.dispose(); // Close the previous window (search results window)
+            
+            // Call finalizePlaylistPanel() method and pass the current playlist model
+            finalizePlaylistPanel(playlistModel);
+        });
+
 
         // Add ActionListener for "Remove" button
         removeFromPlaylist.addActionListener(e -> {
-            String selectedSong = playlistList.getSelectedValue();
-            if (selectedSong != null) {
-                playlistModel.removeElement(selectedSong);
+            Track selectedTrack = playlistList.getSelectedValue();
+            if (selectedTrack != null) {
+                playlistModel.removeElement(selectedTrack);
             } else {
                 JOptionPane.showMessageDialog(frame, "No song selected to remove.", "Error", JOptionPane.WARNING_MESSAGE);
             }
@@ -89,9 +94,40 @@ public class GuiPlaylist {
         frame.add(playlistPanel, BorderLayout.CENTER);
         frame.add(buttonPanel, BorderLayout.SOUTH);
         frame.setVisible(true);
-    }   
+    } // end of showSearchResultsWindow()
 
+    public void finalizePlaylistPanel(DefaultListModel<Track> playlListModel){
+        JFrame frame = new JFrame("Finalized Playlist");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLayout(new BorderLayout());
 
+        // Playlist Panel (similar to the one in showSearchResultsWindow)
+        JPanel playlistPanel = new JPanel(new BorderLayout());
+        JList<Track> finalizedPlaylistList = new JList<>(playlListModel);
+        finalizedPlaylistList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Allow single selection
+        JScrollPane playlistScrollPane = new JScrollPane(finalizedPlaylistList);
+        playlistPanel.add(playlistScrollPane, BorderLayout.CENTER);
+        playlistPanel.setBorder(BorderFactory.createTitledBorder("Finalized Playlist"));
+
+        // Play Button Panel
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 1));
+        JButton playButton = new JButton("Play");
+        buttonPanel.add(playButton);
+
+        // Add ActionListener for Play button (example action)
+        playButton.addActionListener(e -> {
+            // Here you can define the logic for starting the playback
+            // For now, it just shows a message when clicked
+            JOptionPane.showMessageDialog(frame, "Playing the playlist", "Play", JOptionPane.INFORMATION_MESSAGE);
+        });
+
+        // Add panels to frame
+        frame.add(playlistPanel, BorderLayout.CENTER);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
+
+        frame.setVisible(true);
+    }
 
 
 }
