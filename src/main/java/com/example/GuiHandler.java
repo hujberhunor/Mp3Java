@@ -1,15 +1,22 @@
 package com.example;
 
+import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// If using other Swing components like JFrame, JPanel, etc.
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 // A felugró ablakhoz kell
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
@@ -20,13 +27,18 @@ import com.mpatric.mp3agic.UnsupportedTagException;
 
 
 
+
 public class GuiHandler {
     GuiActions actions = new GuiActions();
+    GuiPlaylist gp = new GuiPlaylist();
     Track track;
     JFrame frame;
     JTextField searchField, artistField, titleField, albumField, progressField;
     JButton playButton, fileSelectButton;
     Timer progressTimer;
+
+    // Playlist makerhez kellenek
+    ArrayList<Track> playList = new ArrayList<>();
 
     public void init() {
         initFrame();
@@ -196,52 +208,6 @@ public class GuiHandler {
     }
 
 
-     /**
-     * Felugró ablak a search resultok miatt
-     * @param results The list of tracks found by the search.
-     */
-    private void showSearchResultsWindow(ArrayList<Track> results) {
-        JFrame resultsFrame = new JFrame("Search Results");
-        resultsFrame.setSize(400, 300);
-        resultsFrame.setLayout(new GridBagLayout());
-        resultsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1.0;
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-    
-        //  lista a resultoknak
-        JList<String> resultsList = new JList<>(
-                results.stream().map(track -> track.getTitle() + " - " + track.getArtist()).toArray(String[]::new));
-        resultsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        JScrollPane scrollPane = new JScrollPane(resultsList);
-    
-        gbc.gridy = 0;
-        gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-        resultsFrame.add(scrollPane, gbc);
-
-        JButton selectButton = new JButton("Select");
-        gbc.gridy = 1;
-        gbc.weighty = 0.0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        resultsFrame.add(selectButton, gbc);
-
-        // Add functionality to select a track and close the results window
-        selectButton.addActionListener(e -> {
-            int selectedIndex = resultsList.getSelectedIndex();
-            if (selectedIndex >= 0) {
-                track = results.get(selectedIndex);
-                actions.selectedFromSearch(track);
-                initComponents();
-                resultsFrame.dispose();
-            }
-        });
-         
-        resultsFrame.setVisible(true);
-    }
 
     /**
      * Csak továbbadja a paramétereit az azonos paraméterezésű searchTrack fv-nek ami
@@ -258,7 +224,8 @@ public class GuiHandler {
         if (tracks.isEmpty()) {
             System.out.println("No results found.");
         } else {
-            showSearchResultsWindow(tracks);
+            // ITT történik az ablak megjelenítése
+            gp.showSearchResultsWindow(tracks);
         }
     }
 
