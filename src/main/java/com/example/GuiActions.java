@@ -6,12 +6,15 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
 import javax.swing.ListModel;
 
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
+
+import javafx.scene.media.MediaPlayer;
 
 /**
  * Minden guiHandlerben helyet foglaló 
@@ -61,17 +64,63 @@ public class GuiActions {
         fileHandler.write(audioHandler, "playedTracks.json"); // szerializáció
     }
 
-    public void playPlaylist(JList playlist){
-        ListModel<Track> model = playlist.getModel(); // Get the model from the JList
-        ArrayList<Track> trackList = new ArrayList<>();
+// ---
 
-        // Iterate through the model and add each element to the ArrayList
-        for (int i = 0; i < model.getSize(); i++) {
-            trackList.add(model.getElementAt(i));
-            System.out.println(model.getElementAt(i)); // debug
-        }
+public void playPlaylist(JList<Track> playlist) {
+    ListModel<Track> model = playlist.getModel(); // JList modellje
+    ArrayList<Track> trackList = new ArrayList<>();
+
+    // Lista feltöltése
+    for (int i = 0; i < model.getSize(); i++) {
+        trackList.add(model.getElementAt(i));
     }
 
+    // Playlist lejátszása külön szálon
+    new Thread(() -> playTracksSequentially(trackList)).start();
+}
+
+
+private void playTracksSequentially(ArrayList<Track> trackList) {
+    GuiPlaylist gp = new GuiPlaylist();
+
+    for (Track track : trackList) {
+        // AudioHandler inicializálása a jelenlegi trackhez
+        AudioHandler audioHandler = new AudioHandler(track);
+
+        gp.initializeTrackControlWindow(audioHandler, trackList);
+        gp.updateTrackControlWindow(audioHandler);
+
+        // Jelenlegi track lejátszása
+        audioHandler.play();
+        System.out.println("Now playing: " + track.getTitle());
+
+        // Megvárjuk, amíg a track lejátszása befejeződik
+        waitForTrackToFinish(audioHandler);
+    }
+}
+
+private void waitForTrackToFinish(AudioHandler audioHandler) {
+    MediaPlayer mediaPlayer = audioHandler.getMediaPlayer();
+
+    // Várakozás, amíg a MediaPlayer lejátszik
+    Object lock = new Object();
+    mediaPlayer.setOnEndOfMedia(() -> {
+        synchronized (lock) {
+            lock.notify(); // Értesítjük a fő szálat, hogy a lejátszás befejeződött
+        }
+    });
+
+    synchronized (lock) {
+        try {
+            // Fő szál vár, amíg a track lejátszása befejeződik
+            lock.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+/// .---
     public void playPressed(){
         if (!pressed) {
             audioHandler.play();

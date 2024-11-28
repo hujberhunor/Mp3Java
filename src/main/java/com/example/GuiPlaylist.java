@@ -8,15 +8,21 @@ import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.media.MediaPlayer;
+
 public class GuiPlaylist {
 
-    JButton addToPlaylist, removeFromPlaylist, finalizePlaylist;
+    JButton addToPlaylist, removeFromPlaylist, playButton;
     DefaultListModel<Track> playlistModel = new DefaultListModel<>(); // Changed to store Track objects
     GuiActions ga = new GuiActions();
 
@@ -52,10 +58,10 @@ public class GuiPlaylist {
         // Buttons
         JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
         addToPlaylist = new JButton("Add");
-        finalizePlaylist = new JButton("Finalize playlist");
+        playButton = new JButton("Play");
         removeFromPlaylist = new JButton("Remove");
         buttonPanel.add(addToPlaylist);
-        buttonPanel.add(finalizePlaylist);
+        buttonPanel.add(playButton);
         buttonPanel.add(removeFromPlaylist);
 
         // Add ActionListener for "Add" button
@@ -71,12 +77,16 @@ public class GuiPlaylist {
         });
        
         // Add ActionListener for "Finalize playlist" button
-        finalizePlaylist.addActionListener(e -> {
-            // Close the search results window
-            frame.dispose(); // Close the previous window (search results window)
-            
-            // Call finalizePlaylistPanel() method and pass the current playlist model
-            finalizePlaylistPanel(playlistModel);
+        playButton.addActionListener(e -> {
+            JList<Track> finalizedPlaylistList = new JList<>(playlistModel);
+            finalizedPlaylistList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Allow single selection
+           
+            if (playlistModel.getSize() > 0) {
+                JOptionPane.showMessageDialog(frame, "After pressing OK the playlist will start", "Play", JOptionPane.INFORMATION_MESSAGE);
+                ga.playPlaylist(finalizedPlaylistList); // Pass the JList to the method
+            } else {
+                JOptionPane.showMessageDialog(frame, "Empty.", "Error", JOptionPane.WARNING_MESSAGE);
+            }
         });
 
 
@@ -97,42 +107,101 @@ public class GuiPlaylist {
         frame.setVisible(true);
     } // end of showSearchResultsWindow()
 
-public void finalizePlaylistPanel(DefaultListModel<Track> playlListModel) {
-    JFrame frame = new JFrame("Finalized Playlist");
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.setSize(400, 300);
-    frame.setLayout(new BorderLayout());
+private JFrame trackWindow;
+private JLabel titleLabel;
+private JLabel artistLabel;
+private JLabel albumLabel;
+private JButton playPauseButton;
 
-    // Playlist Panel (similar to the one in showSearchResultsWindow)
-    JPanel playlistPanel = new JPanel(new BorderLayout());
-    JList<Track> finalizedPlaylistList = new JList<>(playlListModel);
-    finalizedPlaylistList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Allow single selection
-    JScrollPane playlistScrollPane = new JScrollPane(finalizedPlaylistList);
-    playlistPanel.add(playlistScrollPane, BorderLayout.CENTER);
-    playlistPanel.setBorder(BorderFactory.createTitledBorder("Finalized Playlist"));
+private AudioHandler currentAudioHandler; // Központi AudioHandler
 
-    // Play Button Panel
+private JLabel positionLabel; // New label for track position
+private Timeline positionUpdater; // Timer for updating track position
+
+public void initializeTrackControlWindow(AudioHandler audioHandler, ArrayList<Track> trackList) {
+    currentAudioHandler = audioHandler; // Set the current AudioHandler
+
+    // If the window already exists, just make it visible
+    if (trackWindow != null) {
+        trackWindow.setVisible(true);
+        return;
+    }
+
+    // Create new window
+    trackWindow = new JFrame("Now Playing");
+    trackWindow.setSize(400, 250);
+    trackWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    trackWindow.setLayout(new BorderLayout());
+
+    // Info panel
+    JPanel infoPanel = new JPanel(new GridLayout(4, 1));
+    titleLabel = new JLabel("Title: ", JLabel.CENTER);
+    artistLabel = new JLabel("Artist: ", JLabel.CENTER);
+    albumLabel = new JLabel("Album: ", JLabel.CENTER);
+    positionLabel = new JLabel("Position: 0/0 s", JLabel.CENTER); // Initial position
+
+    infoPanel.add(titleLabel);
+    infoPanel.add(artistLabel);
+    infoPanel.add(albumLabel);
+    infoPanel.add(positionLabel);
+
+    // Buttons panel
     JPanel buttonPanel = new JPanel(new GridLayout(1, 1));
-    JButton playButton = new JButton("Play");
-    buttonPanel.add(playButton);
+    playPauseButton = new JButton("Pause"); // Default state is "Pause"
 
-    // Add ActionListener for Play button
-    playButton.addActionListener(e -> {
-        // Check if the playlist is not empty
-        if (playlListModel.getSize() > 0) {
-            // Call playPlaylist with the finalized JList
-            JOptionPane.showMessageDialog(frame, "Playing the playlist", "Play", JOptionPane.INFORMATION_MESSAGE);
-            ga.playPlaylist(finalizedPlaylistList); // Pass the JList to the method
-        } else {
-            JOptionPane.showMessageDialog(frame, "Empty.", "Error", JOptionPane.WARNING_MESSAGE);
+    // Button actions
+    playPauseButton.addActionListener(e -> {
+        if (currentAudioHandler != null) {
+            MediaPlayer mediaPlayer = currentAudioHandler.getMediaPlayer();
+            if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+                currentAudioHandler.pause();
+                playPauseButton.setText("Play");
+            } else {
+                currentAudioHandler.play();
+                playPauseButton.setText("Pause");
+            }
         }
     });
 
-    // Add panels to frame
-    frame.add(playlistPanel, BorderLayout.CENTER);
-    frame.add(buttonPanel, BorderLayout.SOUTH);
+    buttonPanel.add(playPauseButton);
 
-    frame.setVisible(true);
+    // Assemble UI
+    trackWindow.add(infoPanel, BorderLayout.CENTER);
+    trackWindow.add(buttonPanel, BorderLayout.SOUTH);
+
+    // Center window and display
+    trackWindow.setLocationRelativeTo(null);
+    trackWindow.setVisible(true);
+}
+
+public void updateTrackControlWindow(AudioHandler audioHandler) {
+    currentAudioHandler = audioHandler; // Update current AudioHandler
+    if (titleLabel != null && artistLabel != null && albumLabel != null) {
+        Track track = audioHandler.getTrackFromAH();
+        titleLabel.setText("Title: " + track.getTitle());
+        artistLabel.setText("Artist: " + track.getArtist());
+        albumLabel.setText("Album: " + track.getAlbum());
+    }
+
+    // Set up the position updater
+    setupPositionUpdater(audioHandler);
+}
+
+private void setupPositionUpdater(AudioHandler audioHandler) {
+    if (positionUpdater != null) {
+        positionUpdater.stop(); // Stop the previous updater if it exists
+    }
+
+    MediaPlayer mediaPlayer = audioHandler.getMediaPlayer();
+
+    positionUpdater = new Timeline(new KeyFrame(javafx.util.Duration.seconds(1), e -> {
+    double currentTime = mediaPlayer.getCurrentTime().toSeconds();
+    double totalDuration = mediaPlayer.getTotalDuration().toSeconds();
+    positionLabel.setText(String.format("Position: %.0f/%.0f s", currentTime, totalDuration));
+}));
+
+    positionUpdater.setCycleCount(Animation.INDEFINITE);
+    positionUpdater.play();
 }
 
 
