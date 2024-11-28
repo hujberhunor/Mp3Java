@@ -18,6 +18,7 @@ public class GuiPlaylist {
 
     JButton addToPlaylist, removeFromPlaylist, finalizePlaylist;
     DefaultListModel<Track> playlistModel = new DefaultListModel<>(); // Changed to store Track objects
+    GuiActions ga = new GuiActions();
 
     /**
      * Pop-up window for search results.
@@ -96,7 +97,7 @@ public class GuiPlaylist {
         frame.setVisible(true);
     } // end of showSearchResultsWindow()
 
-    public void finalizePlaylistPanel(DefaultListModel<Track> playlListModel){
+public void finalizePlaylistPanel(DefaultListModel<Track> playlListModel) {
     JFrame frame = new JFrame("Finalized Playlist");
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     frame.setSize(400, 300);
@@ -115,16 +116,15 @@ public class GuiPlaylist {
     JButton playButton = new JButton("Play");
     buttonPanel.add(playButton);
 
-    // Add ActionListener for Play button (example action)
+    // Add ActionListener for Play button
     playButton.addActionListener(e -> {
-        // Get the selected index from the playlist
-        int selectedIndex = finalizedPlaylistList.getSelectedIndex();
-
-        if (selectedIndex != -1) { // If a track is selected
-            Track selectedTrack = playlListModel.get(selectedIndex);  // Get the selected track from the model
-            JOptionPane.showMessageDialog(frame, "Playing: "+ selectedIndex + " asd "  + selectedTrack.toString(), "Play", JOptionPane.INFORMATION_MESSAGE);
+        // Check if the playlist is not empty
+        if (playlListModel.getSize() > 0) {
+            // Call playPlaylist with the finalized JList
+            JOptionPane.showMessageDialog(frame, "Playing the playlist", "Play", JOptionPane.INFORMATION_MESSAGE);
+            ga.playPlaylist(finalizedPlaylistList); // Pass the JList to the method
         } else {
-            JOptionPane.showMessageDialog(frame, "No song selected.", "Error", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Empty.", "Error", JOptionPane.WARNING_MESSAGE);
         }
     });
 
@@ -134,6 +134,7 @@ public class GuiPlaylist {
 
     frame.setVisible(true);
 }
+
 
 
 }

@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
@@ -57,6 +59,17 @@ public class GuiActions {
         selected = track;
         audioHandler = new AudioHandler(track);
         fileHandler.write(audioHandler, "playedTracks.json"); // szerializáció
+    }
+
+    public void playPlaylist(JList playlist){
+        ListModel<Track> model = playlist.getModel(); // Get the model from the JList
+        ArrayList<Track> trackList = new ArrayList<>();
+
+        // Iterate through the model and add each element to the ArrayList
+        for (int i = 0; i < model.getSize(); i++) {
+            trackList.add(model.getElementAt(i));
+            System.out.println(model.getElementAt(i)); // debug
+        }
     }
 
     public void playPressed(){
